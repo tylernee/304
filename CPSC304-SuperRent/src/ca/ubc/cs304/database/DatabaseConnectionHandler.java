@@ -1,6 +1,8 @@
 package ca.ubc.cs304.database;
 
 import ca.ubc.cs304.model.BranchModel;
+import ca.ubc.cs304.model.CustomerModel;
+import ca.ubc.cs304.model.RentModel;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -28,7 +30,121 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
-	public void close() {
+	public CustomerModel[] getCustomers() {
+		ArrayList<CustomerModel> customers = new ArrayList<>();
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM CUSTOMERS");
+			// get info on ResultSet
+			ResultSetMetaData rsmd = rs.getMetaData();
+			// display column names;
+			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+				// get column name and print it
+				System.out.printf("%-15s", rsmd.getColumnName(i + 1));
+			}
+			while (rs.next()) {
+//				Customer (cellphone, name, address, dlicense)
+				// TODO change the getString for dlicense
+				CustomerModel customer = new CustomerModel(rs.getString("cellphone"),
+						rs.getString("name"), rs.getString("address"), Integer.parseInt(rs.getString("dlicense")));
+				customers.add(customer);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return customers.toArray(new CustomerModel[customers.size()]);
+	}
+
+	public void insertNewCustomer(CustomerModel customer) {
+		//	Customer (cellphone, name, address, dlicense)
+		try {
+			PreparedStatement ps = connection.prepareStatement("INSERT INTO CUSTOMERS VALUES (?,?,?,?)");
+			ps.setString(1, customer.getCellphone());
+			ps.setString(2, customer.getName());
+			ps.setString(3, customer.getAddress());
+			ps.setInt(4, customer.getDlicense());
+
+//			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
+			ps.executeUpdate();
+			connection.commit();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+			rollbackConnection();
+		}
+	}
+
+	public String handleRent(int confNo) {
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM Reservations WHERE confNo = " + confNo);
+			ResultSetMetaData rsmd = rs.getMetaData();
+
+			// Reservation (confNo, vtname, cellphone, fromDate, fromTime, toDate, toTime)
+			// Vehicle (~vid~, vlicense, make, model, year, color, odometer, status, vtname, location, city)
+			//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
+			String cellphone ="", fromDate="", fromTime="", toDate="", toTime = "", vtname="";
+			int vid=-1, odometer=-1;
+			while(rs.next()) {
+				cellphone = rs.getString("cellphone");
+				fromDate = rs.getString("fromDate");
+				fromTime = rs.getString("fromTime");
+				toDate = rs.getString("toDate");
+				toTime = rs.getString("toTime");
+				vtname = rs.getString("vtname");
+			}
+//			System.out.println("SELECT vid, odometer FROM Vehicles WHERE vtname = '" + vtname + "' AND status = 'for_rent'");
+			Statement stmt2 = connection.createStatement();
+
+			ResultSet rs2 = stmt2.executeQuery("SELECT * FROM Vehicles");
+			rsmd = rs2.getMetaData();
+			System.out.println(rs2.next());
+			while (rs2.next()) {
+				vid = rs2.getInt("vid");
+				odometer = rs2.getInt("odometer");
+			}
+			System.out.println(vid);
+//			System.out.println(cellphone + fromDate + fromTime + toDate + toTime + odometer);
+
+
+
+		} catch (SQLException e) {
+			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+			rollbackConnection();
+		}
+
+		return "";
+	}
+
+	private void insertNewRental(RentModel rental) {
+		//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
+		try {
+			PreparedStatement ps = connection.prepareStatement("INSERT INTO CUSTOMERS VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+			ps.setInt(1, rental.getRid());
+			ps.setInt(2, rental.getVid());
+			ps.setString(3, rental.getCellphone());
+			ps.setString(4, rental.getFromDate());
+			ps.setString(5, rental.getFromTime());
+			ps.setString(6, rental.getToDate());
+			ps.setInt(7, rental.getOdometer());
+			ps.setString(8, rental.getCardName());
+			ps.setInt(9, rental.getCardNo());
+			ps.setString(10, rental.getExpDate());
+			ps.setInt(11, rental.getConfNo());
+//			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
+			ps.executeUpdate();
+			connection.commit();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+			rollbackConnection();
+		}
+	}
+
+
+
+
+		public void close() {
 		try {
 			if (connection != null) {
 				connection.close();
@@ -56,9 +172,7 @@ public class DatabaseConnectionHandler {
 			rollbackConnection();
 		}
 	}
-	public void makeReservation(int dlicense) {
 
-	}
 
 	public void insertBranch(BranchModel model) {
 		try {
@@ -89,12 +203,12 @@ public class DatabaseConnectionHandler {
 		try {
 			Statement stmt = connection.createStatement();
 
-			ResultSet rs = stmt.executeQuery("SELECT * FROM reservation");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM vehicles");
 
 			 // get info on ResultSet
 			 ResultSetMetaData rsmd = rs.getMetaData();
 			//
-			 System.out.println(" ");
+			 System.out.println(rs.getString("status"));
 
 
 			 // display column names;
