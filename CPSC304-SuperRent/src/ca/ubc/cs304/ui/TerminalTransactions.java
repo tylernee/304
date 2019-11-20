@@ -35,7 +35,7 @@ public class TerminalTransactions {
 			System.out.println();
 			System.out.println("1. Make reservation ");
 			System.out.println("2. View Available Vehicles");
-			System.out.println("3. Update branch name");
+			System.out.println("3. Do rental");
 			System.out.println("4. Show branch");
 			System.out.println("5. Quit");
 			System.out.print("Please choose one of the above 5 options: ");
@@ -55,10 +55,11 @@ public class TerminalTransactions {
 					viewAvailableVehicles();
 					break;
 				case 3: 
-					handleUpdateOption();
+//					handleUpdateOption();
+					rentOutVehicle();
 					break;
 				case 4:  
-					delegate.showBranch(); 
+					delegate.showCustomers();
 					break;
 				case 5:
 					handleQuitOption();
@@ -82,6 +83,23 @@ public class TerminalTransactions {
 
 	//TODO clerk transactions CHANGE RETURN TYPE AND ADD PARAMETERS WHEN NECESSARY
 	private void rentOutVehicle() {
+		//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
+
+		// 2 cases: if a reservation has been made, grab reservation tuple and grab necessary info
+		//			if no reservation, in which we create a new tuple for customer (if neccesary)
+		System.out.println("Please enter your reservation number, enter 0 if you do not have one:");
+		int resNo = readInteger(false);
+		if (resNo != 0) {
+			// proceed rental
+			// Reservation (confNo, vtname, cellphone, fromDate, fromTime, toDate, toTime)
+			System.out.println("do rental");
+			delegate.handleRent(resNo);
+			// remove tuple with confNo from confirmation and create one to rentm
+
+		} else {
+			System.out.println("create new customer model, insert into db, make them pick a vehicle, etc");
+		}
+
 
 	}
 

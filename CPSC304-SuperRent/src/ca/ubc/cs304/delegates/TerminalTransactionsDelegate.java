@@ -14,11 +14,12 @@ import ca.ubc.cs304.model.BranchModel;
 public interface TerminalTransactionsDelegate {
 	public void deleteBranch(int branchId);
 	public void insertBranch(BranchModel model);
-	public void showBranch();
+	public void showCustomers();
 	public void updateBranch(int branchId, String name);
 
 
 	public void makeReservation(int dlicense);
+	public String handleRent(int confNo);
 	
 	public void terminalTransactionsFinished();
 }

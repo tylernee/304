@@ -4,6 +4,7 @@ import ca.ubc.cs304.database.DatabaseConnectionHandler;
 import ca.ubc.cs304.delegates.LoginWindowDelegate;
 import ca.ubc.cs304.delegates.TerminalTransactionsDelegate;
 import ca.ubc.cs304.model.BranchModel;
+import ca.ubc.cs304.model.CustomerModel;
 import ca.ubc.cs304.ui.TerminalTransactions;
 
 import java.util.Scanner;
@@ -83,10 +84,15 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 	 * 
 	 * Displays information about varies bank branches.
 	 */
-    public void showBranch() {
-    	BranchModel[] models = dbHandler.getBranchInfo();
-
+    public void showCustomers() {
+    	CustomerModel[] customers = dbHandler.getCustomers();
     }
+
+    public String handleRent(int confNo) {
+    	String receipt = dbHandler.handleRent(confNo);
+    	return "receipt";
+	}
+
 	
     /**
 	 * TerminalTransactionsDelegate Implementation
@@ -103,9 +109,10 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 
 
     public void makeReservation(int dlicense) {
-    	dbHandler.makeReservation(dlicense);
-
+//    	dbHandler.makeReservation(dlicense);
 	}
+
+
     
 	/**
 	 * Main method called at launch time

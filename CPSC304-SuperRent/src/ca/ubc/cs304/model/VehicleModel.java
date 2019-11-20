@@ -14,13 +14,13 @@ public class VehicleModel {
 	private final int year;
 	private final String color;
 	private final int odometer;
-	private final boolean status;
+	private final String status;
 	private final String vtName;
 	private final String location;
 	private final String city;
 
 	public VehicleModel(int vid, String vlicense, String make, String model,
-						int year, String color, int odometer, boolean status, String vtName, String location, String city) {
+						int year, String color, int odometer, String status, String vtName, String location, String city) {
 		this.vid = vid;
 		this.vlicense = vlicense;
 		this.make = make;
@@ -62,7 +62,7 @@ public class VehicleModel {
 		return odometer;
 	}
 
-	public boolean isStatus() {
+	public String getStatus() {
 		return status;
 	}
 
