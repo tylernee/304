@@ -23,6 +23,7 @@ public class guiWindow {
     private JButton backButtonSelType;
     private JButton backButtonSelLoc;
     private JButton backButtonSelTime;
+    private JButton okButtonVT;
     private String vehicleType;
     private String location;
     private String city;
@@ -46,15 +47,17 @@ public class guiWindow {
         vAvailVeh.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                switchPanel(vehicleSelection);
+                switchPanel(selectLocation);
             }
         });
-        vTypes.addActionListener(new ActionListener() {
+        okButtonVT.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JComboBox cb = (JComboBox)actionEvent.getSource();
-                vehicleType = (String)cb.getSelectedItem();
-                switchPanel(selectLocation);
+                vehicleType = (String)vTypes.getSelectedItem();
+                if(vehicleType.equalsIgnoreCase("None")){
+                    vehicleType = null;
+                }
+                switchPanel(selectTime);
             }
         });
         selLocation.addActionListener(new ActionListener() {
@@ -63,35 +66,37 @@ public class guiWindow {
                 JComboBox cb = (JComboBox)actionEvent.getSource();
                 String locationCity = (String)cb.getSelectedItem();
                 //gets locationCity into fields
-                switchPanel(selectTime);
+                switchPanel(selectType);
             }
         });
         stButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String timeText = selTime.getText();
+                if(timeText.isEmpty()){
+                    //time values are null
+                }
                 //format time to get required information and put in fields
                 //call transaction method
                 //switch to panel that produces result
-                
             }
         });
         backButtonSelType.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                switchPanel(customerSelection);
+                switchPanel(selectLocation);
             }
         });
         backButtonSelLoc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                switchPanel(selectType);
+                switchPanel(customerSelection);
             }
         });
         backButtonSelTime.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                switchPanel(selectLocation);
+                switchPanel(selectType);
             }
         });
     }
