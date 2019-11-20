@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0d34743-88dd-410e-b9b7-5fe199175c62" name="Default" comment="" />
+    <list default="true" id="e0d34743-88dd-410e-b9b7-5fe199175c62" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/controller/SuperRent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/controller/SuperRent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/database/DatabaseConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/database/DatabaseConnectionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/TerminalTransactions.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/TerminalTransactions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/controller/SuperRent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/controller/SuperRent.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +45,16 @@
     <expand />
     <select />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1TiTYffcHxHpdyWfvXNU3n37uST" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -52,8 +72,13 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="oracle" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="178" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="309" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../android-sdk" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -163,10 +188,25 @@
       <workItem from="1573943268011" duration="2111000" />
       <workItem from="1573946506832" duration="769000" />
       <workItem from="1573947888216" duration="22143000" />
+      <workItem from="1574275280687" duration="464000" />
+      <workItem from="1574275900240" duration="12252000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

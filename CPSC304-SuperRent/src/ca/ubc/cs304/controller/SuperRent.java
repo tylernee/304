@@ -4,7 +4,9 @@ import ca.ubc.cs304.database.DatabaseConnectionHandler;
 import ca.ubc.cs304.delegates.LoginWindowDelegate;
 import ca.ubc.cs304.delegates.TerminalTransactionsDelegate;
 import ca.ubc.cs304.model.BranchModel;
+import ca.ubc.cs304.ui.LoginWindow;
 import ca.ubc.cs304.ui.TerminalTransactions;
+import ca.ubc.cs304.ui.guiWindow;
 
 import java.util.Scanner;
 
@@ -13,15 +15,15 @@ import java.util.Scanner;
  */
 public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDelegate {
 	private DatabaseConnectionHandler dbHandler = null;
-//	private LoginWindow loginWindow = null;
+	private LoginWindow loginWindow = null;
 
 	public SuperRent() {
 		dbHandler = new DatabaseConnectionHandler();
 	}
 	
 	private void start() {
-//		loginWindow = new LoginWindow();
-//		loginWindow.showFrame(this);
+		//loginWindow = new LoginWindow();
+		//loginWindow.showFrame(this);
 		Scanner sc = new Scanner(System.in);
 		System.out.println("enter username (should be ora_CWLID: ");
 		System.out.println("make sure you set up SSH Tunneling with the server");
@@ -43,7 +45,10 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 
 		if (didConnect) {
 			// Once connected, remove login window and start text transaction flow
-//			loginWindow.dispose();
+			//loginWindow.dispose();
+
+			guiWindow guiWindow = new guiWindow();
+			guiWindow.makeWindow();
 
 			TerminalTransactions transaction = new TerminalTransactions();
 			transaction.showMainMenu(this);
