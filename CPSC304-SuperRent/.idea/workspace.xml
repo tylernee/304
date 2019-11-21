@@ -47,6 +47,7 @@
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/controller/SuperRent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/controller/SuperRent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -228,7 +229,8 @@
       <workItem from="1573947888216" duration="62222000" />
       <workItem from="1573947888216" duration="22143000" />
       <workItem from="1574275280687" duration="464000" />
-      <workItem from="1574275900240" duration="27278000" />
+      <workItem from="1574275900240" duration="27337000" />
+      <workItem from="1574362434691" duration="1038000" />
     </task>
     <servers />
   </component>
