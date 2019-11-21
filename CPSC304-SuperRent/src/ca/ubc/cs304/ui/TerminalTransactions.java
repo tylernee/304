@@ -1,11 +1,15 @@
 package ca.ubc.cs304.ui;
 
+import ca.ubc.cs304.database.DatabaseConnectionHandler;
 import ca.ubc.cs304.delegates.TerminalTransactionsDelegate;
 import ca.ubc.cs304.model.BranchModel;
+import ca.ubc.cs304.model.VehicleTypeModel;
 
+import javax.xml.crypto.Data;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  * The class is only responsible for handling terminal text inputs. 
@@ -75,9 +79,19 @@ public class TerminalTransactions {
 	// TODO customer transactions CHANGE RETURN TYPE AND ADD PARAMETERS WHEN NECESSARY
 	private void handleReservation() {
 		// Reservation (confNo, vtname, cellphone, fromDate, fromTime, toDate, toTime)
+
 	}
 	// TODO
 	private void viewAvailableVehicles() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("To view number of available vehicles, please select a specific car type:");
+        String cartype = scanner.next();
+        System.out.println("Next, enter a location");
+        String location = scanner.next();
+        System.out.println("Lastly, enter a time interval:");
+        String timeinterval = scanner.next();
+        VehicleTypeModel[] vehicleTypes = delegate.showVehicleTypes();
+        System.out.println(vehicleTypes);
 
 	}
 

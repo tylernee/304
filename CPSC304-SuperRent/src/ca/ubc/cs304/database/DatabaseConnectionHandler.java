@@ -1,8 +1,6 @@
 package ca.ubc.cs304.database;
 
-import ca.ubc.cs304.model.BranchModel;
-import ca.ubc.cs304.model.CustomerModel;
-import ca.ubc.cs304.model.RentModel;
+import ca.ubc.cs304.model.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -141,10 +139,73 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
+	public VehicleModel[] getVehicles() {
+		ArrayList<VehicleModel> vehicles = new ArrayList<>();
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM VEHICLES");
+			// get info on ResultSet
+			ResultSetMetaData rsmd = rs.getMetaData();
+			// display column names;
+			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+				// get column name and print it
+				System.out.printf("%-15s", rsmd.getColumnName(i + 1));
+			}
+			while (rs.next()) {
 
+				VehicleModel vehicle = new VehicleModel(
+						Integer.parseInt(rs.getString("vid")),
+						rs.getString("vlicense"),
+						rs.getString("make"),
+						rs.getString("model"),
+						Integer.parseInt(rs.getString("year")),
+						rs.getString("color"),
+						Integer.parseInt(rs.getString("odometer")),
+						rs.getString("status"),
+						rs.getString("vtName"),
+						rs.getString("location"),
+						rs.getString("city"));
+				vehicles.add(vehicle);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return vehicles.toArray(new VehicleModel[vehicles.size()]);
+	}
 
+	public VehicleTypeModel[] getVehicleTypes() {
+		ArrayList<VehicleTypeModel> vehicleTypes = new ArrayList<>();
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM VEHICLESTYPES");
+			// get info on ResultSet
+			ResultSetMetaData rsmd = rs.getMetaData();
+			// display column names;
+			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+				// get column name and print it
+				System.out.printf("%-15s", rsmd.getColumnName(i + 1));
+			}
+			while (rs.next()) {
 
-		public void close() {
+				VehicleTypeModel vehicleType = new VehicleTypeModel(
+						rs.getString("vtname"),
+						rs.getString("features"),
+						Integer.parseInt(rs.getString("wrate")),
+						Integer.parseInt(rs.getString("drate")),
+						Integer.parseInt(rs.getString("hrate")),
+						Integer.parseInt(rs.getString("wirate")),
+						Integer.parseInt(rs.getString("dirate")),
+						Integer.parseInt(rs.getString("hirate")),
+						Integer.parseInt(rs.getString("kirate")));
+				vehicleTypes.add(vehicleType);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return vehicleTypes.toArray(new VehicleTypeModel[vehicleTypes.size()]);
+	}
+
+	public void close() {
 		try {
 			if (connection != null) {
 				connection.close();

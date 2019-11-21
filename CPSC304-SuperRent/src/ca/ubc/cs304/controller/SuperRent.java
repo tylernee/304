@@ -5,6 +5,8 @@ import ca.ubc.cs304.delegates.LoginWindowDelegate;
 import ca.ubc.cs304.delegates.TerminalTransactionsDelegate;
 import ca.ubc.cs304.model.BranchModel;
 import ca.ubc.cs304.model.CustomerModel;
+import ca.ubc.cs304.model.VehicleModel;
+import ca.ubc.cs304.model.VehicleTypeModel;
 import ca.ubc.cs304.ui.TerminalTransactions;
 
 import java.util.Scanner;
@@ -29,8 +31,8 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 		String username = sc.next();
 		System.out.println("enter password (should be aSTUDENTNUMBER: ");
 		String pass = sc.next();
-		username = "ora_moya33";
-		pass = "a35798347";
+		username = "ora_tylernee";
+		pass = "a22705157";
 		login(username, pass);
 	}
 	
@@ -87,6 +89,16 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
     public void showCustomers() {
     	CustomerModel[] customers = dbHandler.getCustomers();
     }
+
+    public VehicleTypeModel[] showVehicleTypes() {
+		VehicleTypeModel[] vehicleTypes = dbHandler.getVehicleTypes();
+		return vehicleTypes;
+	}
+
+	public VehicleModel[] showVehicles() {
+		VehicleModel[] vehicles = dbHandler.getVehicles();
+		return vehicles;
+	}
 
     public String handleRent(int confNo) {
     	String receipt = dbHandler.handleRent(confNo);
