@@ -3,7 +3,7 @@ package ca.ubc.cs304.controller;
 import ca.ubc.cs304.database.DatabaseConnectionHandler;
 import ca.ubc.cs304.delegates.LoginWindowDelegate;
 import ca.ubc.cs304.delegates.TerminalTransactionsDelegate;
-import ca.ubc.cs304.model.BranchModel;
+import ca.ubc.cs304.model.*;
 import ca.ubc.cs304.ui.LoginWindow;
 import ca.ubc.cs304.ui.TerminalTransactions;
 import ca.ubc.cs304.ui.guiWindow;
@@ -30,8 +30,8 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 		String username = sc.next();
 		System.out.println("enter password (should be aSTUDENTNUMBER: ");
 		String pass = sc.next();
-		username = "ora_moya33";
-		pass = "a35798347";
+		username = "ora_tylernee";
+		pass = "a22705157";
 		login(username, pass);
 	}
 	
@@ -88,10 +88,30 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 	 * 
 	 * Displays information about varies bank branches.
 	 */
-    public void showBranch() {
-    	BranchModel[] models = dbHandler.getBranchInfo();
-
+    public void showCustomers() {
+    	CustomerModel[] customers = dbHandler.getCustomers();
     }
+
+    public VehicleTypeModel[] showVehicleTypes() {
+		VehicleTypeModel[] vehicleTypes = dbHandler.getVehicleTypes();
+		return vehicleTypes;
+	}
+
+	public VehicleModel[] showVehicles() {
+		VehicleModel[] vehicles = dbHandler.getVehicles();
+		return vehicles;
+	}
+
+	public ReservationModel[] showReservations() {
+    	ReservationModel[] reservations = dbHandler.getReservations();
+    	return reservations;
+	}
+
+    public String handleRent(int confNo) {
+    	String receipt = dbHandler.handleRent(confNo);
+    	return "receipt";
+	}
+
 	
     /**
 	 * TerminalTransactionsDelegate Implementation
@@ -108,9 +128,10 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 
 
     public void makeReservation(int dlicense) {
-    	dbHandler.makeReservation(dlicense);
-
+//    	dbHandler.makeReservation(dlicense);
 	}
+
+
     
 	/**
 	 * Main method called at launch time

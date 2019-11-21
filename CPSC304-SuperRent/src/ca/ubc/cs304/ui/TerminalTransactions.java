@@ -1,11 +1,18 @@
 package ca.ubc.cs304.ui;
 
+import ca.ubc.cs304.database.DatabaseConnectionHandler;
 import ca.ubc.cs304.delegates.TerminalTransactionsDelegate;
 import ca.ubc.cs304.model.BranchModel;
+import ca.ubc.cs304.model.ReservationModel;
+import ca.ubc.cs304.model.VehicleModel;
+import ca.ubc.cs304.model.VehicleTypeModel;
 
+import javax.xml.crypto.Data;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * The class is only responsible for handling terminal text inputs. 
@@ -35,7 +42,7 @@ public class TerminalTransactions {
 			System.out.println();
 			System.out.println("1. Make reservation ");
 			System.out.println("2. View Available Vehicles");
-			System.out.println("3. Update branch name");
+			System.out.println("3. Do rental");
 			System.out.println("4. Show branch");
 			System.out.println("5. Quit");
 			System.out.print("Please choose one of the above 5 options: ");
@@ -55,10 +62,11 @@ public class TerminalTransactions {
 					viewAvailableVehicles();
 					break;
 				case 3: 
-					handleUpdateOption();
+//					handleUpdateOption();
+					rentOutVehicle();
 					break;
 				case 4:  
-					delegate.showBranch(); 
+					delegate.showCustomers();
 					break;
 				case 5:
 					handleQuitOption();
@@ -74,14 +82,98 @@ public class TerminalTransactions {
 	// TODO customer transactions CHANGE RETURN TYPE AND ADD PARAMETERS WHEN NECESSARY
 	private void handleReservation() {
 		// Reservation (confNo, vtname, cellphone, fromDate, fromTime, toDate, toTime)
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("To make a reservation, please enter a vehicle type:");
+        System.out.println("Any, Economy, Compact, Mid-size, Standard, Full-size, SUV, Truck");
+        String cartype = scanner.next();
+        System.out.println("Next, enter a location");
+        System.out.println("Type NA if none");
+        String location = scanner.next();
+        System.out.println("Next, enter a time interval for pickup and return:");
+        String timeinterval = scanner.next();
+        if (checkVehicleAvailable(cartype,location,timeinterval)){
+            System.out.println("The requested vehicle is available. Next, please enter your name:");
+            String cname = scanner.next();
+            System.out.println("Next, enter your cellphone number:");
+            String cnumber = scanner.next();
+        } else {
+            System.out.println("The requested vehicle is not available. Please try again!");
+        }
+
+
+
+
+        // check if customer exists, if not add to database.
+
+        // return a confirmation no.
 	}
 	// TODO
 	private void viewAvailableVehicles() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("To view number of available vehicles, please select a specific car type:");
+        System.out.println("Any, Economy, Compact, Mid-size, Standard, Full-size, SUV, Truck");
+        String cartype = scanner.next();
+        System.out.println("Next, enter a location:");
+        System.out.println("Type NA if none");
+        String location = scanner.next();
+        System.out.println("Lastly, enter a time interval:");
+        String timeinterval = scanner.next();
+        checkVehicleAvailable(cartype,location,timeinterval);
 	}
+
+	public boolean checkVehicleAvailable(String vehicletype, String location, String timeinterval){
+        VehicleModel[] vehicles = delegate.showVehicles();
+        int vehicleCount = 0;
+        VehicleModel[] availableVehicles = new VehicleModel[vehicles.length];
+        for(int i=0; i < vehicles.length; i++){
+            if(vehicles[i].getStatus().contains("for_rent") && (vehicles[i].getVtName().contains(vehicletype) || vehicletype.contains("Any"))
+                    && (vehicles[i].getLocation().contains(location) || location.contains("NA"))){
+                availableVehicles[vehicleCount] = vehicles[i];
+                vehicleCount++;
+            }
+        }
+        if (vehicleCount == 0){
+            System.out.println("No Vehicles Available! Please select another.");
+            return false;
+        } else {
+            System.out.println("Number of Available Vehicles: " + vehicleCount);
+            Scanner scanner = new Scanner((System.in));
+            System.out.println("Do you want to view more details about the vehicles? Y or N");
+            String response = scanner.next();
+            if (response.contains("Y")){
+                for (int i = 0; i < availableVehicles.length; i++) {
+                    if(availableVehicles[i] != null){
+                        System.out.println("Vehicle " + (i + 1) + " - Type: " + availableVehicles[i].getVtName()
+                                + ", Make: " + availableVehicles[i].getMake() + ", Model: " +availableVehicles[i].getModel()
+                                + ", Year: " + availableVehicles[i].getYear() + ", Odometer: " +availableVehicles[i].getOdometer()
+                                + ", Color: " +availableVehicles[i].getColor() + ", Location: " +availableVehicles[i].getLocation());
+                    }
+                }
+            }
+            return true;
+        }
+
+    }
 
 	//TODO clerk transactions CHANGE RETURN TYPE AND ADD PARAMETERS WHEN NECESSARY
 	private void rentOutVehicle() {
+		//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
+
+		// 2 cases: if a reservation has been made, grab reservation tuple and grab necessary info
+		//			if no reservation, in which we create a new tuple for customer (if neccesary)
+		System.out.println("Please enter your reservation number, enter 0 if you do not have one:");
+		int resNo = readInteger(false);
+		if (resNo != 0) {
+			// proceed rental
+			// Reservation (confNo, vtname, cellphone, fromDate, fromTime, toDate, toTime)
+			System.out.println("do rental");
+			delegate.handleRent(resNo);
+			// remove tuple with confNo from confirmation and create one to rentm
+
+		} else {
+			System.out.println("create new customer model, insert into db, make them pick a vehicle, etc");
+		}
+
 
 	}
 

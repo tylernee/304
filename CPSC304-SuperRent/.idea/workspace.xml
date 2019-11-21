@@ -91,6 +91,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
@@ -192,9 +193,13 @@
       <workItem from="1573942161401" duration="1086000" />
       <workItem from="1573943268011" duration="2111000" />
       <workItem from="1573946506832" duration="769000" />
+<<<<<<< HEAD
       <workItem from="1573947888216" duration="22143000" />
       <workItem from="1574275280687" duration="464000" />
       <workItem from="1574275900240" duration="18240000" />
+=======
+      <workItem from="1573947888216" duration="37499000" />
+>>>>>>> master
     </task>
     <servers />
   </component>
