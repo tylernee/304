@@ -39,6 +39,60 @@ public class guiWindow {
     private JButton showAvaliableVehiclesButton;
     private JPanel vehicleSelection;
     private JButton backToSelUser;
+    private JPanel clerkSelection;
+    private JButton rentButtonClerkSelection;
+    private JButton returnButtonClerkSelection;
+    private JButton generateReportButtonClerkSelection;
+    private JButton backButtonClerkSelection;
+    private JPanel Rent;
+    private JPanel findVehiclesAddRental;
+    private JPanel haveReservationRent;
+    private JComboBox vehicleTypeAddRental;
+    private JTextField fromDateAddRental;
+    private JTextField toDateAddRental;
+    private JButton findVehiclesButtonAddRental;
+    private JButton backButtonAddRental;
+    private JPanel addCustomerAddRental;
+    private JTextField nameAddRental;
+    private JTextField addressAddRental;
+    private JTextField cellAddRental;
+    private JTextField licenseAddRental;
+    private JButton registerAddRental;
+    private JButton backRegisterAddRental;
+    private JPanel isCustomerRent;
+    private JButton noButtonIsCustomerRent;
+    private JButton yesButtonIsCustomerRent;
+    private JButton backButtonIsCustomerRent;
+    private JButton yesButtonHaveReservation;
+    private JButton backButtonHaveReservation;
+    private JButton noButtonHaveReservation;
+    private JPanel listVehiclesRent;
+    private JButton backButtonListVehiclesRent;
+    private JButton addToRentalButton;
+    private JPanel confNoRent;
+    private JButton findReservation;
+    private JTextField confNoFieldRent;
+    private JButton backButtonConfRent;
+    private JPanel Return;
+    private JTextField rIdReturn;
+    private JTextField dateReturn;
+    private JTextField odometerReturn;
+    private JButton returnVehicleButton;
+    private JButton backButtonReturn;
+    private JComboBox tankFullReturn;
+    private JPanel generateReport;
+    private JPanel selectReport;
+    private JButton dailyRentalReportButton;
+    private JButton dailyReturnReportButton;
+    private JButton backButtonGenReport;
+    private JPanel dailyRentalReport;
+    private JComboBox rentalReportBranch;
+    private JButton generateRentalReportButton;
+    private JButton backButtonRentalReport;
+    private JPanel dailyReturnReport;
+    private JButton generateReturnReportButton;
+    private JButton backButtonDailyReturn;
+    private JComboBox returnReportBranch;
     private String vehicleType;
 
 
@@ -52,7 +106,7 @@ public class guiWindow {
         clerkButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                //switchPanel(clerkSelection);
+                switchPanel(clerkSelection);
             }
         });
         vAvailVeh.addActionListener(new ActionListener() {
@@ -104,7 +158,8 @@ public class guiWindow {
                 String address = addressAddCustomer.getText();
                 String cellphone = cellAddCustomer.getText();
                 String driversLicense = licenseAddCustomer.getText();
-
+                //add info into database
+                switchPanel(makeReservation);
             }
         });
         backButtonAddCustomer.addActionListener(new ActionListener() {
@@ -146,6 +201,198 @@ public class guiWindow {
                 String toDate = toDateMakeReservation.getText();
             }
         });
+        backButtonClerkSelection.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(users);
+            }
+        });
+        rentButtonClerkSelection.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(isCustomerRent);
+            }
+        });
+        noButtonIsCustomerRent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(addCustomerAddRental);
+            }
+        });
+        yesButtonIsCustomerRent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(haveReservationRent);
+            }
+        });
+        backButtonIsCustomerRent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(clerkSelection);
+            }
+        });
+        backButtonHaveReservation.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(isCustomerRent);
+            }
+        });
+        backButtonAddRental.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(isCustomerRent);
+            }
+        });
+        noButtonHaveReservation.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(findVehiclesAddRental);
+            }
+        });
+        backButtonListVehiclesRent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(findVehiclesAddRental);
+            }
+        });
+        findVehiclesButtonAddRental.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                //using info, query availiable vehicles and show them
+                String vehicleType = (String)vehicleTypeAddRental.getSelectedItem();
+                String fromDate = fromDateAddRental.getText();
+                String toDate = toDateAddRental.getText();
+                //get through vehicle selection transaction
+                switchPanel(listVehiclesRent);
+            }
+        });
+        findReservation.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String confNo = confNoFieldRent.getText();
+                //find conf no
+                //add rest of stuff in database
+                //find avaliable vehicles
+                switchPanel(listVehiclesRent);
+            }
+        });
+        backButtonConfRent.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(haveReservationRent);
+            }
+        });
+        yesButtonHaveReservation.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(confNoRent);
+            }
+        });
+        returnButtonClerkSelection.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(Return);
+            }
+        });
+        backButtonReturn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(clerkSelection);
+            }
+        });
+        returnVehicleButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String rid = rIdReturn.getText();
+                String date = rIdReturn.getText();
+                String odometer = odometerReturn.getText();
+                String tankFull = (String)tankFullReturn.getSelectedItem();
+                boolean tank;
+                if(tankFull.equalsIgnoreCase("Yes")){
+                    tank = true;
+                }else {
+                    tank = false;
+                }
+                //do querying
+                //switchPanel(print results);
+            }
+        });
+        backButtonGenReport.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(clerkSelection);
+            }
+        });
+        backButtonRentalReport.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(selectReport);
+            }
+        });
+        generateRentalReportButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String branch = (String)rentalReportBranch.getSelectedItem();
+                if (branch.equalsIgnoreCase("All")){
+                    //generate report of all branches
+                }else{
+                    //generate report of selected branch
+                }
+            }
+        });
+        generateReportButtonClerkSelection.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(selectReport);
+            }
+        });
+        dailyRentalReportButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(dailyRentalReport);
+            }
+        });
+        dailyReturnReportButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(dailyReturnReport);
+            }
+        });
+        generateReturnReportButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String branch = (String)returnReportBranch.getSelectedItem();
+                if (branch.equalsIgnoreCase("All")){
+                    //generate report of all branches
+                }else{
+                    //generate report of selected branch
+                }
+            }
+        });
+        backButtonDailyReturn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(selectReport);
+            }
+        });
+        backRegisterAddRental.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(isCustomerRent);
+            }
+        });
+        registerAddRental.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                //uses information of textfields to create new customer tuple
+                String name = nameAddRental.getText();
+                String address = addressAddRental.getText();
+                String cellphone = cellAddRental.getText();
+                String driversLicense = licenseAddRental.getText();
+                //add info into database
+                switchPanel(findVehiclesAddRental);
+            }
+        });
     }
 
     public void makeWindow(){
@@ -163,4 +410,5 @@ public class guiWindow {
         panel1.repaint();
         panel1.revalidate();
     }
+
 }
