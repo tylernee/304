@@ -1,5 +1,7 @@
 package ca.ubc.cs304.ui;
 
+import ca.ubc.cs304.database.DatabaseConnectionHandler;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -95,8 +97,10 @@ public class guiWindow {
     private JComboBox returnReportBranch;
     private String vehicleType;
 
+    private DatabaseConnectionHandler dbHandler = null;
 
-    public guiWindow() {
+    public guiWindow(final DatabaseConnectionHandler dbHandler) {
+        this.dbHandler = dbHandler;
         customerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -270,9 +274,12 @@ public class guiWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String confNo = confNoFieldRent.getText();
-                //find conf no
-                //add rest of stuff in database
-                //find avaliable vehicles
+                try {
+                    int confNum = Integer.parseInt(confNo);
+                    dbHandler.handleRent(confNum, "name", 123123, "dec21");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 switchPanel(listVehiclesRent);
             }
         });
@@ -397,7 +404,7 @@ public class guiWindow {
 
     public void makeWindow(){
         JFrame frame = new JFrame("SuperRent");
-        frame.setContentPane(new guiWindow().panel1);
+        frame.setContentPane(new guiWindow(this.dbHandler).panel1);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(400,400);
         frame.setLocationRelativeTo(null);

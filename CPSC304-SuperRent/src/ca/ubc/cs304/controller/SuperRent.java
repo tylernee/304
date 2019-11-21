@@ -6,7 +6,6 @@ import ca.ubc.cs304.delegates.TerminalTransactionsDelegate;
 import ca.ubc.cs304.model.BranchModel;
 import ca.ubc.cs304.model.CustomerModel;
 import ca.ubc.cs304.ui.LoginWindow;
-import ca.ubc.cs304.ui.TerminalTransactions;
 import ca.ubc.cs304.ui.guiWindow;
 
 import java.util.Scanner;
@@ -48,11 +47,11 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 			// Once connected, remove login window and start text transaction flow
 			//loginWindow.dispose();
 
-			guiWindow guiWindow = new guiWindow();
+			guiWindow guiWindow = new guiWindow(dbHandler);
 			guiWindow.makeWindow();
 
-			TerminalTransactions transaction = new TerminalTransactions();
-			transaction.showMainMenu(this);
+//			TerminalTransactions transaction = new TerminalTransactions();
+//			transaction.showMainMenu(this);
 		}
 	}
 	
