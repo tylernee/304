@@ -6,7 +6,7 @@ package ca.ubc.cs304.model;
 public class RentModel {
 	private final int rid;
 	private final int vid;
-	private final String cellphone;
+	private final String dlicense;
 	private final String fromDate;
 	private final String fromTime;
 	private final String toDate;
@@ -16,13 +16,13 @@ public class RentModel {
 	private final int cardNo;
 	private final String expDate;
 	private final int confNo;
-//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
+//	Rent(rid, vid, dlicense, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
 
-	public RentModel(int rid, int vid, String cellphone, String fromDate, String fromTime, String toDate, String toTime,
+	public RentModel(int rid, int vid, String dlicense, String fromDate, String fromTime, String toDate, String toTime,
 					 int odometer, String cardName, int cardNo, String expDate, int confNo) {
 		this.rid = rid;
 		this.vid = vid;
-		this.cellphone = cellphone;
+		this.dlicense = dlicense;
 		this.fromDate = fromDate;
 		this.fromTime = fromTime;
 		this.toDate = toDate;
@@ -42,8 +42,8 @@ public class RentModel {
 		return vid;
 	}
 
-	public String getCellphone() {
-		return cellphone;
+	public String getDLicense() {
+		return dlicense;
 	}
 
 	public String getFromDate() {

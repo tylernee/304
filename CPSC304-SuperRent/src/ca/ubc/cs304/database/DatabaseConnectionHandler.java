@@ -5,7 +5,9 @@ import ca.ubc.cs304.model.CustomerModel;
 import ca.ubc.cs304.model.RentModel;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * This class handles all database related transactions
@@ -46,7 +48,7 @@ public class DatabaseConnectionHandler {
 //				Customer (cellphone, name, address, dlicense)
 				// TODO change the getString for dlicense
 				CustomerModel customer = new CustomerModel(rs.getString("cellphone"),
-						rs.getString("name"), rs.getString("address"), Integer.parseInt(rs.getString("dlicense")));
+						rs.getString("name"), rs.getString("address"), rs.getString("dlicense"));
 				customers.add(customer);
 			}
 		} catch (SQLException e) {
@@ -62,7 +64,7 @@ public class DatabaseConnectionHandler {
 			ps.setString(1, customer.getCellphone());
 			ps.setString(2, customer.getName());
 			ps.setString(3, customer.getAddress());
-			ps.setInt(4, customer.getDlicense());
+			ps.setString(4, customer.getDlicense());
 
 //			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
 			ps.executeUpdate();
@@ -74,38 +76,94 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
-	public String handleRent(int confNo) {
+	public String handleRentNoReservation(String vtname, String cardName, int cardNo, String expDate) {
+		try {
+			Statement stmt = connection.createStatement();
+			// GET VID AND ODOMETER FROM ANY VEHICLE OF THE RESERVED TYPE
+			ResultSet rs2 = stmt.executeQuery("SELECT vid, odometer FROM Vehicles WHERE vtname = '" + vtname + "' AND status = 'for_rent'");
+			int vid = -1, odometer = -1;
+			while (rs2.next()) {
+				vid = rs2.getInt("VID");
+				odometer = rs2.getInt("odometer");
+			}
+			PreparedStatement ps = connection.prepareStatement("UPDATE Vehicles SET status = ? WHERE vid = ?");
+			ps.setString(1, "rented");
+			ps.setInt(2, vid);
+			int rowCount = ps.executeUpdate();
+			if (rowCount == 0) {
+				System.out.println(WARNING_TAG + " Vehicle " + vid + " does not exist!");
+			}
+			connection.commit();
+
+			Random randomInt = new Random();
+			int rid = randomInt.nextInt(60000)/2 + randomInt.nextInt(300)/2;
+			// TODO: WAIT FOR THE GUI AND IMPLEMENT THIS
+			//create a new RentModel and push to DB
+//			RentModel rental = new RentModel(rid, vid, dlicense, fromDate, fromTime, toDate, toTime, odometer,
+//					cardName, cardNo, expDate, confNo);
+//			System.out.println(toDate);
+//			insertNewRental(rental);
+
+			System.out.println(vid);
+		} catch (SQLException e) {
+			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+			rollbackConnection();
+		}
+		return "";
+	}
+	public String handleRent(int confNo, String cardName, int cardNo, String expDate) {
 		try {
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM Reservations WHERE confNo = " + confNo);
 			ResultSetMetaData rsmd = rs.getMetaData();
 
-			// Reservation (confNo, vtname, cellphone, fromDate, fromTime, toDate, toTime)
-			// Vehicle (~vid~, vlicense, make, model, year, color, odometer, status, vtname, location, city)
-			//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
-			String cellphone ="", fromDate="", fromTime="", toDate="", toTime = "", vtname="";
+			// GET NECCESARRY INFO FROM  RESERVATIONS
+			String dlicense ="", fromDate="", fromTime="", toDate="", toTime = "", vtname="";
 			int vid=-1, odometer=-1;
 			while(rs.next()) {
-				cellphone = rs.getString("cellphone");
+				dlicense = rs.getString("dlicense");
 				fromDate = rs.getString("fromDate");
 				fromTime = rs.getString("fromTime");
 				toDate = rs.getString("toDate");
 				toTime = rs.getString("toTime");
 				vtname = rs.getString("vtname");
 			}
-//			System.out.println("SELECT vid, odometer FROM Vehicles WHERE vtname = '" + vtname + "' AND status = 'for_rent'");
 			Statement stmt2 = connection.createStatement();
-
-			ResultSet rs2 = stmt2.executeQuery("SELECT * FROM Vehicles");
+			// GET VID AND ODOMETER FROM ANY VEHICLE OF THE RESERVED TYPE
+			ResultSet rs2 = stmt2.executeQuery("SELECT vid, odometer FROM Vehicles WHERE vtname = '" + vtname + "' AND status = 'for_rent'");
 			rsmd = rs2.getMetaData();
-			System.out.println(rs2.next());
 			while (rs2.next()) {
-				vid = rs2.getInt("vid");
+				vid = rs2.getInt("VID");
 				odometer = rs2.getInt("odometer");
 			}
-			System.out.println(vid);
-//			System.out.println(cellphone + fromDate + fromTime + toDate + toTime + odometer);
+			// get first vehicle, set vehicles status to RENTED,
+			PreparedStatement ps = connection.prepareStatement("UPDATE Vehicles SET status = ? WHERE vid = ?");
+			ps.setString(1, "rented");
+			ps.setInt(2, vid);
+			int rowCount = ps.executeUpdate();
+			if (rowCount == 0) {
+				System.out.println(WARNING_TAG + " Vehicle " + vid + " does not exist!");
+			}
+			connection.commit();
 
+			Random randomInt = new Random();
+			int rid = randomInt.nextInt(60000)/2 + randomInt.nextInt(300)/2;
+
+			//create a new RentModel and push to DB
+			RentModel rental = new RentModel(rid, vid, dlicense, fromDate, fromTime, toDate, toTime, odometer,
+					cardName, cardNo, expDate, confNo);
+			System.out.println(toDate);
+			insertNewRental(rental);
+
+			// DELETE THE RESERVATION AS WE"VE THE RESERVATION IS COMPLETE
+//			ps = connection.prepareStatement("DELETE FROM Reservations WHERE confNo = ?");
+//			ps.setInt(1, confNo);
+//			rowCount = ps.executeUpdate();
+//			if (rowCount == 0) {
+//				System.out.println(WARNING_TAG + " Reservation " + confNo + " does not exist!");
+//			}
+//			connection.commit();
+			System.out.println("rental complete! Heres your rental ID: " + rid);
 
 
 		} catch (SQLException e) {
@@ -117,20 +175,24 @@ public class DatabaseConnectionHandler {
 	}
 
 	private void insertNewRental(RentModel rental) {
-		//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
+		//	Rent(rid, vid, dlicense, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
 		try {
-			PreparedStatement ps = connection.prepareStatement("INSERT INTO CUSTOMERS VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+			PreparedStatement ps = connection.prepareStatement("INSERT INTO Rentals VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
 			ps.setInt(1, rental.getRid());
 			ps.setInt(2, rental.getVid());
-			ps.setString(3, rental.getCellphone());
+			ps.setString(3, rental.getDLicense());
 			ps.setString(4, rental.getFromDate());
 			ps.setString(5, rental.getFromTime());
 			ps.setString(6, rental.getToDate());
-			ps.setInt(7, rental.getOdometer());
-			ps.setString(8, rental.getCardName());
-			ps.setInt(9, rental.getCardNo());
-			ps.setString(10, rental.getExpDate());
-			ps.setInt(11, rental.getConfNo());
+			ps.setString(7, rental.getToTime());
+			ps.setInt(8, rental.getOdometer());
+			ps.setString(9, rental.getCardName());
+			ps.setInt(10, rental.getCardNo());
+			ps.setString(11, rental.getExpDate());
+			ps.setInt(12, rental.getConfNo());
 //			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
 			ps.executeUpdate();
 			connection.commit();
@@ -141,10 +203,37 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
+	public void returnVehicle(int rid, String date, String time, int odometer, boolean fulltank) {
+		try {
+			Statement stmt = connection.createStatement();
+			// TODO: ADD THE DATES TO CALCULATE THE TOTAL
+			ResultSet rs = stmt.executeQuery("SELECT vid, confNo, odometer FROM Rentals WHERE rid = " + rid);
+			rs.next();
+			int vid = rs.getInt("vid");
+			System.out.println(vid);
+
+			ResultSet rs2 = stmt.executeQuery("SELECT status FROM Vehicles WHERE vid = " + vid);
+			rs2.next();
+			String status = rs2.getString("status");
+			if (status != "rented") {
+				System.out.println("Vehicle was never rented!");
+				rollbackConnection();
+				return;
+			}
+			// change status in Vehicle  to for_rent , calculate costs and return a receipt (GUI)
+
+		} catch (SQLException e) {
+			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+			rollbackConnection();
+		}
+	}
 
 
 
-		public void close() {
+
+
+
+	public void close() {
 		try {
 			if (connection != null) {
 				connection.close();

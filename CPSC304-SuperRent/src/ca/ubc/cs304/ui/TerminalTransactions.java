@@ -2,6 +2,7 @@ package ca.ubc.cs304.ui;
 
 import ca.ubc.cs304.delegates.TerminalTransactionsDelegate;
 import ca.ubc.cs304.model.BranchModel;
+import ca.ubc.cs304.model.CustomerModel;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,8 +37,9 @@ public class TerminalTransactions {
 			System.out.println("1. Make reservation ");
 			System.out.println("2. View Available Vehicles");
 			System.out.println("3. Do rental");
-			System.out.println("4. Show branch");
+			System.out.println("4. Show xx");
 			System.out.println("5. Quit");
+			System.out.println("6. Return Rental");
 			System.out.print("Please choose one of the above 5 options: ");
 
 			choice = readInteger(false);
@@ -64,6 +66,11 @@ public class TerminalTransactions {
 				case 5:
 					handleQuitOption();
 					break;
+
+				case 6:
+					returnVehicle();
+					break;
+
 				default:
 					System.out.println(WARNING_TAG + " The number that you entered was not a valid option.");
 					break;
@@ -87,17 +94,37 @@ public class TerminalTransactions {
 
 		// 2 cases: if a reservation has been made, grab reservation tuple and grab necessary info
 		//			if no reservation, in which we create a new tuple for customer (if neccesary)
-		System.out.println("Please enter your reservation number, enter 0 if you do not have one:");
-		int resNo = readInteger(false);
-		if (resNo != 0) {
+		System.out.println("Please enter your confirmation number, enter 0 if you do not have one:");
+		int confNo = readInteger(false);
+		System.out.println("Enter cardName");
+		String cardName = readLine();
+		System.out.println("enter card number");
+		int cardNo = readInteger(false);
+		System.out.println("enter exp date");
+		String expDate = readLine();
+		if (confNo != 0) {
 			// proceed rental
-			// Reservation (confNo, vtname, cellphone, fromDate, fromTime, toDate, toTime)
 			System.out.println("do rental");
-			delegate.handleRent(resNo);
-			// remove tuple with confNo from confirmation and create one to rentm
+			delegate.handleRent(confNo, cardName, cardNo, expDate);
 
 		} else {
-			System.out.println("create new customer model, insert into db, make them pick a vehicle, etc");
+			//	Customer (cellphone, name, address, dlicense)
+			System.out.println("enter cell #");
+			String cellphone = readLine();
+			System.out.println("enter name");
+			String name = readLine();
+			System.out.println("enter address");
+			String address = readLine();
+			System.out.println("enter drivers license");
+			String dlicense = readLine();
+			CustomerModel customer = new CustomerModel(cellphone, name, address, dlicense);
+			delegate.insertNewCustomer(customer);
+			System.out.println("pick a car 'Economy' by default since no GUI yet (skip)");
+			String vtname = "Economy";
+			System.out.println();
+			System.out.println();
+			delegate.handleRentNoReservation(vtname, cardName, cardNo, expDate);
+
 		}
 
 
@@ -105,7 +132,18 @@ public class TerminalTransactions {
 
 	// TODO
 	private void returnVehicle() {
+		System.out.println("Clerk: please enter the rental id");
+		int rid = readInteger(false);
+		System.out.println("Clerk: please enter todays date");
+		String date = readLine();
+		System.out.println("Clerk: please enter time");
+		String time = readLine();
+		System.out.println("Clerk: odometer reading");
+		int odometer = readInteger(false);
+		System.out.println("Clerk: is gas tank full?");
+		boolean fulltank = Boolean.parseBoolean(readLine());
 
+		delegate.returnVehicle(rid, date, time, odometer, fulltank);
 	}
 	// TODO, this may have to be split up into 4 methods looking at the description
 	private void generateReport() {

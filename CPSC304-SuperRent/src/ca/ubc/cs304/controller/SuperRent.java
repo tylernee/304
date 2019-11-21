@@ -88,12 +88,24 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
     	CustomerModel[] customers = dbHandler.getCustomers();
     }
 
-    public String handleRent(int confNo) {
-    	String receipt = dbHandler.handleRent(confNo);
+    public String handleRent(int confNo, String cardName, int cardNo, String expDate) {
+    	String receipt = dbHandler.handleRent(confNo, cardName, cardNo, expDate);
     	return "receipt";
 	}
 
-	
+	public String handleRentNoReservation(String vtname, String cardName, int cardNo, String expDate) {
+    	String receipt = dbHandler.handleRentNoReservation(vtname, cardName, cardNo, expDate);
+    	return "";
+	}
+
+	public void insertNewCustomer(CustomerModel customer) {
+    	dbHandler.insertNewCustomer(customer);
+	}
+	public void returnVehicle(int rid, String date, String time, int odometer, boolean fulltank) {
+    	dbHandler.returnVehicle(rid, date, time, odometer, fulltank);
+	}
+
+
     /**
 	 * TerminalTransactionsDelegate Implementation
 	 * 

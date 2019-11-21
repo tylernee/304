@@ -8,8 +8,8 @@ public class CustomerModel {
 	private final String cellphone;
 	private final String name;
 	private final String address;
-	private final int dlicense;
-	public CustomerModel(String cellphone, String name, String address, int dlicense) {
+	private final String dlicense;
+	public CustomerModel(String cellphone, String name, String address, String dlicense) {
 		this.cellphone = cellphone;
 		this.name = name;
 		this.address = address;
@@ -22,7 +22,7 @@ public class CustomerModel {
 
 	public String getAddress() {return address;}
 
-	public int getDlicense() { return dlicense; }
+	public String getDlicense() { return dlicense; }
 
 
 }
