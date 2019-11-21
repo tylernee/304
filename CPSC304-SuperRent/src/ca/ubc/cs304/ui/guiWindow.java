@@ -93,6 +93,12 @@ public class guiWindow {
     private JButton generateReturnReportButton;
     private JButton backButtonDailyReturn;
     private JComboBox returnReportBranch;
+    private JComboBox selectVehicleRent;
+    private JPanel creditCardInfo;
+    private JTextField cardNoField;
+    private JTextField expDateField;
+    private JButton makeRentalButtonCreditCard;
+    private JButton backButtonCreditCard;
     private String vehicleType;
 
 
@@ -391,6 +397,29 @@ public class guiWindow {
                 String driversLicense = licenseAddRental.getText();
                 //add info into database
                 switchPanel(findVehiclesAddRental);
+            }
+        });
+        addToRentalButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String car = (String)selectVehicleRent.getSelectedItem(); //have id or some identifying feature in the combobox
+                //select from vehicles, store it into local variable
+                switchPanel(creditCardInfo);
+            }
+        });
+        backButtonCreditCard.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                switchPanel(listVehiclesRent);
+            }
+        });
+        makeRentalButtonCreditCard.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String cardNo = cardNoField.getText();
+                String expDate = expDateField.getText();
+                //add these into rent, maybe use global variables to store?
+                //switchPanel(the output panel which prints the conf no);
             }
         });
     }

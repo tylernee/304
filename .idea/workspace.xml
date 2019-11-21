@@ -2,42 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17a49123-c5a1-413d-bebc-52cf37be2edd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$15.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$16.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$17.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$18.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$19.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$20.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$21.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$22.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$23.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$24.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$25.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$26.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$27.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$28.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$29.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$30.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$31.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$32.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$33.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$34.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$35.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$36.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$37.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$38.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$39.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$40.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$41.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$42.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$43.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$1.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$10.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$10.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$11.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$11.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$12.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$12.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$13.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$13.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$14.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$15.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$16.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$17.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$18.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$19.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$19.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$2.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$20.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$20.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$21.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$21.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$22.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$22.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$23.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$23.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$24.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$24.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$25.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$25.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$26.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$26.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$27.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$27.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$28.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$28.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$29.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$29.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$3.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$30.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$30.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$31.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$31.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$32.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$32.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$33.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$33.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$34.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$34.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$35.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$35.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$36.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$36.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$37.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$37.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$38.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$38.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$39.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$39.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$4.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$40.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$40.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$5.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$6.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$7.class" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/bin/ca/ubc/cs304/ui/guiWindow$7.class" />
@@ -50,9 +52,35 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$12.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$12.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$13.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$13.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$14.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$15.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$16.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$17.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$18.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$19.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$19.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$2.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$20.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$20.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$21.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$21.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$22.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$22.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$23.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$23.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$24.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$24.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$25.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$25.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$26.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$26.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$27.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$27.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$28.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$28.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$29.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$29.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$3.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$30.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$30.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$31.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$31.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$32.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$32.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$33.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$33.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$34.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$34.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$35.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$35.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$36.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$36.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$37.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$37.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$38.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$38.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$39.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$39.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$4.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$40.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$40.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$5.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$6.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$7.class" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$7.class" />
@@ -107,10 +135,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TerminalTransactions.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TerminalTransactions.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-952">
+            <state relative-caret-position="374">
               <caret line="100" column="9" lean-forward="false" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -122,8 +150,83 @@
       <file leaf-file-name="guiWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2199">
+            <state relative-caret-position="-4341">
               <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <element signature="e#4114#4115#0" expanded="true" />
+                <element signature="e#4176#4177#0" expanded="true" />
+                <element signature="e#4338#4339#0" expanded="true" />
+                <element signature="e#4397#4398#0" expanded="true" />
+                <element signature="e#4557#4558#0" expanded="true" />
+                <element signature="e#4616#4617#0" expanded="true" />
+                <element signature="e#5409#5410#0" expanded="true" />
+                <element signature="e#5471#5472#0" expanded="true" />
+                <element signature="e#5644#5645#0" expanded="true" />
+                <element signature="e#5699#5700#0" expanded="true" />
+                <element signature="e#5868#5869#0" expanded="true" />
+                <element signature="e#5924#5925#0" expanded="true" />
+                <element signature="e#6695#6696#0" expanded="true" />
+                <element signature="e#6750#6751#0" expanded="true" />
+                <element signature="e#6921#6922#0" expanded="true" />
+                <element signature="e#6983#6984#0" expanded="true" />
+                <element signature="e#7153#7154#0" expanded="true" />
+                <element signature="e#7213#7214#0" expanded="true" />
+                <element signature="e#7389#7390#0" expanded="true" />
+                <element signature="e#7444#7445#0" expanded="true" />
+                <element signature="e#7608#7609#0" expanded="true" />
+                <element signature="e#7658#7659#0" expanded="true" />
+                <element signature="e#8297#8298#0" expanded="true" />
+                <element signature="e#8347#8348#0" expanded="true" />
+                <element signature="e#8522#8523#0" expanded="true" />
+                <element signature="e#8581#8582#0" expanded="true" />
+                <element signature="e#8754#8755#0" expanded="true" />
+                <element signature="e#8819#8820#0" expanded="true" />
+                <element signature="e#8993#8994#0" expanded="true" />
+                <element signature="e#9057#9058#0" expanded="true" />
+                <element signature="e#9232#9233#0" expanded="true" />
+                <element signature="e#9291#9292#0" expanded="true" />
+                <element signature="e#9467#9468#0" expanded="true" />
+                <element signature="e#9526#9527#0" expanded="true" />
+                <element signature="e#9696#9697#0" expanded="true" />
+                <element signature="e#9755#9756#0" expanded="true" />
+                <element signature="e#9929#9930#0" expanded="true" />
+                <element signature="e#9995#9996#0" expanded="true" />
+                <element signature="e#10172#10173#0" expanded="true" />
+                <element signature="e#10238#10239#0" expanded="true" />
+                <element signature="e#11390#11391#0" expanded="true" />
+                <element signature="e#11454#11455#0" expanded="true" />
+                <element signature="e#11629#11630#0" expanded="true" />
+                <element signature="e#11684#11685#0" expanded="true" />
+                <element signature="e#11861#11862#0" expanded="true" />
+                <element signature="e#11912#11913#0" expanded="true" />
+                <element signature="e#12079#12080#0" expanded="true" />
+                <element signature="e#12138#12139#0" expanded="true" />
+                <element signature="e#12998#12999#0" expanded="true" />
+                <element signature="e#13057#13058#0" expanded="true" />
+                <element signature="e#13230#13231#0" expanded="true" />
+                <element signature="e#13287#13288#0" expanded="true" />
+                <element signature="e#13946#13947#0" expanded="true" />
+                <element signature="e#14003#14004#0" expanded="true" />
+                <element signature="e#14177#14178#0" expanded="true" />
+                <element signature="e#14239#14240#0" expanded="true" />
+                <element signature="e#14413#14414#0" expanded="true" />
+                <element signature="e#14475#14476#0" expanded="true" />
+                <element signature="e#15121#15122#0" expanded="true" />
+                <element signature="e#15178#15179#0" expanded="true" />
+                <element signature="e#15350#15351#0" expanded="true" />
+                <element signature="e#15409#15410#0" expanded="true" />
+                <element signature="e#16601#16602#0" expanded="true" />
+                <element signature="e#16662#16663#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2522">
+              <caret line="17" column="65" lean-forward="true" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -172,6 +275,7 @@
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java" />
+        <option value="$PROJECT_DIR$/CPSC304-SuperRent/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -213,6 +317,24 @@
               <item name="304" type="b2602c69:ProjectViewProjectNode" />
               <item name="304" type="462c0819:PsiDirectoryNode" />
               <item name="CPSC304-SuperRent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="304" type="b2602c69:ProjectViewProjectNode" />
+              <item name="304" type="462c0819:PsiDirectoryNode" />
+              <item name="CPSC304-SuperRent" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="304" type="b2602c69:ProjectViewProjectNode" />
+              <item name="304" type="462c0819:PsiDirectoryNode" />
+              <item name="CPSC304-SuperRent" type="462c0819:PsiDirectoryNode" />
+              <item name=".settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="304" type="b2602c69:ProjectViewProjectNode" />
+              <item name="304" type="462c0819:PsiDirectoryNode" />
+              <item name="CPSC304-SuperRent" type="462c0819:PsiDirectoryNode" />
+              <item name=".vscode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="304" type="b2602c69:ProjectViewProjectNode" />
@@ -476,6 +598,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -485,7 +608,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10816543" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10816543" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -725,43 +848,43 @@
         <state relative-caret-position="-1020">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1574366042750" expanded="true" signature="59332:59357" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="68842:68859" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="68842:68877" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="68842:68890" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="68842:68905" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="68940:71091" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="68953:71076" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69007:69302" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69026:69287" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69089:69267" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69129:69233" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69150:69211" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69352:69679" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69371:69664" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69466:69644" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69506:69610" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69527:69588" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69730:69995" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69749:69980" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69782:69960" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69822:69926" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="69843:69904" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70038:70344" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70057:70329" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70131:70309" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70171:70275" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70192:70253" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70395:70701" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70414:70686" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70488:70666" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70528:70632" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70549:70610" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70753:71062" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70772:71047" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70849:71027" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70889:70993" ph="..." />
-            <marker date="1574366042750" expanded="true" signature="70910:70971" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="59332:59357" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87226:87243" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87226:87261" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87226:87274" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87226:87289" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87324:89475" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87337:89460" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87391:87686" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87410:87671" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87473:87651" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87513:87617" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87534:87595" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87736:88063" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87755:88048" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87850:88028" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87890:87994" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="87911:87972" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88114:88379" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88133:88364" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88166:88344" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88206:88310" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88227:88288" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88422:88728" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88441:88713" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88515:88693" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88555:88659" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88576:88637" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88779:89085" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88798:89070" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88872:89050" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88912:89016" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="88933:88994" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="89137:89446" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="89156:89431" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="89233:89411" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="89273:89377" ph="..." />
+            <marker date="1574367475125" expanded="true" signature="89294:89355" ph="..." />
           </folding>
         </state>
       </provider>
@@ -905,14 +1028,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2199">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -945,11 +1060,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-952">
+        <state relative-caret-position="374">
           <caret line="100" column="9" lean-forward="false" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4341">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="e#4114#4115#0" expanded="true" />
+            <element signature="e#4176#4177#0" expanded="true" />
+            <element signature="e#4338#4339#0" expanded="true" />
+            <element signature="e#4397#4398#0" expanded="true" />
+            <element signature="e#4557#4558#0" expanded="true" />
+            <element signature="e#4616#4617#0" expanded="true" />
+            <element signature="e#5409#5410#0" expanded="true" />
+            <element signature="e#5471#5472#0" expanded="true" />
+            <element signature="e#5644#5645#0" expanded="true" />
+            <element signature="e#5699#5700#0" expanded="true" />
+            <element signature="e#5868#5869#0" expanded="true" />
+            <element signature="e#5924#5925#0" expanded="true" />
+            <element signature="e#6695#6696#0" expanded="true" />
+            <element signature="e#6750#6751#0" expanded="true" />
+            <element signature="e#6921#6922#0" expanded="true" />
+            <element signature="e#6983#6984#0" expanded="true" />
+            <element signature="e#7153#7154#0" expanded="true" />
+            <element signature="e#7213#7214#0" expanded="true" />
+            <element signature="e#7389#7390#0" expanded="true" />
+            <element signature="e#7444#7445#0" expanded="true" />
+            <element signature="e#7608#7609#0" expanded="true" />
+            <element signature="e#7658#7659#0" expanded="true" />
+            <element signature="e#8297#8298#0" expanded="true" />
+            <element signature="e#8347#8348#0" expanded="true" />
+            <element signature="e#8522#8523#0" expanded="true" />
+            <element signature="e#8581#8582#0" expanded="true" />
+            <element signature="e#8754#8755#0" expanded="true" />
+            <element signature="e#8819#8820#0" expanded="true" />
+            <element signature="e#8993#8994#0" expanded="true" />
+            <element signature="e#9057#9058#0" expanded="true" />
+            <element signature="e#9232#9233#0" expanded="true" />
+            <element signature="e#9291#9292#0" expanded="true" />
+            <element signature="e#9467#9468#0" expanded="true" />
+            <element signature="e#9526#9527#0" expanded="true" />
+            <element signature="e#9696#9697#0" expanded="true" />
+            <element signature="e#9755#9756#0" expanded="true" />
+            <element signature="e#9929#9930#0" expanded="true" />
+            <element signature="e#9995#9996#0" expanded="true" />
+            <element signature="e#10172#10173#0" expanded="true" />
+            <element signature="e#10238#10239#0" expanded="true" />
+            <element signature="e#11390#11391#0" expanded="true" />
+            <element signature="e#11454#11455#0" expanded="true" />
+            <element signature="e#11629#11630#0" expanded="true" />
+            <element signature="e#11684#11685#0" expanded="true" />
+            <element signature="e#11861#11862#0" expanded="true" />
+            <element signature="e#11912#11913#0" expanded="true" />
+            <element signature="e#12079#12080#0" expanded="true" />
+            <element signature="e#12138#12139#0" expanded="true" />
+            <element signature="e#12998#12999#0" expanded="true" />
+            <element signature="e#13057#13058#0" expanded="true" />
+            <element signature="e#13230#13231#0" expanded="true" />
+            <element signature="e#13287#13288#0" expanded="true" />
+            <element signature="e#13946#13947#0" expanded="true" />
+            <element signature="e#14003#14004#0" expanded="true" />
+            <element signature="e#14177#14178#0" expanded="true" />
+            <element signature="e#14239#14240#0" expanded="true" />
+            <element signature="e#14413#14414#0" expanded="true" />
+            <element signature="e#14475#14476#0" expanded="true" />
+            <element signature="e#15121#15122#0" expanded="true" />
+            <element signature="e#15178#15179#0" expanded="true" />
+            <element signature="e#15350#15351#0" expanded="true" />
+            <element signature="e#15409#15410#0" expanded="true" />
+            <element signature="e#16601#16602#0" expanded="true" />
+            <element signature="e#16662#16663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2522">
+          <caret line="17" column="65" lean-forward="true" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
