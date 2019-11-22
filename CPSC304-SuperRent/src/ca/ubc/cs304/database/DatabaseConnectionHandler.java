@@ -207,6 +207,28 @@ public class DatabaseConnectionHandler {
 		return vehicleTypes.toArray(new VehicleTypeModel[vehicleTypes.size()]);
 	}
 
+	public void insertNewReservation(ReservationModel reservation) {
+		//	Customer (confNo integer, vtname varchar, dlicense varchar,fromDate varchar,fromTime varchar, toDate varchar,toTime varchar)
+		try {
+			PreparedStatement ps = connection.prepareStatement("INSERT INTO RESERVATIONS VALUES (?,?,?,?,?,?,?)");
+			ps.setInt(1, reservation.getConfNo());
+			ps.setString(2, reservation.getVtName());
+			ps.setString(3, reservation.getDlicense());
+			ps.setString(4, reservation.getFromDate());
+            ps.setString(5, reservation.getFromTime());
+            ps.setString(6, reservation.getToDate());
+            ps.setString(7, reservation.getToTime());
+
+//			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
+			ps.executeUpdate();
+			connection.commit();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+			rollbackConnection();
+		}
+	}
+
 	public ReservationModel[] getReservations() {
 		ArrayList<ReservationModel> reservations = new ArrayList<>();
 		try {

@@ -1,8 +1,14 @@
 package ca.ubc.cs304.ui;
 
+import ca.ubc.cs304.database.DatabaseConnectionHandler;
+import ca.ubc.cs304.model.CustomerModel;
+import ca.ubc.cs304.model.ReservationModel;
+import ca.ubc.cs304.model.VehicleModel;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 public class guiWindow {
     private JPanel panel1;
@@ -99,10 +105,16 @@ public class guiWindow {
     private JTextField expDateField;
     private JButton makeRentalButtonCreditCard;
     private JButton backButtonCreditCard;
+    private JPanel vehicleResults;
+    private JTextArea vehicleResultsField;
+    private JButton backVehicleResults;
+    private JTextField reservationLocation;
     private String vehicleType;
+    private DatabaseConnectionHandler dbHandler = null;
 
 
-    public guiWindow() {
+    public guiWindow(DatabaseConnectionHandler dbHandler) {
+        this.dbHandler = dbHandler;
         customerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -130,20 +142,32 @@ public class guiWindow {
                 }
                 String loc = (String)selLocation.getSelectedItem();
                 String time = selTime.getText();
-                //format location and time
-                //query data with transaction
-                //switchPanel(result panel);
+                VehicleModel[] availableVehicles = checkVehicleAvailable(vehicleType, loc, time);
+                switchPanel(vehicleResults);
+                int vehicleCount = 0;
+                String results = "";
+                System.out.println("No Vehicles Available! Please select another.");
+                for (int i = 0; i < availableVehicles.length; i++) {
+                    if(availableVehicles[i] != null){
+                        results = results + "Vehicle " + (i + 1) + " - "
+                                + " " + availableVehicles[i].getMake()
+                                + " " +availableVehicles[i].getModel()
+                                + " " + availableVehicles[i].getYear()
+                                + " " +availableVehicles[i].getColor() + "\n";
+                        vehicleCount++;
+                    }
+                }
+                results = "Total Number of Available Vehicles: " + vehicleCount + "\n" + results;
+
+                vehicleResultsField.setText(results);
             }
         });
-
-
         backButtonSelType.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 switchPanel(customerSelection);
             }
         });
-
         makeReservationButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -164,8 +188,24 @@ public class guiWindow {
                 String address = addressAddCustomer.getText();
                 String cellphone = cellAddCustomer.getText();
                 String driversLicense = licenseAddCustomer.getText();
+                Boolean exists = false;
                 //add info into database
-                switchPanel(makeReservation);
+                CustomerModel[] customers = dbHandler.getCustomers();
+                if (name.isEmpty() || address.isEmpty() || cellphone.isEmpty() || driversLicense.isEmpty()){
+                    nameAddCustomer.setText("Please fill in all information fields!");
+                } else {
+                    for (int i = 0; i < customers.length; i++){
+                        if (customers[i].getDlicense().contains(driversLicense) || licenseAddCustomer.getText().contains("Already Registered")){
+                            licenseAddCustomer.setText("License Already Registered! Enter a new driver's license.");
+                            exists = true;
+                        }
+                    }
+                    if(!exists){
+                        dbHandler.insertNewCustomer(new CustomerModel(cellphone, name, address, driversLicense));
+                        switchPanel(makeReservation);
+                    }
+                }
+
             }
         });
         backButtonAddCustomer.addActionListener(new ActionListener() {
@@ -201,10 +241,43 @@ public class guiWindow {
         makeReservationButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                String loc = reservationLocation.getText();
                 String vt = (String)selectTypeMakeReservation.getSelectedItem();
                 String dl = licenseMakeReservation.getText();
                 String fromDate = fromDateMakeReservation.getText();
                 String toDate = toDateMakeReservation.getText();
+                VehicleModel[] availableVehicles = checkVehicleAvailable(vt, loc, fromDate + toDate);
+                CustomerModel[] customers = dbHandler.getCustomers();
+                Boolean exists = false;
+                for(int i=0; i < customers.length; i++){
+                    if (customers[i].getDlicense().contains(dl)){
+                        exists = true;
+                    }
+                }
+                if (exists) {
+                    VehicleModel selectedVehicle = null;
+                    for(int i=0; i < availableVehicles.length; i++){
+                        if (availableVehicles[i] != null) {
+                            selectedVehicle = availableVehicles[i];
+                        }
+                    }
+                    // TODO: update vehicle to reserved
+                    if (selectedVehicle != null){
+                        int confNo = (int)(Math.random()*10000);
+                        dbHandler.insertNewReservation(new ReservationModel(confNo, vt, dl,fromDate, fromDate, toDate, toDate));
+                        switchPanel(vehicleResults);
+                        vehicleResultsField.setText("Reservation Successfully Made!" + "\n"
+                        + "Your Confirmation Number: " + confNo
+                        + "Vehicle Type: " + vt
+                        + "Drivers License: " + dl
+                        + "From: " + fromDate
+                        + "To: " + toDate);
+                    } else {
+                        reservationLocation.setText("Vehicle Not Available. Try again!");
+                    }
+                } else {
+                    licenseMakeReservation.setText("Customer doesn't exist!");
+                }
             }
         });
         backButtonClerkSelection.addActionListener(new ActionListener() {
@@ -422,11 +495,32 @@ public class guiWindow {
                 //switchPanel(the output panel which prints the conf no);
             }
         });
+        backVehicleResults.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                switchPanel(selectVehicles);
+            }
+        });
+    }
+
+    public VehicleModel[] checkVehicleAvailable(String vehicletype, String location, String timeinterval){
+        VehicleModel[] vehicles = dbHandler.getVehicles();
+        int vehicleCount = 0;
+        VehicleModel[] availableVehicles = new VehicleModel[vehicles.length];
+        for(int i=0; i < vehicles.length; i++){
+            if(vehicles[i].getStatus().contains("for_rent") && (vehicleType == null || vehicles[i].getVtName().contains(vehicletype) || vehicletype.contains("None"))
+                    && (location == null || vehicles[i].getLocation().contains(location) || location.contains("NA")) || (timeinterval == null)){
+                availableVehicles[vehicleCount] = vehicles[i];
+                vehicleCount++;
+            }
+        }
+        return availableVehicles;
+
     }
 
     public void makeWindow(){
         JFrame frame = new JFrame("SuperRent");
-        frame.setContentPane(new guiWindow().panel1);
+        frame.setContentPane(new guiWindow(dbHandler).panel1);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(400,400);
         frame.setLocationRelativeTo(null);
