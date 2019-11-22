@@ -8,8 +8,6 @@ import ca.ubc.cs304.model.CustomerModel;
 import ca.ubc.cs304.ui.LoginWindow;
 import ca.ubc.cs304.ui.guiWindow;
 
-import java.util.Scanner;
-
 /**
  * This is the main controller class that will orchestrate everything.
  */
@@ -24,14 +22,14 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 	private void start() {
 		//loginWindow = new LoginWindow();
 		//loginWindow.showFrame(this);
-		Scanner sc = new Scanner(System.in);
-		System.out.println("enter username (should be ora_CWLID: ");
-		System.out.println("make sure you set up SSH Tunneling with the server");
-		String username = sc.next();
-		System.out.println("enter password (should be aSTUDENTNUMBER: ");
-		String pass = sc.next();
-		username = "ora_moya33";
-		pass = "a35798347";
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("enter username (should be ora_CWLID: ");
+//		System.out.println("make sure you set up SSH Tunneling with the server");
+//		String username = sc.next();
+//		System.out.println("enter password (should be aSTUDENTNUMBER: ");
+//		String pass = sc.next();
+		String username = "ora_moya33";
+		String pass = "a35798347";
 		login(username, pass);
 	}
 	
@@ -98,7 +96,7 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 	}
 
 	public String handleRentNoReservation(String vtname, String cardName, int cardNo, String expDate) {
-    	String receipt = dbHandler.handleRentNoReservation(vtname, cardName, cardNo, expDate);
+//    	String receipt = dbHandler.handleRentNoReservation(vtname, cardName, cardNo, expDate);
     	return "";
 	}
 

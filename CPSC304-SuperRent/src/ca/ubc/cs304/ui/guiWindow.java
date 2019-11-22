@@ -1,10 +1,14 @@
 package ca.ubc.cs304.ui;
 
 import ca.ubc.cs304.database.DatabaseConnectionHandler;
+import ca.ubc.cs304.model.CustomerModel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class guiWindow {
     private JPanel panel1;
@@ -101,7 +105,10 @@ public class guiWindow {
     private JTextField expDateField;
     private JButton makeRentalButtonCreditCard;
     private JButton backButtonCreditCard;
+    private JTextField reservationDriversLicense;
     private String vehicleType;
+
+    private int test = 0;
 
     private DatabaseConnectionHandler dbHandler = null;
 
@@ -169,7 +176,14 @@ public class guiWindow {
                 String cellphone = cellAddCustomer.getText();
                 String driversLicense = licenseAddCustomer.getText();
                 //add info into database
+
+                dbHandler.setCustomerName(name);
+                dbHandler.setAddress(address);
+                dbHandler.setCellphone(cellphone);
+                dbHandler.setDlicense(driversLicense);
                 switchPanel(makeReservation);
+
+
             }
         });
         backButtonAddCustomer.addActionListener(new ActionListener() {
@@ -187,6 +201,7 @@ public class guiWindow {
         yesButtonIsCustomer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
                 switchPanel(makeReservation);
             }
         });
@@ -226,6 +241,7 @@ public class guiWindow {
         noButtonIsCustomerRent.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
                 switchPanel(addCustomerAddRental);
             }
         });
@@ -244,6 +260,7 @@ public class guiWindow {
         backButtonHaveReservation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
                 switchPanel(isCustomerRent);
             }
         });
@@ -256,6 +273,9 @@ public class guiWindow {
         noButtonHaveReservation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                String dlicense = reservationDriversLicense.getText();
+                dbHandler.setDlicense(dlicense);
+                System.out.println(dlicense);
                 switchPanel(findVehiclesAddRental);
             }
         });
@@ -270,10 +290,30 @@ public class guiWindow {
             public void actionPerformed(ActionEvent actionEvent) {
                 //using info, query availiable vehicles and show them
                 String vehicleType = (String)vehicleTypeAddRental.getSelectedItem();
-                String fromDate = fromDateAddRental.getText();
-                String toDate = toDateAddRental.getText();
-                //get through vehicle selection transaction
-                switchPanel(listVehiclesRent);
+                String fromDatefromTime = fromDateAddRental.getText();
+                String toDatetoTime = toDateAddRental.getText();
+                System.out.println(vehicleType);
+                // yyyy/mm/dd/xx:xx
+                try {
+                    String fromDate = fromDatefromTime.substring(0, 10);
+                    String fromTime = fromDatefromTime.substring(11);
+                    String toDate = toDatetoTime.substring(0, 10);
+                    String toTime = toDatetoTime.substring(11);
+
+                    dbHandler.setVtname(vehicleType);
+                    dbHandler.setFromDate(fromDate);
+                    dbHandler.setFromTime(fromTime);
+                    dbHandler.setToDate(toDate);
+                    dbHandler.setToDate(toTime);
+
+                    //get through vehicle selection transaction
+//                switchPanel(listVehiclesRent);
+                    switchPanel(creditCardInfo);
+                } catch (Exception e) {
+                    System.out.println("please follow correct format");
+                }
+
+
             }
         });
         findReservation.addActionListener(new ActionListener() {
@@ -282,11 +322,14 @@ public class guiWindow {
                 String confNo = confNoFieldRent.getText();
                 try {
                     int confNum = Integer.parseInt(confNo);
-                    dbHandler.handleRent(confNum, "name", 123123, "dec21");
+                    dbHandler.setIsReservation(true);
+                    dbHandler.setConfNo(confNum);
+//                    switchPanel(listVehiclesRent);
+                    switchPanel(creditCardInfo);
                 } catch (Exception e) {
                     e.printStackTrace();
+                    System.out.println("not a number");
                 }
-                switchPanel(listVehiclesRent);
             }
         });
         backButtonConfRent.addActionListener(new ActionListener() {
@@ -320,13 +363,18 @@ public class guiWindow {
                 String date = rIdReturn.getText();
                 String odometer = odometerReturn.getText();
                 String tankFull = (String)tankFullReturn.getSelectedItem();
+
+                Calendar cal = Calendar.getInstance();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd:HH:mm:ss");
+                String returnTime = sdf.format(cal.getTime());
+
                 boolean tank;
                 if(tankFull.equalsIgnoreCase("Yes")){
                     tank = true;
-                }else {
+                } else {
                     tank = false;
                 }
-                //do querying
+                dbHandler.returnVehicle(Integer.parseInt(rid), date, returnTime, Integer.parseInt(odometer), tank);
                 //switchPanel(print results);
             }
         });
@@ -403,6 +451,12 @@ public class guiWindow {
                 String cellphone = cellAddRental.getText();
                 String driversLicense = licenseAddRental.getText();
                 //add info into database
+                dbHandler.setIsReservation(false);
+                dbHandler.setCustomerName(name);
+                dbHandler.setAddress(address);
+                dbHandler.setCellphone(cellphone);
+                dbHandler.setDlicense(driversLicense);
+                dbHandler.insertNewCustomer(new CustomerModel(cellphone, name, address, driversLicense));
                 switchPanel(findVehiclesAddRental);
             }
         });
@@ -425,22 +479,51 @@ public class guiWindow {
             public void actionPerformed(ActionEvent actionEvent) {
                 String cardNo = cardNoField.getText();
                 String expDate = expDateField.getText();
+                try {
+                    dbHandler.setCreditCardNo(Integer.parseInt(cardNo));
+                    dbHandler.setExpDate(expDate);
+                    // there was a reservation if true
+                    if (dbHandler.isReservation()) {
+                        dbHandler.handleRent(dbHandler.getConfNo(), "SuperRentUser",
+                                dbHandler.getCreditCardNo(), dbHandler.getExpDate());
+                    } else {
+                        System.out.println("in else case where vtname = " + dbHandler.getVtname());
+                        dbHandler.handleRentNoReservation(dbHandler.getVtname(), "SuperRentUser", dbHandler.getCreditCardNo(), dbHandler.getExpDate(),
+                                dbHandler.getDlicense(), dbHandler.getFromDate(), dbHandler.getToDate(), dbHandler.getFromTime(), dbHandler.getToTime());
+                    }
+                    dbHandler.reset();
+                    // TODO: show receipt
+                    switchPanel(users);
+                } catch (Exception e) {
+                    System.out.println("not a valid cc number");
+                }
                 //add these into rent, maybe use global variables to store?
                 //switchPanel(the output panel which prints the conf no);
             }
         });
+        Rent.addComponentListener(new ComponentAdapter() {
+        });
+        reservationDriversLicense.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String dlicense = reservationDriversLicense.getText();
+                dbHandler.setDlicense(dlicense);
+                System.out.println(dlicense);
+
+            }
+        });
     }
 
-    public void makeWindow(){
+    public void makeWindow() {
         JFrame frame = new JFrame("SuperRent");
         frame.setContentPane(new guiWindow(this.dbHandler).panel1);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(400,400);
+        frame.setSize(600,400);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
-    public void switchPanel(JPanel panel){
+    public void switchPanel(JPanel panel) {
         panel1.removeAll();
         panel1.add(panel);
         panel1.repaint();

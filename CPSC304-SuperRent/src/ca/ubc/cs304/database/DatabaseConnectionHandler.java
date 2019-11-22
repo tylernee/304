@@ -21,6 +21,124 @@ public class DatabaseConnectionHandler {
 	private static final String WARNING_TAG = "[WARNING]";
 
 	private Connection connection = null;
+	private boolean isReserved = false;
+	private int confNo;
+	private int creditCardNo;
+	private String expDate;
+	private String customerName;
+	private String address;
+	private String cellphone;
+	private String dlicense;
+	private String fromDate;
+	private String vtname;
+
+	public String getVtname() {
+		return vtname;
+	}
+
+	public void setVtname(String vtname) {
+		this.vtname = vtname;
+	}
+
+	public String getFromDate() {
+		return fromDate;
+	}
+
+	public void setFromDate(String fromDate) {
+		this.fromDate = fromDate;
+	}
+
+	public String getToDate() {
+		return toDate;
+	}
+
+	public void setToDate(String toDate) {
+		this.toDate = toDate;
+	}
+
+	public String getFromTime() {
+		return fromTime;
+	}
+
+	public void setFromTime(String fromTime) {
+		this.fromTime = fromTime;
+	}
+
+	public String getToTime() {
+		return toTime;
+	}
+
+	public void setToTime(String toTime) {
+		this.toTime = toTime;
+	}
+
+	private String toDate;
+	private String fromTime;
+	private String toTime;
+
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCellphone() {
+		return cellphone;
+	}
+
+	public void setCellphone(String cellphone) {
+		this.cellphone = cellphone;
+	}
+
+	public String getDlicense() {
+		return dlicense;
+	}
+
+	public void setDlicense(String dlicense) {
+		this.dlicense = dlicense;
+	}
+
+	public int getConfNo() {
+		return confNo;
+	}
+
+	public void setConfNo(int confNo) {
+		this.confNo = confNo;
+	}
+
+	public int getCreditCardNo() {
+		return creditCardNo;
+	}
+
+	public void setCreditCardNo(int creditCardNo) {
+		this.creditCardNo = creditCardNo;
+	}
+
+	public String getExpDate() {
+		return expDate;
+	}
+
+	public void setExpDate(String expDate) {
+		this.expDate = expDate;
+	}
+
+	public void setIsReservation(boolean res) {
+		this.isReserved = res;
+	}
+
+	public boolean isReservation() {
+		return this.isReserved;
+	}
 
 	public DatabaseConnectionHandler() {
 		try {
@@ -76,7 +194,8 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
-	public String handleRentNoReservation(String vtname, String cardName, int cardNo, String expDate) {
+	public String handleRentNoReservation(String vtname, String cardName, int cardNo, String expDate, String dlicense,
+										  String fromDate, String toDate, String fromTime, String toTime) {
 		try {
 			Statement stmt = connection.createStatement();
 			// GET VID AND ODOMETER FROM ANY VEHICLE OF THE RESERVED TYPE
@@ -97,14 +216,13 @@ public class DatabaseConnectionHandler {
 
 			Random randomInt = new Random();
 			int rid = randomInt.nextInt(60000)/2 + randomInt.nextInt(300)/2;
-			// TODO: WAIT FOR THE GUI AND IMPLEMENT THIS
-			//create a new RentModel and push to DB
-//			RentModel rental = new RentModel(rid, vid, dlicense, fromDate, fromTime, toDate, toTime, odometer,
-//					cardName, cardNo, expDate, confNo);
-//			System.out.println(toDate);
-//			insertNewRental(rental);
+			// TODO make a new reservation table and then make a rent model so that dumb null error disappears
+			RentModel rental = new RentModel(rid, vid, dlicense, fromDate, fromTime, toDate, toTime, odometer,
+					cardName, cardNo, expDate, -1);
+			insertNewRental(rental);
+			System.out.println("rental no reservation complete! Heres your rental ID: " + rid);
 
-			System.out.println(vid);
+
 		} catch (SQLException e) {
 			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
 			rollbackConnection();
@@ -155,14 +273,6 @@ public class DatabaseConnectionHandler {
 			System.out.println(toDate);
 			insertNewRental(rental);
 
-			// DELETE THE RESERVATION AS WE"VE THE RESERVATION IS COMPLETE
-//			ps = connection.prepareStatement("DELETE FROM Reservations WHERE confNo = ?");
-//			ps.setInt(1, confNo);
-//			rowCount = ps.executeUpdate();
-//			if (rowCount == 0) {
-//				System.out.println(WARNING_TAG + " Reservation " + confNo + " does not exist!");
-//			}
-//			connection.commit();
 			System.out.println("rental complete! Heres your rental ID: " + rid);
 
 
@@ -179,7 +289,7 @@ public class DatabaseConnectionHandler {
 		try {
 			PreparedStatement ps = connection.prepareStatement("INSERT INTO Rentals VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
 
-			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 			ps.setInt(1, rental.getRid());
 			ps.setInt(2, rental.getVid());
@@ -192,13 +302,19 @@ public class DatabaseConnectionHandler {
 			ps.setString(9, rental.getCardName());
 			ps.setInt(10, rental.getCardNo());
 			ps.setString(11, rental.getExpDate());
-			ps.setInt(12, rental.getConfNo());
+			if (confNo == -1) {
+				System.out.println("setting null");
+				ps.setNull(12, java.sql.Types.INTEGER);
+			} else {
+				ps.setInt(12, rental.getConfNo());
+			}
 //			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
 			ps.executeUpdate();
 			connection.commit();
 			ps.close();
 		} catch (SQLException e) {
 			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+			System.out.println("cause it was null?");
 			rollbackConnection();
 		}
 	}
@@ -215,12 +331,13 @@ public class DatabaseConnectionHandler {
 			ResultSet rs2 = stmt.executeQuery("SELECT status FROM Vehicles WHERE vid = " + vid);
 			rs2.next();
 			String status = rs2.getString("status");
-			if (status != "rented") {
+			if (!status.equals("rented")) {
 				System.out.println("Vehicle was never rented!");
 				rollbackConnection();
 				return;
 			}
-			// change status in Vehicle  to for_rent , calculate costs and return a receipt (GUI)
+			System.out.println("returned");
+			// change status in Vehicle  to for_rent , insert new value in returns calculate costs and return a receipt (GUI)
 
 		} catch (SQLException e) {
 			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
@@ -365,5 +482,18 @@ public class DatabaseConnectionHandler {
 		} catch (SQLException e) {
 			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
 		}
+	}
+
+	public void reset() {
+		isReserved = false;
+		confNo = -1;
+		creditCardNo = -1;
+		expDate = "";
+		customerName ="";
+		address = "";
+		cellphone = "";
+		dlicense = "";
+		fromDate = "";
+		vtname = "";
 	}
 }
