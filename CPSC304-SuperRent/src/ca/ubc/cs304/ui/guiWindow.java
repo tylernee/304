@@ -360,13 +360,15 @@ public class guiWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String rid = rIdReturn.getText();
-                String date = rIdReturn.getText();
+                String date = dateReturn.getText();
                 String odometer = odometerReturn.getText();
                 String tankFull = (String)tankFullReturn.getSelectedItem();
 
                 Calendar cal = Calendar.getInstance();
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd:HH:mm:ss");
                 String returnTime = sdf.format(cal.getTime());
+                System.out.println(date);
+                System.out.println(returnTime);
 
                 boolean tank;
                 if(tankFull.equalsIgnoreCase("Yes")){
@@ -375,6 +377,7 @@ public class guiWindow {
                     tank = false;
                 }
                 dbHandler.returnVehicle(Integer.parseInt(rid), date, returnTime, Integer.parseInt(odometer), tank);
+                switchPanel(users);
                 //switchPanel(print results);
             }
         });

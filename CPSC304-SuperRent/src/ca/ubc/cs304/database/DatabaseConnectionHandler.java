@@ -1,13 +1,14 @@
 package ca.ubc.cs304.database;
 
-import ca.ubc.cs304.model.BranchModel;
 import ca.ubc.cs304.model.CustomerModel;
 import ca.ubc.cs304.model.RentModel;
 
 import java.sql.*;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * This class handles all database related transactions
@@ -303,7 +304,6 @@ public class DatabaseConnectionHandler {
 			ps.setInt(10, rental.getCardNo());
 			ps.setString(11, rental.getExpDate());
 			if (confNo == -1) {
-				System.out.println("setting null");
 				ps.setNull(12, java.sql.Types.INTEGER);
 			} else {
 				ps.setInt(12, rental.getConfNo());
@@ -319,25 +319,106 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
+	private int calculateCost(String vtname, String rentDate, String returnDate, int origOdometer, int curOdometer) {
+		// calc weekly rate and daily rate :: get values from VEHICLETYPE table
+		// calc krate from origOdometer - curOdometer
+		try {
+			Statement stmt = connection.createStatement();
+			System.out.println(vtname);
+			ResultSet rs = stmt.executeQuery("SELECT * FROM VehicleTypes WHERE vtname = '" + vtname + "'");
+			rs.next();
+			int weeklyRate = rs.getInt("wrate");
+			int hourlyRate = rs.getInt("hrate");
+			int dailyRate = rs.getInt("drate");
+			int weeklyIRate = rs.getInt("wirate");
+			int dailyIRate = rs.getInt("dirate");
+			int hourlyIRate = rs.getInt("hirate");
+			int kilometerRate = rs.getInt("krate");
+
+			// format the dates and get difference in days
+			SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
+			java.util.Date firstDate = sdf.parse(rentDate);
+			java.util.Date secondDate = sdf.parse(returnDate);
+
+			long totalDaysInMillis =  Math.abs(secondDate.getTime() - firstDate.getTime());
+			int diff = (int) TimeUnit.DAYS.convert(totalDaysInMillis, TimeUnit.MILLISECONDS);
+
+			int totalWeeks = (int) Math.floor(diff/7);
+			int remainingDays = diff%7;
+
+			int total = (origOdometer + curOdometer) * kilometerRate;
+			if (totalWeeks > 0) {
+				total+= weeklyRate*totalWeeks;
+				total+= weeklyIRate*totalWeeks;
+			}
+			total+=dailyIRate*remainingDays;
+			total+=dailyRate*remainingDays;
+			return total;
+
+		} catch (SQLException | ParseException e) {
+			e.printStackTrace();
+		}
+		return 0;
+
+	}
+
 	public void returnVehicle(int rid, String date, String time, int odometer, boolean fulltank) {
 		try {
 			Statement stmt = connection.createStatement();
 			// TODO: ADD THE DATES TO CALCULATE THE TOTAL
-			ResultSet rs = stmt.executeQuery("SELECT vid, confNo, odometer FROM Rentals WHERE rid = " + rid);
+			ResultSet rs = stmt.executeQuery("SELECT vid, confNo, odometer, fromDate FROM Rentals WHERE rid = " + rid);
 			rs.next();
 			int vid = rs.getInt("vid");
+			int originalOdometer = rs.getInt("odometer");
+			String fromDate = rs.getString("fromDate");
 			System.out.println(vid);
 
-			ResultSet rs2 = stmt.executeQuery("SELECT status FROM Vehicles WHERE vid = " + vid);
+			ResultSet rs2 = stmt.executeQuery("SELECT vtname, status FROM Vehicles WHERE vid = " + vid);
 			rs2.next();
+			String vtname = rs2.getString("vtname");
 			String status = rs2.getString("status");
 			if (!status.equals("rented")) {
 				System.out.println("Vehicle was never rented!");
 				rollbackConnection();
 				return;
 			}
-			System.out.println("returned");
+			System.out.println(originalOdometer);
+			System.out.println(odometer);
+			int totalKmUsed = originalOdometer - odometer;
+
+			PreparedStatement ps = connection.prepareStatement("UPDATE vehicles SET status = ?, odometer = ? WHERE vid = ?");
+			ps.setString(1, "for_rent");
+			ps.setInt(2, totalKmUsed);
+			ps.setInt(3, vid);
+			ps.executeUpdate();
+			connection.commit();
+
+			//todays date
+			SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
+			java.util.Date curDate = new java.util.Date();
+			System.out.println("curdate: " + sdf.format(curDate));
+			int cost = calculateCost(vtname, date, sdf.format(curDate), originalOdometer, odometer);
+//			int cost = 1;
+
+			PreparedStatement ps2 = connection.prepareStatement("INSERT INTO Returns VALUES (?, ?, ?, ?, ?, ?)");
+			ps2.setInt(1, rid);
+			ps2.setString(2, date);
+			ps2.setString(3, time);
+			ps2.setInt(4, odometer);
+			ps2.setInt(5, (fulltank) ? 1 : 0);
+			ps2.setInt(6, cost);
+			ps2.executeUpdate();
+			System.out.println("after execute");
+
+			connection.commit();
+			System.out.println("rental complete costs: " + cost);
+			ps.close();
+			ps2.close();
 			// change status in Vehicle  to for_rent , insert new value in returns calculate costs and return a receipt (GUI)
+			// update odometer, get price from the difference.
+
+
+
 
 		} catch (SQLException e) {
 			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
@@ -360,104 +441,11 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
-	public void deleteBranch(int branchId) {
-		try {
-			PreparedStatement ps = connection.prepareStatement("DELETE FROM branch WHERE branch_id = ?");
-			ps.setInt(1, branchId);
 
-			int rowCount = ps.executeUpdate();
-			if (rowCount == 0) {
-				System.out.println(WARNING_TAG + " Branch " + branchId + " does not exist!");
-			}
+	public void generateReport(String location) {
 
-			connection.commit();
-
-			ps.close();
-		} catch (SQLException e) {
-			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
-			rollbackConnection();
-		}
 	}
 
-
-	public void insertBranch(BranchModel model) {
-		try {
-			PreparedStatement ps = connection.prepareStatement("INSERT INTO branch VALUES (?,?,?,?,?)");
-			ps.setInt(1, model.getId());
-			ps.setString(2, model.getName());
-			ps.setString(3, model.getAddress());
-			ps.setString(4, model.getCity());
-			if (model.getPhoneNumber() == 0) {
-				ps.setNull(5, java.sql.Types.INTEGER);
-			} else {
-				ps.setInt(5, model.getPhoneNumber());
-			}
-
-			ps.executeUpdate();
-			connection.commit();
-
-			ps.close();
-		} catch (SQLException e) {
-			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
-			rollbackConnection();
-		}
-	}
-
-	public BranchModel[] getBranchInfo() {
-		ArrayList<BranchModel> result = new ArrayList<BranchModel>();
-
-		try {
-			Statement stmt = connection.createStatement();
-
-			ResultSet rs = stmt.executeQuery("SELECT * FROM vehicles");
-
-			 // get info on ResultSet
-			 ResultSetMetaData rsmd = rs.getMetaData();
-			//
-			 System.out.println(rs.getString("status"));
-
-
-			 // display column names;
-			 for (int i = 0; i < rsmd.getColumnCount(); i++) {
-			 // get column name and print it
-			 System.out.printf("%-15s", rsmd.getColumnName(i + 1));
-			 }
-
-			while (rs.next()) {
-				System.out.println(rs.getString("snum"));
-//				BranchModel model = new BranchModel(rs.getString("branch_addr"), rs.getString("branch_city"),
-//						rs.getInt("branch_id"), rs.getString("branch_name"), rs.getInt("branch_phone"));
-//				result.add(model);
-			}
-
-			rs.close();
-			stmt.close();
-		} catch (SQLException e) {
-			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
-		}
-
-		return result.toArray(new BranchModel[result.size()]);
-	}
-
-	public void updateBranch(int id, String name) {
-		try {
-			PreparedStatement ps = connection.prepareStatement("UPDATE branch SET branch_name = ? WHERE branch_id = ?");
-			ps.setString(1, name);
-			ps.setInt(2, id);
-
-			int rowCount = ps.executeUpdate();
-			if (rowCount == 0) {
-				System.out.println(WARNING_TAG + " Branch " + id + " does not exist!");
-			}
-
-			connection.commit();
-
-			ps.close();
-		} catch (SQLException e) {
-			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
-			rollbackConnection();
-		}
-	}
 
 	public boolean login(String username, String password) {
 		try {
