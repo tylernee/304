@@ -107,11 +107,6 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
     	return reservations;
 	}
 
-    public String handleRent(int confNo) {
-    	String receipt = dbHandler.handleRent(confNo);
-    	return "receipt";
-	}
-
 	
     /**
 	 * TerminalTransactionsDelegate Implementation

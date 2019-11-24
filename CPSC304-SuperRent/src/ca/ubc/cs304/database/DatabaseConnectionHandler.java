@@ -71,47 +71,7 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
-	public String handleRent(int confNo) {
-		try {
-			Statement stmt = connection.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM Reservations WHERE confNo = " + confNo);
-			ResultSetMetaData rsmd = rs.getMetaData();
 
-			// Reservation (confNo, vtname, cellphone, fromDate, fromTime, toDate, toTime)
-			// Vehicle (~vid~, vlicense, make, model, year, color, odometer, status, vtname, location, city)
-			//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
-			String cellphone ="", fromDate="", fromTime="", toDate="", toTime = "", vtname="";
-			int vid=-1, odometer=-1;
-			while(rs.next()) {
-				cellphone = rs.getString("cellphone");
-				fromDate = rs.getString("fromDate");
-				fromTime = rs.getString("fromTime");
-				toDate = rs.getString("toDate");
-				toTime = rs.getString("toTime");
-				vtname = rs.getString("vtname");
-			}
-//			System.out.println("SELECT vid, odometer FROM Vehicles WHERE vtname = '" + vtname + "' AND status = 'for_rent'");
-			Statement stmt2 = connection.createStatement();
-
-			ResultSet rs2 = stmt2.executeQuery("SELECT * FROM Vehicles");
-			rsmd = rs2.getMetaData();
-			System.out.println(rs2.next());
-			while (rs2.next()) {
-				vid = rs2.getInt("vid");
-				odometer = rs2.getInt("odometer");
-			}
-			System.out.println(vid);
-//			System.out.println(cellphone + fromDate + fromTime + toDate + toTime + odometer);
-
-
-
-		} catch (SQLException e) {
-			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
-			rollbackConnection();
-		}
-
-		return "";
-	}
 
 	private void insertNewRental(RentModel rental) {
 		//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
@@ -157,10 +117,10 @@ public class DatabaseConnectionHandler {
                         Integer.parseInt(rs.getString("rid")),
                         Integer.parseInt(rs.getString("vid")),
                         rs.getString("cellphone"),
-                        rs.getDate("fromDate"),
-                        rs.getTime("fromTime"),
-                        rs.getDate("toDate"),
-                        rs.getTime("toTime"),
+                        Date.valueOf(rs.getString("fromDate")),
+                        Time.valueOf(rs.getString("fromTime")),
+                        Date.valueOf(rs.getString("toDate")),
+                        Time.valueOf(rs.getString("toTime")),
                         Integer.parseInt(rs.getString("odometer")),
                         rs.getString("cardName"),
                         Integer.parseInt(rs.getString("cardNo")),
@@ -306,10 +266,10 @@ public class DatabaseConnectionHandler {
                         Integer.parseInt(rs.getString("vid")),
 						rs.getString("vtname"),
 						rs.getString("dlicense"),
-						rs.getDate("fromDate"),
-						rs.getTime("fromTime"),
-						rs.getDate("toDate"),
-						rs.getTime("toTime"));
+                        Date.valueOf(rs.getString("fromDate")),
+						Time.valueOf(rs.getString("fromTime")),
+						Date.valueOf(rs.getString("toDate")),
+						Time.valueOf(rs.getString("toTime")));
 				reservations.add(reservation);
 			}
 		} catch (SQLException e) {
