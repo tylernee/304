@@ -1,21 +1,29 @@
 package ca.ubc.cs304.model;
 
+import java.sql.Time;
+import java.sql.Date;
+
 /**
  * The intent for this class is to update/store information about a single branch
  */
 public class ReservationModel {
 	// Reservation (confNo, vtname, cellphone, fromDate, fromTime, toDate, toTime)
 	private final int confNo;
+	private final int vid;
 	private final String vtname;
 	private final String dlicense;
-	private final String fromDate;
-	private final String fromTime;
-	private final String toDate;
-	private final String toTime;
 
 
-	public ReservationModel(int confNo, String vtname, String dlicense, String fromDate, String fromTime, String toDate, String toTime) {
+
+	private final Date fromDate;
+	private final Time fromTime;
+	private final Date toDate;
+	private final Time toTime;
+
+
+	public ReservationModel(int confNo,int vid, String vtname, String dlicense, Date fromDate, Time fromTime, Date toDate, Time toTime) {
 		this.confNo = confNo;
+		this.vid = vid;
 		this.vtname = vtname;
 		this.dlicense = dlicense;
 		this.fromDate = fromDate;
@@ -27,22 +35,24 @@ public class ReservationModel {
 	public int getConfNo() {
 		return confNo;
 	}
+	public int getVid() { return vid;}
 	public String getVtName() {
 		return vtname;
 	}
-	public String getDLicense() {
+
+	public String getDlicense() {
 		return dlicense;
 	}
-	public String getFromDate() {
+	public Date getFromDate() {
 		return fromDate;
 	}
-	public String getFromTime() {
+	public Time getFromTime() {
 		return fromTime;
 	}
-	public String getToDate() {
+	public Date getToDate() {
 		return toDate;
 	}
-	public String getToTime() {
+	public Time getToTime() {
 		return toTime;
 	}
 }

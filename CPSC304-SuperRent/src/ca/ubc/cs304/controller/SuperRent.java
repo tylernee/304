@@ -19,14 +19,9 @@ public class SuperRent implements LoginWindowDelegate {
 	private void start() {
 		//loginWindow = new LoginWindow();
 		//loginWindow.showFrame(this);
-//		Scanner sc = new Scanner(System.in);
-//		System.out.println("enter username (should be ora_CWLID: ");
-//		System.out.println("make sure you set up SSH Tunneling with the server");
-//		String username = sc.next();
-//		System.out.println("enter password (should be aSTUDENTNUMBER: ");
-//		String pass = sc.next();
 		String username = "ora_moya33";
 		String pass = "a35798347";
+
 		login(username, pass);
 	}
 	
@@ -45,12 +40,9 @@ public class SuperRent implements LoginWindowDelegate {
 			guiWindow guiWindow = new guiWindow(dbHandler);
 			guiWindow.makeWindow();
 
-//			TerminalTransactions transaction = new TerminalTransactions();
-//			transaction.showMainMenu(this);
 		}
 	}
 
-    
 	/**
 	 * Main method called at launch time
 	 */

@@ -2,6 +2,7 @@ package ca.ubc.cs304.database;
 
 import ca.ubc.cs304.model.CustomerModel;
 import ca.ubc.cs304.model.RentModel;
+import ca.ubc.cs304.model.*;
 
 import java.sql.*;
 import java.text.ParseException;
@@ -25,13 +26,13 @@ public class DatabaseConnectionHandler {
 	private boolean isReserved = false;
 	private int confNo;
 	private int creditCardNo;
-	private String expDate;
+	private Date expDate;
 	private String creditCardName;
 	private String customerName;
 	private String address;
 	private String cellphone;
 	private String dlicense;
-	private String fromDate;
+	private Date fromDate;
 	private String vtname;
 	private String branchLocation;
 
@@ -58,41 +59,41 @@ public class DatabaseConnectionHandler {
 		this.vtname = vtname;
 	}
 
-	public String getFromDate() {
+	public Date getFromDate() {
 		return fromDate;
 	}
 
-	public void setFromDate(String fromDate) {
+	public void setFromDate(Date fromDate) {
 		this.fromDate = fromDate;
 	}
 
-	public String getToDate() {
+	public Date getToDate() {
 		return toDate;
 	}
 
-	public void setToDate(String toDate) {
+	public void setToDate(Date toDate) {
 		this.toDate = toDate;
 	}
 
-	public String getFromTime() {
+	public Time getFromTime() {
 		return fromTime;
 	}
 
-	public void setFromTime(String fromTime) {
+	public void setFromTime(Time fromTime) {
 		this.fromTime = fromTime;
 	}
 
-	public String getToTime() {
+	public Time getToTime() {
 		return toTime;
 	}
 
-	public void setToTime(String toTime) {
+	public void setToTime(Time toTime) {
 		this.toTime = toTime;
 	}
 
-	private String toDate;
-	private String fromTime;
-	private String toTime;
+	private Date toDate;
+	private Time fromTime;
+	private Time toTime;
 
 	public String getCustomerName() {
 		return customerName;
@@ -142,11 +143,11 @@ public class DatabaseConnectionHandler {
 		this.creditCardNo = creditCardNo;
 	}
 
-	public String getExpDate() {
+	public Date getExpDate() {
 		return expDate;
 	}
 
-	public void setExpDate(String expDate) {
+	public void setExpDate(Date expDate) {
 		this.expDate = expDate;
 	}
 
@@ -182,7 +183,6 @@ public class DatabaseConnectionHandler {
 			}
 			while (rs.next()) {
 //				Customer (cellphone, name, address, dlicense)
-				// TODO change the getString for dlicense
 				CustomerModel customer = new CustomerModel(rs.getString("cellphone"),
 						rs.getString("name"), rs.getString("address"), rs.getString("dlicense"));
 				customers.add(customer);
@@ -212,8 +212,8 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
-	public String handleRentNoReservation(String vtname, String cardName, int cardNo, String expDate, String dlicense,
-										  String fromDate, String toDate, String fromTime, String toTime) {
+	public String handleRentNoReservation(String vtname, String cardName, int cardNo, Date expDate, String dlicense,
+										  Date fromDate, Date toDate, Time fromTime, Time toTime) {
 		try {
 			Statement stmt = connection.createStatement();
 			// GET VID AND ODOMETER FROM ANY VEHICLE OF THE RESERVED TYPE
@@ -247,21 +247,25 @@ public class DatabaseConnectionHandler {
 		}
 		return "";
 	}
-	public String handleRent(int confNo, String cardName, int cardNo, String expDate) {
+	public void handleRent(int confNo, String cardName, int cardNo, Date expDate) {
 		try {
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM Reservations WHERE confNo = " + confNo);
 			ResultSetMetaData rsmd = rs.getMetaData();
 
 			// GET NECCESARRY INFO FROM  RESERVATIONS
-			String dlicense ="", fromDate="", fromTime="", toDate="", toTime = "", vtname="";
-			int vid=-1, odometer=-1;
-			while(rs.next()) {
+			String dlicense = "", vtname ="";
+			Date fromDate = null;
+			Time fromTime = null;
+			Date toDate = null;
+			Time toTime = null;
+			int vid = -1, odometer = -1;
+			while (rs.next()) {
 				dlicense = rs.getString("dlicense");
-				fromDate = rs.getString("fromDate");
-				fromTime = rs.getString("fromTime");
-				toDate = rs.getString("toDate");
-				toTime = rs.getString("toTime");
+				fromDate = rs.getDate("fromDate");
+				fromTime = rs.getTime("fromTime");
+				toDate = rs.getDate("toDate");
+				toTime = rs.getTime("toTime");
 				vtname = rs.getString("vtname");
 			}
 			Statement stmt2 = connection.createStatement();
@@ -283,7 +287,7 @@ public class DatabaseConnectionHandler {
 			connection.commit();
 
 			Random randomInt = new Random();
-			int rid = randomInt.nextInt(60000)/2 + randomInt.nextInt(300)/2;
+			int rid = randomInt.nextInt(60000) / 2 + randomInt.nextInt(300) / 2;
 
 			//create a new RentModel and push to DB
 			RentModel rental = new RentModel(rid, vid, dlicense, fromDate, fromTime, toDate, toTime, odometer,
@@ -292,14 +296,9 @@ public class DatabaseConnectionHandler {
 			insertNewRental(rental);
 
 			System.out.println("rental complete! Heres your rental ID: " + rid);
-
-
 		} catch (SQLException e) {
-			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
-			rollbackConnection();
+			e.printStackTrace();
 		}
-
-		return "";
 	}
 
 	private void insertNewRental(RentModel rental) {
@@ -312,14 +311,14 @@ public class DatabaseConnectionHandler {
 			ps.setInt(1, rental.getRid());
 			ps.setInt(2, rental.getVid());
 			ps.setString(3, rental.getDLicense());
-			ps.setString(4, rental.getFromDate());
-			ps.setString(5, rental.getFromTime());
-			ps.setString(6, rental.getToDate());
-			ps.setString(7, rental.getToTime());
+			ps.setDate(4, rental.getFromDate());
+			ps.setTime(5, rental.getFromTime());
+			ps.setDate(6, rental.getToDate());
+			ps.setTime(7, rental.getToTime());
 			ps.setInt(8, rental.getOdometer());
 			ps.setString(9, rental.getCardName());
 			ps.setInt(10, rental.getCardNo());
-			ps.setString(11, rental.getExpDate());
+			ps.setDate(11, rental.getExpDate());
 			if (confNo == -1) {
 				ps.setNull(12, java.sql.Types.INTEGER);
 			} else {
@@ -460,19 +459,19 @@ public class DatabaseConnectionHandler {
 
 
 	public void generateReportForBranch(String location) {
-        try {
-            Statement stmt = connection.createStatement();
-            String createView = "create view test (location, vtname, totalRents) as " +
-                    "select v.location, v.vtname, count(v.vtname) " +
-                    "from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) and" +
-                    "group by v.vtname, v.location";
-            stmt.executeUpdate(createView);
+		try {
+			Statement stmt = connection.createStatement();
+			String createView = "create view test (location, vtname, totalRents) as " +
+					"select v.location, v.vtname, count(v.vtname) " +
+					"from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) and" +
+					"group by v.vtname, v.location";
+			stmt.executeUpdate(createView);
 
 
 
-        } catch (SQLException e) {
+		} catch (SQLException e) {
 
-        }
+		}
 
 	}
 
@@ -482,9 +481,9 @@ public class DatabaseConnectionHandler {
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("DROP VIEW test2");
 			String createView = "CREATE VIEW test2 (location, vtname, totalRents) as " +
-                    "select v.location, v.vtname, COUNT(v.vtname) " +
-                    "from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) " +
-                    "group by v.vtname, v.location";
+					"select v.location, v.vtname, COUNT(v.vtname) " +
+					"from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) " +
+					"group by v.vtname, v.location";
 //			String view = "SELECT v.location, v.vtname, COUNT(v.vtname) " +
 //					"FROM Vehicles v WHERE v.vid IN " +
 //					"(SELECT r.vid FROM Rentals r WHERE r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) " +
@@ -539,13 +538,194 @@ public class DatabaseConnectionHandler {
 		isReserved = false;
 		confNo = -1;
 		creditCardNo = -1;
-		expDate = "";
+		expDate = null;
 		customerName ="";
 		address = "";
 		cellphone = "";
 		dlicense = "";
-		fromDate = "";
+		fromDate = null;
 		vtname = "";
 		creditCardName = "";
 	}
+    public RentModel[] getRentals() {
+        ArrayList<RentModel> rentals = new ArrayList<>();
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM RENTALS");
+            // get info on ResultSet
+            ResultSetMetaData rsmd = rs.getMetaData();
+            // display column names;
+            for (int i = 0; i < rsmd.getColumnCount(); i++) {
+                // get column name and print it
+                System.out.printf("%-15s", rsmd.getColumnName(i + 1));
+            }
+            System.out.println("");
+            while (rs.next()) {
+
+                RentModel vehicle = new RentModel(
+                        Integer.parseInt(rs.getString("rid")),
+                        Integer.parseInt(rs.getString("vid")),
+                        rs.getString("cellphone"),
+                        Date.valueOf(rs.getString("fromDate")),
+                        Time.valueOf(rs.getString("fromTime")),
+                        Date.valueOf(rs.getString("toDate")),
+                        Time.valueOf(rs.getString("toTime")),
+                        Integer.parseInt(rs.getString("odometer")),
+                        rs.getString("cardName"),
+                        Integer.parseInt(rs.getString("cardNo")),
+                        rs.getDate("expDate"),
+                        Integer.parseInt(rs.getString("confNo")));
+                rentals.add(vehicle);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rentals.toArray(new RentModel[rentals.size()]);
+    }
+
+    public void updateVehicles(int vid, String status) {
+        try {
+            PreparedStatement ps = connection.prepareStatement("UPDATE VEHICLES SET status = ? WHERE vid = ?");
+            ps.setString(1, status);
+            ps.setInt(2, vid);
+
+            int rowCount = ps.executeUpdate();
+            if (rowCount == 0) {
+                System.out.println(WARNING_TAG + " Vehicle " + vid + " does not exist!");
+            }
+
+            connection.commit();
+
+            ps.close();
+        } catch (SQLException e) {
+            System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+            rollbackConnection();
+        }
+    }
+
+	public VehicleModel[] getVehicles() {
+		ArrayList<VehicleModel> vehicles = new ArrayList<>();
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM VEHICLES");
+			// get info on ResultSet
+			ResultSetMetaData rsmd = rs.getMetaData();
+			// display column names;
+			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+				// get column name and print it
+				System.out.printf("%-15s", rsmd.getColumnName(i + 1));
+			}
+			System.out.println("");
+			while (rs.next()) {
+
+				VehicleModel vehicle = new VehicleModel(
+						Integer.parseInt(rs.getString("vid")),
+						rs.getString("vlicense"),
+						rs.getString("make"),
+						rs.getString("model"),
+						Integer.parseInt(rs.getString("year")),
+						rs.getString("color"),
+						Integer.parseInt(rs.getString("odometer")),
+						rs.getString("status"),
+						rs.getString("vtName"),
+						rs.getString("location"),
+						rs.getString("city"));
+				vehicles.add(vehicle);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return vehicles.toArray(new VehicleModel[vehicles.size()]);
+	}
+
+	public VehicleTypeModel[] getVehicleTypes() {
+		ArrayList<VehicleTypeModel> vehicleTypes = new ArrayList<>();
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM VEHICLETYPES");
+			// get info on ResultSet
+			ResultSetMetaData rsmd = rs.getMetaData();
+			// display column names;
+			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+				// get column name and print it
+				System.out.printf("%-15s", rsmd.getColumnName(i + 1));
+			}
+			System.out.println("");
+			while (rs.next()) {
+
+				VehicleTypeModel vehicleType = new VehicleTypeModel(
+						rs.getString("vtname"),
+						rs.getString("features"),
+						Integer.parseInt(rs.getString("wrate")),
+						Integer.parseInt(rs.getString("drate")),
+						Integer.parseInt(rs.getString("hrate")),
+						Integer.parseInt(rs.getString("wirate")),
+						Integer.parseInt(rs.getString("dirate")),
+						Integer.parseInt(rs.getString("hirate")),
+						Integer.parseInt(rs.getString("krate")));
+				vehicleTypes.add(vehicleType);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return vehicleTypes.toArray(new VehicleTypeModel[vehicleTypes.size()]);
+	}
+
+	public void insertNewReservation(ReservationModel reservation) {
+		//	Customer (confNo integer, vtname varchar, dlicense varchar,fromDate varchar,fromTime varchar, toDate varchar,toTime varchar)
+		try {
+			PreparedStatement ps = connection.prepareStatement("INSERT INTO RESERVATIONS VALUES (?,?,?,?,?,?,?,?)");
+			ps.setInt(1, reservation.getConfNo());
+			ps.setInt(2, reservation.getVid());
+			ps.setString(3, reservation.getVtName());
+			ps.setString(4, reservation.getDlicense());
+			ps.setDate(5, reservation.getFromDate());
+            ps.setTime(6, reservation.getFromTime());
+            ps.setDate(7, reservation.getToDate());
+            ps.setTime(8, reservation.getToTime());
+
+//			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
+			ps.executeUpdate();
+			connection.commit();
+			ps.close();
+		} catch (SQLException e) {
+			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+			rollbackConnection();
+		}
+	}
+
+
+	public ReservationModel[] getReservations() {
+		ArrayList<ReservationModel> reservations = new ArrayList<>();
+		try {
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM RESERVATIONS");
+			// get info on ResultSet
+			ResultSetMetaData rsmd = rs.getMetaData();
+			// display column names;
+			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+				// get column name and print it
+				System.out.printf("%-15s", rsmd.getColumnName(i + 1));
+			}
+			System.out.println("");
+			while (rs.next()) {
+
+				ReservationModel reservation = new ReservationModel(
+						Integer.parseInt(rs.getString("confNo")),
+                        Integer.parseInt(rs.getString("vid")),
+						rs.getString("vtname"),
+						rs.getString("dlicense"),
+                        Date.valueOf(rs.getString("fromDate")),
+						Time.valueOf(rs.getString("fromTime")),
+						Date.valueOf(rs.getString("toDate")),
+						Time.valueOf(rs.getString("toTime")));
+				reservations.add(reservation);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return reservations.toArray(new ReservationModel[reservations.size()]);
+	}
+
+
 }
