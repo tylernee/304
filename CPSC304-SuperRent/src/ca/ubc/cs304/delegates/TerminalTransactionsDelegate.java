@@ -25,7 +25,6 @@ public interface TerminalTransactionsDelegate {
 
 
 	public void makeReservation(int dlicense);
-	public String handleRent(int confNo);
 
 	
 	public void terminalTransactionsFinished();

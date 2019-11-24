@@ -71,7 +71,7 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
-	
+
 
 	private void insertNewRental(RentModel rental) {
 		//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
@@ -117,10 +117,10 @@ public class DatabaseConnectionHandler {
                         Integer.parseInt(rs.getString("rid")),
                         Integer.parseInt(rs.getString("vid")),
                         rs.getString("cellphone"),
-                        rs.getDate("fromDate"),
-                        rs.getTime("fromTime"),
-                        rs.getDate("toDate"),
-                        rs.getTime("toTime"),
+                        Date.valueOf(rs.getString("fromDate")),
+                        Time.valueOf(rs.getString("fromTime")),
+                        Date.valueOf(rs.getString("toDate")),
+                        Time.valueOf(rs.getString("toTime")),
                         Integer.parseInt(rs.getString("odometer")),
                         rs.getString("cardName"),
                         Integer.parseInt(rs.getString("cardNo")),
@@ -266,10 +266,10 @@ public class DatabaseConnectionHandler {
                         Integer.parseInt(rs.getString("vid")),
 						rs.getString("vtname"),
 						rs.getString("dlicense"),
-						rs.getDate("fromDate"),
-						rs.getTime("fromTime"),
-						rs.getDate("toDate"),
-						rs.getTime("toTime"));
+                        Date.valueOf(rs.getString("fromDate")),
+						Time.valueOf(rs.getString("fromTime")),
+						Date.valueOf(rs.getString("toDate")),
+						Time.valueOf(rs.getString("toTime")));
 				reservations.add(reservation);
 			}
 		} catch (SQLException e) {
