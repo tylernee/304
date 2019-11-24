@@ -116,7 +116,7 @@ public class guiWindow {
     private DatabaseConnectionHandler dbHandler = null;
 
 
-    public guiWindow(DatabaseConnectionHandler dbHandler) {
+    public guiWindow(final DatabaseConnectionHandler dbHandler) {
         this.dbHandler = dbHandler;
         customerButton.addActionListener(new ActionListener() {
             @Override
