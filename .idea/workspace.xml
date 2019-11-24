@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="17a49123-c5a1-413d-bebc-52cf37be2edd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReturnModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReturnModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="guiWindow.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="guiWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1293">
-              <caret line="276" column="21" lean-forward="true" selection-start-line="276" selection-start-column="21" selection-end-line="276" selection-end-column="21" />
+            <state relative-caret-position="645">
+              <caret line="382" column="75" lean-forward="true" selection-start-line="382" selection-start-column="75" selection-end-line="382" selection-end-column="75" />
               <folding>
                 <element signature="class#7282:8774" />
                 <element signature="e#11490#11491#0" expanded="true" />
@@ -93,11 +88,11 @@
           <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
-      <file leaf-file-name="DatabaseConnectionHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DatabaseConnectionHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4624">
-              <caret line="275" column="50" selection-start-line="275" selection-start-column="50" selection-end-line="275" selection-end-column="50" />
+            <state relative-caret-position="-5441">
+              <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -714,17 +709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4624">
-          <caret line="275" column="50" selection-start-line="275" selection-start-column="50" selection-end-line="275" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1293">
-          <caret line="276" column="21" lean-forward="true" selection-start-line="276" selection-start-column="21" selection-end-line="276" selection-end-column="21" />
+        <state relative-caret-position="645">
+          <caret line="382" column="75" lean-forward="true" selection-start-line="382" selection-start-column="75" selection-end-line="382" selection-end-column="75" />
           <folding>
             <element signature="class#7282:8774" />
             <element signature="e#11490#11491#0" expanded="true" />
@@ -774,6 +762,13 @@
             <element signature="e#20467#20468#0" expanded="true" />
             <element signature="e#20526#20527#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5441">
+          <caret line="73" column="4" selection-start-line="73" selection-start-column="4" selection-end-line="73" selection-end-column="4" />
         </state>
       </provider>
     </entry>
