@@ -5,10 +5,7 @@ import ca.ubc.cs304.delegates.LoginWindowDelegate;
 import ca.ubc.cs304.delegates.TerminalTransactionsDelegate;
 import ca.ubc.cs304.model.*;
 import ca.ubc.cs304.ui.LoginWindow;
-import ca.ubc.cs304.ui.TerminalTransactions;
 import ca.ubc.cs304.ui.guiWindow;
-
-import java.util.Scanner;
 
 /**
  * This is the main controller class that will orchestrate everything.
@@ -30,8 +27,8 @@ public class SuperRent implements LoginWindowDelegate, TerminalTransactionsDeleg
 //		String username = sc.next();
 //		System.out.println("enter password (should be aSTUDENTNUMBER: ");
 //		String pass = sc.next();
-		String username = "ora_tylernee";
-		String pass = "a22705157";
+		String username = "ora_atsf";
+		String pass = "a26411348";
 		login(username, pass);
 	}
 	

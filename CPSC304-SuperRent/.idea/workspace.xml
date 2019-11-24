@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0d34743-88dd-410e-b9b7-5fe199175c62" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/controller/SuperRent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/controller/SuperRent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/database/DatabaseConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/database/DatabaseConnectionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/CustomerModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/CustomerModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/RentModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/RentModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/ReservationModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/ReservationModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/ReturnModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/ReturnModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/LoginWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/LoginWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/LoginWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/LoginWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/TerminalTransactions.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/TerminalTransactions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$11.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$12.class" afterDir="false" />
@@ -28,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$17.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$18.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$19.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$20.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$21.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$22.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$22.class" afterDir="false" />
@@ -39,7 +27,6 @@
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$27.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$27.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$28.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$28.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$29.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$29.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$30.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$30.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$31.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$31.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$32.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$32.class" afterDir="false" />
@@ -61,8 +48,7 @@
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/controller/SuperRent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/controller/SuperRent.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,6 +89,12 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@dbhost.students.cs.ubc.ca" type="feb32156:DbDataSourceImpl" />
         <item name="ORA_ATSF: schema" type="3abd1b6a:OraImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@dbhost.students.cs.ubc.ca" type="feb32156:DbDataSourceImpl" />
+        <item name="ORA_ATSF: schema" type="3abd1b6a:OraImplModel$Schema" />
+        <item name="RESERVATIONS: table" type="942f455b:OraImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -229,7 +221,12 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ce22c07a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -255,6 +252,7 @@
       <workItem from="1574362434691" duration="1189000" />
       <workItem from="1574557402820" duration="67000" />
       <workItem from="1574557705284" duration="2023000" />
+      <workItem from="1574618460782" duration="722000" />
     </task>
     <servers />
   </component>
