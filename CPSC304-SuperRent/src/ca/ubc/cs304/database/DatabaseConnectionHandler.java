@@ -459,7 +459,33 @@ public class DatabaseConnectionHandler {
 	}
 
 
-	public void generateReport(String location) {
+	public void generateReportForBranch(String location) {
+        try {
+            Statement stmt = connection.createStatement();
+            String createView = "create view test (location, vtname, totalRents) as " +
+                    "select v.location, v.vtname, count(v.vtname) " +
+                    "from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) and" +
+                    "group by v.vtname, v.location";
+            stmt.executeUpdate(createView);
+
+        } catch (SQLException e) {
+
+        }
+
+	}
+
+	public void generateReportForAll() {
+		try {
+			Statement stmt = connection.createStatement();
+			String createView = "create view test (location, vtname, totalRents) as " +
+                    "select v.location, v.vtname, count(v.vtname) " +
+                    "from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) " +
+                    "group by v.vtname, v.location";
+			stmt.executeUpdate(createView);
+
+		} catch (SQLException e) {
+
+		}
 
 	}
 

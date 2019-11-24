@@ -401,10 +401,10 @@ public class guiWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String branch = (String)rentalReportBranch.getSelectedItem();
-                if (branch.equalsIgnoreCase("All")){
-                    //generate report of all branches
+                if (branch.equalsIgnoreCase("ALL")){
+                    dbHandler.generateReportForAll();
                 }else{
-
+                    dbHandler.generateReportForBranch(branch);
                 }
             }
         });
