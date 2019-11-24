@@ -9,6 +9,9 @@ import ca.ubc.cs304.model.VehicleModel;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.sql.Date;
 import java.sql.Time;
 
@@ -107,6 +110,9 @@ public class guiWindow {
     private JTextField expDateField;
     private JButton makeRentalButtonCreditCard;
     private JButton backButtonCreditCard;
+    private JTextField reservationDriversLicense;
+    private JComboBox locationAddRental;
+    private JTextField cardNameField;
     private JPanel vehicleResults;
     private JTextArea vehicleResultsField;
     private JButton backVehicleResults;
@@ -114,6 +120,8 @@ public class guiWindow {
     private JTextField selTime;
     private String vehicleType;
     private DatabaseConnectionHandler dbHandler = null;
+
+
 
 
     public guiWindow(final DatabaseConnectionHandler dbHandler) {
@@ -209,6 +217,15 @@ public class guiWindow {
                 String driversLicense = licenseAddCustomer.getText();
                 Boolean exists = false;
                 //add info into database
+//<<<<<<< HEAD
+//
+//                dbHandler.setCustomerName(name);
+//                dbHandler.setAddress(address);
+//                dbHandler.setCellphone(cellphone);
+//                dbHandler.setDlicense(driversLicense);
+//                switchPanel(makeReservation);
+//
+//=======
                 CustomerModel[] customers = dbHandler.getCustomers();
                 if (name.isEmpty() || address.isEmpty() || cellphone.isEmpty() || driversLicense.isEmpty()){
                     nameAddCustomer.setText("Please fill in all information fields!");
@@ -242,6 +259,7 @@ public class guiWindow {
         yesButtonIsCustomer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
                 switchPanel(makeReservation);
             }
         });
@@ -323,6 +341,7 @@ public class guiWindow {
         noButtonIsCustomerRent.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
                 switchPanel(addCustomerAddRental);
             }
         });
@@ -341,6 +360,7 @@ public class guiWindow {
         backButtonHaveReservation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
                 switchPanel(isCustomerRent);
             }
         });
@@ -353,6 +373,9 @@ public class guiWindow {
         noButtonHaveReservation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                String dlicense = reservationDriversLicense.getText();
+                dbHandler.setDlicense(dlicense);
+                System.out.println(dlicense);
                 switchPanel(findVehiclesAddRental);
             }
         });
@@ -367,20 +390,49 @@ public class guiWindow {
             public void actionPerformed(ActionEvent actionEvent) {
                 //using info, query availiable vehicles and show them
                 String vehicleType = (String)vehicleTypeAddRental.getSelectedItem();
-                String fromDate = fromDateAddRental.getText();
-                String toDate = toDateAddRental.getText();
-                //get through vehicle selection transaction
-                switchPanel(listVehiclesRent);
+                String location = (String) locationAddRental.getSelectedItem();
+                String fromDatefromTime = fromDateAddRental.getText();
+                String toDatetoTime = toDateAddRental.getText();
+                System.out.println(vehicleType);
+                // yyyy/mm/dd/xx:xx
+                try {
+                    String fromDate = fromDatefromTime.substring(0, 10);
+                    String fromTime = fromDatefromTime.substring(11);
+                    String toDate = toDatetoTime.substring(0, 10);
+                    String toTime = toDatetoTime.substring(11);
+                    System.out.println(fromDate);
+                    dbHandler.setVtname(vehicleType);
+                    dbHandler.setFromDate(Date.valueOf(fromDate));
+                    dbHandler.setFromTime(Time.valueOf(fromTime));
+                    dbHandler.setToDate(Date.valueOf(toDate));
+                    dbHandler.setToTime(Time.valueOf(toTime));
+                    dbHandler.setBranchLocation(location);
+
+                    //get through vehicle selection transaction
+//                switchPanel(listVehiclesRent);
+                    switchPanel(creditCardInfo);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("please follow correct date format");
+                }
+
+
             }
         });
         findReservation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String confNo = confNoFieldRent.getText();
-                //find conf no
-                //add rest of stuff in database
-                //find avaliable vehicles
-                switchPanel(listVehiclesRent);
+                try {
+                    int confNum = Integer.parseInt(confNo);
+                    dbHandler.setIsReservation(true);
+                    dbHandler.setConfNo(confNum);
+//                    switchPanel(listVehiclesRent);
+                    switchPanel(creditCardInfo);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("not a number");
+                }
             }
         });
         backButtonConfRent.addActionListener(new ActionListener() {
@@ -411,16 +463,24 @@ public class guiWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String rid = rIdReturn.getText();
-                String date = rIdReturn.getText();
+                String date = dateReturn.getText();
                 String odometer = odometerReturn.getText();
                 String tankFull = (String)tankFullReturn.getSelectedItem();
+
+                Calendar cal = Calendar.getInstance();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd:HH:mm:ss");
+                String returnTime = sdf.format(cal.getTime());
+                System.out.println(date);
+                System.out.println(returnTime);
+
                 boolean tank;
                 if(tankFull.equalsIgnoreCase("Yes")){
                     tank = true;
-                }else {
+                } else {
                     tank = false;
                 }
-                //do querying
+                dbHandler.returnVehicle(Integer.parseInt(rid), date, returnTime, Integer.parseInt(odometer), tank);
+                switchPanel(users);
                 //switchPanel(print results);
             }
         });
@@ -440,10 +500,10 @@ public class guiWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String branch = (String)rentalReportBranch.getSelectedItem();
-                if (branch.equalsIgnoreCase("All")){
-                    //generate report of all branches
+                if (branch.equalsIgnoreCase("ALL")){
+                    dbHandler.generateReportForAll();
                 }else{
-                    //generate report of selected branch
+                    dbHandler.generateReportForBranch(branch);
                 }
             }
         });
@@ -497,6 +557,12 @@ public class guiWindow {
                 String cellphone = cellAddRental.getText();
                 String driversLicense = licenseAddRental.getText();
                 //add info into database
+                dbHandler.setIsReservation(false);
+                dbHandler.setCustomerName(name);
+                dbHandler.setAddress(address);
+                dbHandler.setCellphone(cellphone);
+                dbHandler.setDlicense(driversLicense);
+                dbHandler.insertNewCustomer(new CustomerModel(cellphone, name, address, driversLicense));
                 switchPanel(findVehiclesAddRental);
             }
         });
@@ -519,8 +585,38 @@ public class guiWindow {
             public void actionPerformed(ActionEvent actionEvent) {
                 String cardNo = cardNoField.getText();
                 String expDate = expDateField.getText();
+                String cardName = cardNameField.getText();
+                try {
+                    dbHandler.setCreditCardNo(Integer.parseInt(cardNo));
+                    dbHandler.setExpDate(Date.valueOf(expDate));
+                    dbHandler.setCreditCardName(cardName);
+                    // there was a reservation if true
+                    if (dbHandler.isReservation()) {
+                        dbHandler.handleRent(dbHandler.getConfNo(), dbHandler.getCreditCardName(),
+                                dbHandler.getCreditCardNo(), dbHandler.getExpDate());
+                    } else {
+                        dbHandler.handleRentNoReservation(dbHandler.getVtname(), dbHandler.getCreditCardName(), dbHandler.getCreditCardNo(), dbHandler.getExpDate(),
+                                dbHandler.getDlicense(), dbHandler.getFromDate(), dbHandler.getToDate(), dbHandler.getFromTime(), dbHandler.getToTime());
+                    }
+                    dbHandler.reset();
+                    // TODO: show receipt
+                    switchPanel(users);
+                } catch (Exception e) {
+                    System.out.println("not a valid cc number");
+                }
                 //add these into rent, maybe use global variables to store?
                 //switchPanel(the output panel which prints the conf no);
+            }
+        });
+        Rent.addComponentListener(new ComponentAdapter() {
+        });
+        reservationDriversLicense.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String dlicense = reservationDriversLicense.getText();
+                dbHandler.setDlicense(dlicense);
+                System.out.println(dlicense);
+
             }
         });
         backVehicleResults.addActionListener(new ActionListener() {
@@ -532,6 +628,7 @@ public class guiWindow {
     }
 
     public VehicleModel[] checkVehicleAvailable(String vehicletype, String location, Date date, Time time){
+        System.out.println("");
         VehicleModel[] vehicles = dbHandler.getVehicles();
         int vehicleCount = 0;
         int reservCount = 0;
@@ -591,16 +688,16 @@ public class guiWindow {
 
     }
 
-    public void makeWindow(){
+    public void makeWindow() {
         JFrame frame = new JFrame("SuperRent");
         frame.setContentPane(new guiWindow(dbHandler).panel1);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(400,400);
+        frame.setSize(600,400);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
-    public void switchPanel(JPanel panel){
+    public void switchPanel(JPanel panel) {
         panel1.removeAll();
         panel1.add(panel);
         panel1.repaint();

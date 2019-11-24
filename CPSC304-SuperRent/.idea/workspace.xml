@@ -6,7 +6,12 @@
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/controller/SuperRent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/controller/SuperRent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/database/DatabaseConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/database/DatabaseConnectionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/TerminalTransactions.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/TerminalTransactions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/RentModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/RentModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/ReservationModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/ReservationModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/ReturnModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/model/ReturnModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/LoginWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/LoginWindow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/LoginWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/LoginWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$11.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$12.class" afterDir="false" />
@@ -17,6 +22,7 @@
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$17.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$18.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$19.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$20.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$21.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$22.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$22.class" afterDir="false" />
@@ -27,6 +33,7 @@
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$27.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$27.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$28.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$28.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$29.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$29.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$30.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$30.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$31.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$31.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$32.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$32.class" afterDir="false" />
@@ -42,6 +49,8 @@
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$41.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$41.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$42.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$42.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$43.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$43.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$44.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$44.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$45.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$45.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$7.class" afterDir="false" />
@@ -49,6 +58,8 @@
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/controller/SuperRent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/controller/SuperRent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +110,9 @@
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CPSC304-SuperRent" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -140,6 +154,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
@@ -249,10 +264,9 @@
       <workItem from="1573947888216" duration="22143000" />
       <workItem from="1574275280687" duration="464000" />
       <workItem from="1574275900240" duration="27337000" />
-      <workItem from="1574362434691" duration="1189000" />
-      <workItem from="1574557402820" duration="67000" />
-      <workItem from="1574557705284" duration="2023000" />
-      <workItem from="1574618460782" duration="722000" />
+      <workItem from="1574362434691" duration="1038000" />
+      <workItem from="1574565139668" duration="1674000" />
+      <workItem from="1574583428283" duration="4197000" />
     </task>
     <servers />
   </component>
