@@ -9,7 +9,8 @@ import java.sql.Time;
 public class RentModel {
 	private final int rid;
 	private final int vid;
-	private final String cellphone;
+
+	private final String dlicense;
 	private final Date fromDate;
 	private final Time fromTime;
 	private final Date toDate;
@@ -19,13 +20,14 @@ public class RentModel {
 	private final int cardNo;
 	private final Date expDate;
 	private final int confNo;
-//	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
+//	Rent(rid, vid, dlicense, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
 
-	public RentModel(int rid, int vid, String cellphone, Date fromDate, Time fromTime, Date toDate, Time toTime,
+
+	public RentModel(int rid, int vid, String dlicense, Date fromDate, Time fromTime, Date toDate, Time toTime,
 					 int odometer, String cardName, int cardNo, Date expDate, int confNo) {
 		this.rid = rid;
 		this.vid = vid;
-		this.cellphone = cellphone;
+		this.dlicense = dlicense;
 		this.fromDate = fromDate;
 		this.fromTime = fromTime;
 		this.toDate = toDate;
@@ -45,8 +47,8 @@ public class RentModel {
 		return vid;
 	}
 
-	public String getCellphone() {
-		return cellphone;
+	public String getDLicense() {
+		return dlicense;
 	}
 
 	public Date getFromDate() {

@@ -12,6 +12,9 @@ public class ReservationModel {
 	private final int vid;
 	private final String vtname;
 	private final String dlicense;
+
+
+
 	private final Date fromDate;
 	private final Time fromTime;
 	private final Date toDate;
@@ -36,13 +39,16 @@ public class ReservationModel {
 	public String getVtName() {
 		return vtname;
 	}
+
 	public String getDlicense() {
 		return dlicense;
 	}
 	public Date getFromDate() {
 		return fromDate;
 	}
-	public Time getFromTime() { return fromTime; }
+	public Time getFromTime() {
+		return fromTime;
+	}
 	public Date getToDate() {
 		return toDate;
 	}
