@@ -49,7 +49,7 @@ public class SuperRent implements LoginWindowDelegate {
 //			transaction.showMainMenu(this);
 		}
 	}
-	
+
     
 	/**
 	 * Main method called at launch time

@@ -2,98 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0d34743-88dd-410e-b9b7-5fe199175c62" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/304.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/libraries/ojdbc8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/controller/SuperRent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/database/DatabaseConnectionHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/delegates/LoginWindowDelegate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/model/BranchModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/model/CustomerModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/model/RentModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/model/ReservationModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/model/ReturnModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/model/VehicleModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/model/VehicleTypeModel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/LoginWindow$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/LoginWindow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/TerminalTransactions.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$10.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$11.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$12.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$13.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$14.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$15.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$16.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$17.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$18.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$19.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$20.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$21.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$22.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$23.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$24.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$25.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$26.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$27.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$28.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$29.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$30.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$31.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$32.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$33.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$34.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$35.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$36.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$37.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$38.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$39.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$40.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$41.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$42.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$43.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$44.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$7.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$8.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow$9.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/ca/ubc/cs304/ui/guiWindow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/production/304/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/controller/SuperRent.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/controller/SuperRent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/database/DatabaseConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/database/DatabaseConnectionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/TerminalTransactions.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/TerminalTransactions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/database/DatabaseConnectionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ca/ubc/cs304/ui/guiWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/controller/SuperRent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/controller/SuperRent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/model/RentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/model/RentModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/model/ReservationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/model/ReservationModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/model/ReturnModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/model/ReturnModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/LoginWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/LoginWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/TerminalTransactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/TerminalTransactions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ca/ubc/cs304/ui/guiWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../branch.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

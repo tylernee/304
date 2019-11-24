@@ -468,6 +468,8 @@ public class DatabaseConnectionHandler {
                     "group by v.vtname, v.location";
             stmt.executeUpdate(createView);
 
+
+
         } catch (SQLException e) {
 
         }
@@ -475,16 +477,34 @@ public class DatabaseConnectionHandler {
 	}
 
 	public void generateReportForAll() {
+		System.out.println("here");
 		try {
 			Statement stmt = connection.createStatement();
-			String createView = "create view test (location, vtname, totalRents) as " +
-                    "select v.location, v.vtname, count(v.vtname) " +
+			stmt.executeUpdate("DROP VIEW test2");
+			String createView = "CREATE VIEW test2 (location, vtname, totalRents) as " +
+                    "select v.location, v.vtname, COUNT(v.vtname) " +
                     "from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) " +
                     "group by v.vtname, v.location";
+//			String view = "SELECT v.location, v.vtname, COUNT(v.vtname) " +
+//					"FROM Vehicles v WHERE v.vid IN " +
+//					"(SELECT r.vid FROM Rentals r WHERE r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) " +
+//					"group by v.vtname, v.location";
 			stmt.executeUpdate(createView);
+			System.out.println("here");
+
+			ResultSet rs = stmt.executeQuery("SELECT totalRents from test2");
+
+			System.out.println("after select from view");
+			boolean nextrs = rs.next();
+			System.out.println(nextrs);
+			System.out.println(rs.getString("totalRents"));
+//			while (rs.next()) {
+//				System.out.println("in loop");
+//				System.out.println(rs.getString("location"));
+//			}
 
 		} catch (SQLException e) {
-
+			e.printStackTrace();
 		}
 
 	}
