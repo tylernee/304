@@ -42,7 +42,6 @@ public class DatabaseConnectionHandler {
 			}
 			while (rs.next()) {
 //				Customer (cellphone, name, address, dlicense)
-				// TODO change the getString for dlicense
 				CustomerModel customer = new CustomerModel(rs.getString("cellphone"),
 						rs.getString("name"), rs.getString("address"), rs.getString("dlicense"));
 				customers.add(customer);
@@ -121,13 +120,13 @@ public class DatabaseConnectionHandler {
 			ps.setInt(1, rental.getRid());
 			ps.setInt(2, rental.getVid());
 			ps.setString(3, rental.getCellphone());
-			ps.setString(4, rental.getFromDate());
-			ps.setString(5, rental.getFromTime());
-			ps.setString(6, rental.getToDate());
+			ps.setDate(4, rental.getFromDate());
+			ps.setTime(5, rental.getFromTime());
+			ps.setDate(6, rental.getToDate());
 			ps.setInt(7, rental.getOdometer());
 			ps.setString(8, rental.getCardName());
 			ps.setInt(9, rental.getCardNo());
-			ps.setString(10, rental.getExpDate());
+			ps.setDate(10, rental.getExpDate());
 			ps.setInt(11, rental.getConfNo());
 //			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
 			ps.executeUpdate();
@@ -138,6 +137,62 @@ public class DatabaseConnectionHandler {
 			rollbackConnection();
 		}
 	}
+
+    public RentModel[] getRentals() {
+        ArrayList<RentModel> rentals = new ArrayList<>();
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM RENTALS");
+            // get info on ResultSet
+            ResultSetMetaData rsmd = rs.getMetaData();
+            // display column names;
+            for (int i = 0; i < rsmd.getColumnCount(); i++) {
+                // get column name and print it
+                System.out.printf("%-15s", rsmd.getColumnName(i + 1));
+            }
+            System.out.println("");
+            while (rs.next()) {
+
+                RentModel vehicle = new RentModel(
+                        Integer.parseInt(rs.getString("rid")),
+                        Integer.parseInt(rs.getString("vid")),
+                        rs.getString("cellphone"),
+                        rs.getDate("fromDate"),
+                        rs.getTime("fromTime"),
+                        rs.getDate("toDate"),
+                        rs.getTime("toTime"),
+                        Integer.parseInt(rs.getString("odometer")),
+                        rs.getString("cardName"),
+                        Integer.parseInt(rs.getString("cardNo")),
+                        rs.getDate("expDate"),
+                        Integer.parseInt(rs.getString("confNo")));
+                rentals.add(vehicle);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rentals.toArray(new RentModel[rentals.size()]);
+    }
+
+    public void updateVehicles(int vid, String status) {
+        try {
+            PreparedStatement ps = connection.prepareStatement("UPDATE VEHICLES SET status = ? WHERE vid = ?");
+            ps.setString(1, status);
+            ps.setInt(2, vid);
+
+            int rowCount = ps.executeUpdate();
+            if (rowCount == 0) {
+                System.out.println(WARNING_TAG + " Vehicle " + vid + " does not exist!");
+            }
+
+            connection.commit();
+
+            ps.close();
+        } catch (SQLException e) {
+            System.out.println(EXCEPTION_TAG + " " + e.getMessage());
+            rollbackConnection();
+        }
+    }
 
 	public VehicleModel[] getVehicles() {
 		ArrayList<VehicleModel> vehicles = new ArrayList<>();
@@ -210,14 +265,15 @@ public class DatabaseConnectionHandler {
 	public void insertNewReservation(ReservationModel reservation) {
 		//	Customer (confNo integer, vtname varchar, dlicense varchar,fromDate varchar,fromTime varchar, toDate varchar,toTime varchar)
 		try {
-			PreparedStatement ps = connection.prepareStatement("INSERT INTO RESERVATIONS VALUES (?,?,?,?,?,?,?)");
+			PreparedStatement ps = connection.prepareStatement("INSERT INTO RESERVATIONS VALUES (?,?,?,?,?,?,?,?)");
 			ps.setInt(1, reservation.getConfNo());
-			ps.setString(2, reservation.getVtName());
-			ps.setString(3, reservation.getDlicense());
-			ps.setString(4, reservation.getFromDate());
-            ps.setString(5, reservation.getFromTime());
-            ps.setString(6, reservation.getToDate());
-            ps.setString(7, reservation.getToTime());
+			ps.setInt(2, reservation.getVid());
+			ps.setString(3, reservation.getVtName());
+			ps.setString(4, reservation.getDlicense());
+			ps.setDate(5, reservation.getFromDate());
+            ps.setTime(6, reservation.getFromTime());
+            ps.setDate(7, reservation.getToDate());
+            ps.setTime(8, reservation.getToTime());
 
 //			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
 			ps.executeUpdate();
@@ -228,6 +284,7 @@ public class DatabaseConnectionHandler {
 			rollbackConnection();
 		}
 	}
+
 
 	public ReservationModel[] getReservations() {
 		ArrayList<ReservationModel> reservations = new ArrayList<>();
@@ -246,12 +303,13 @@ public class DatabaseConnectionHandler {
 
 				ReservationModel reservation = new ReservationModel(
 						Integer.parseInt(rs.getString("confNo")),
+                        Integer.parseInt(rs.getString("vid")),
 						rs.getString("vtname"),
 						rs.getString("dlicense"),
-						rs.getString("fromDate"),
-						rs.getString("fromTime"),
-						rs.getString("toDate"),
-						rs.getString("toTime"));
+						rs.getDate("fromDate"),
+						rs.getTime("fromTime"),
+						rs.getDate("toDate"),
+						rs.getTime("toTime"));
 				reservations.add(reservation);
 			}
 		} catch (SQLException e) {

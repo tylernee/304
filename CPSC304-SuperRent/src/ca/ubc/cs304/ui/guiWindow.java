@@ -2,13 +2,15 @@ package ca.ubc.cs304.ui;
 
 import ca.ubc.cs304.database.DatabaseConnectionHandler;
 import ca.ubc.cs304.model.CustomerModel;
+import ca.ubc.cs304.model.RentModel;
 import ca.ubc.cs304.model.ReservationModel;
 import ca.ubc.cs304.model.VehicleModel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Scanner;
+import java.sql.Date;
+import java.sql.Time;
 
 public class guiWindow {
     private JPanel panel1;
@@ -21,7 +23,7 @@ public class guiWindow {
     private JComboBox vTypes;
     private JPanel selectVehicles;
     private JComboBox selLocation;
-    private JTextField selTime;
+    private JTextField selDate;
     private JButton backButtonSelType;
     private JPanel Reservation;
     private JPanel isCustomer;
@@ -109,6 +111,7 @@ public class guiWindow {
     private JTextArea vehicleResultsField;
     private JButton backVehicleResults;
     private JTextField reservationLocation;
+    private JTextField selTime;
     private String vehicleType;
     private DatabaseConnectionHandler dbHandler = null;
 
@@ -136,17 +139,18 @@ public class guiWindow {
         showAvaliableVehiclesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                String loc = (String)selLocation.getSelectedItem();
                 vehicleType = (String)vTypes.getSelectedItem();
                 if(vehicleType.equalsIgnoreCase("None")){
                     vehicleType = null;
                 }
-                String loc = (String)selLocation.getSelectedItem();
-                String time = selTime.getText();
-                VehicleModel[] availableVehicles = checkVehicleAvailable(vehicleType, loc, time);
+                Date date = Date.valueOf(selDate.getText());
+                Time time = Time.valueOf(selTime.getText());
+                VehicleModel[] availableVehicles = checkVehicleAvailable(vehicleType, loc, date,  time);
                 switchPanel(vehicleResults);
                 int vehicleCount = 0;
                 String results = "";
-                System.out.println("No Vehicles Available! Please select another.");
+
                 for (int i = 0; i < availableVehicles.length; i++) {
                     if(availableVehicles[i] != null){
                         results = results + "Vehicle " + (i + 1) + " - "
@@ -157,9 +161,15 @@ public class guiWindow {
                         vehicleCount++;
                     }
                 }
-                results = "Total Number of Available Vehicles: " + vehicleCount + "\n" + results;
+                if (vehicleCount > 0){
+                    results = "Total Number of Available Vehicles: " + vehicleCount + "\n" + results;
 
-                vehicleResultsField.setText(results);
+                    vehicleResultsField.setText(results);
+                } else {
+                    results = "No Vehicles Available! Please select another.";
+                    vehicleResultsField.setText(results);
+                }
+
             }
         });
         backButtonSelType.addActionListener(new ActionListener() {
@@ -244,9 +254,11 @@ public class guiWindow {
                 String loc = reservationLocation.getText();
                 String vt = (String)selectTypeMakeReservation.getSelectedItem();
                 String dl = licenseMakeReservation.getText();
-                String fromDate = fromDateMakeReservation.getText();
-                String toDate = toDateMakeReservation.getText();
-                VehicleModel[] availableVehicles = checkVehicleAvailable(vt, loc, fromDate + toDate);
+                Date fromDate = Date.valueOf(fromDateMakeReservation.getText().substring(0,10));
+                Time fromTime = Time.valueOf(fromDateMakeReservation.getText().substring(11,19));
+                Date toDate = Date.valueOf(toDateMakeReservation.getText().substring(0,10));
+                Time toTime = Time.valueOf(toDateMakeReservation.getText().substring(11,19));
+                VehicleModel[] availableVehicles = checkVehicleAvailable(vt, loc, fromDate, fromTime);
                 CustomerModel[] customers = dbHandler.getCustomers();
                 Boolean exists = false;
                 for(int i=0; i < customers.length; i++){
@@ -259,12 +271,13 @@ public class guiWindow {
                     for(int i=0; i < availableVehicles.length; i++){
                         if (availableVehicles[i] != null) {
                             selectedVehicle = availableVehicles[i];
+                            dbHandler.updateVehicles(availableVehicles[i].getVid(), "reserved");
+                            break;
                         }
                     }
-                    // TODO: update vehicle to reserved
                     if (selectedVehicle != null){
                         int confNo = (int)(Math.random()*10000);
-                        dbHandler.insertNewReservation(new ReservationModel(confNo, vt, dl,fromDate, fromDate, toDate, toDate));
+                        dbHandler.insertNewReservation(new ReservationModel(confNo,selectedVehicle.getVid(), vt, dl, fromDate, fromTime, toDate, toTime));
                         switchPanel(vehicleResults);
                         vehicleResultsField.setText("Reservation Successfully Made!" + "\n"
                         + "Your Confirmation Number: " + confNo
@@ -503,17 +516,60 @@ public class guiWindow {
         });
     }
 
-    public VehicleModel[] checkVehicleAvailable(String vehicletype, String location, String timeinterval){
+    public VehicleModel[] checkVehicleAvailable(String vehicletype, String location, Date date, Time time){
         VehicleModel[] vehicles = dbHandler.getVehicles();
         int vehicleCount = 0;
+        int reservCount = 0;
+        int rentalsCount = 0;
         VehicleModel[] availableVehicles = new VehicleModel[vehicles.length];
-        for(int i=0; i < vehicles.length; i++){
-            if(vehicles[i].getStatus().contains("for_rent") && (vehicleType == null || vehicles[i].getVtName().contains(vehicletype) || vehicletype.contains("None"))
-                    && (location == null || vehicles[i].getLocation().contains(location) || location.contains("NA")) || (timeinterval == null)){
-                availableVehicles[vehicleCount] = vehicles[i];
-                vehicleCount++;
+        RentModel[] rentals = dbHandler.getRentals();
+        RentModel[] relatedRentals = new RentModel[rentals.length];
+        for(int i=0; i<rentals.length; i++){
+            if (rentals[i].getFromDate().compareTo(date) > 0 && rentals[i].getToDate().compareTo(date) < 0){
+                relatedRentals[rentalsCount] = rentals[i];
+                rentalsCount++;
             }
         }
+        ReservationModel[] reservations = dbHandler.getReservations();
+        ReservationModel[] relatedReservations = new ReservationModel[reservations.length];
+        for(int i=0; i<reservations.length; i++){
+            // 0 if equal
+            // Date is greater than date, > 0
+            // Date before data < 0
+            if (reservations[i].getVtName().contains(vehicletype) && (reservations[i].getToDate().compareTo(date) < 0) && (reservations[i].getFromDate().compareTo(date)>0)){
+                relatedReservations[reservCount] = reservations[i];
+                reservCount++;
+            }
+        }
+        for(int i=0; i < vehicles.length; i++){
+            if(vehicles[i].getStatus().contains("reserved") && vehicles[i].getVtName().contains(vehicletype)){
+                for(int j=0; j < relatedReservations.length; j++){
+                    if (vehicles[i].getVid() == relatedReservations[j].getVid()){
+                        availableVehicles[vehicleCount] = vehicles[i];
+                        vehicleCount++;
+                        break;
+                    }
+                }
+                continue;
+            }
+            if(vehicles[i].getStatus().contains("rented") && vehicles[i].getVtName().contains(vehicletype)){
+                for(int j=0; j < relatedRentals.length; j++){
+                    if (vehicles[i].getVid() == relatedRentals[j].getVid()){
+                        availableVehicles[vehicleCount] = vehicles[i];
+                        vehicleCount++;
+                        break;
+                    }
+                }
+                continue;
+            }
+            if(vehicles[i].getStatus().contains("for_rent") && (vehicleType == null || vehicles[i].getVtName().contains(vehicletype) || vehicletype.contains("None"))
+                    && (location == null || vehicles[i].getLocation().contains(location) || location.contains("NA")) || (time == null) || (date == null)){
+                availableVehicles[vehicleCount] = vehicles[i];
+                vehicleCount++;
+                continue;
+            }
+        }
+
         return availableVehicles;
 
     }

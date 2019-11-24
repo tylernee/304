@@ -1,5 +1,8 @@
 package ca.ubc.cs304.model;
 
+import java.sql.Date;
+import java.sql.Time;
+
 /**
  * The intent for this class is to update/store information about a single branch
  */
@@ -7,19 +10,19 @@ public class RentModel {
 	private final int rid;
 	private final int vid;
 	private final String cellphone;
-	private final String fromDate;
-	private final String fromTime;
-	private final String toDate;
-	private final String toTime;
+	private final Date fromDate;
+	private final Time fromTime;
+	private final Date toDate;
+	private final Time toTime;
 	private final int odometer;
 	private final String cardName;
 	private final int cardNo;
-	private final String expDate;
+	private final Date expDate;
 	private final int confNo;
 //	Rent(rid, vid, cellphone, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
 
-	public RentModel(int rid, int vid, String cellphone, String fromDate, String fromTime, String toDate, String toTime,
-					 int odometer, String cardName, int cardNo, String expDate, int confNo) {
+	public RentModel(int rid, int vid, String cellphone, Date fromDate, Time fromTime, Date toDate, Time toTime,
+					 int odometer, String cardName, int cardNo, Date expDate, int confNo) {
 		this.rid = rid;
 		this.vid = vid;
 		this.cellphone = cellphone;
@@ -46,21 +49,19 @@ public class RentModel {
 		return cellphone;
 	}
 
-	public String getFromDate() {
+	public Date getFromDate() {
 		return fromDate;
 	}
 
-	public String getFromTime() {
+	public Time getFromTime() {
 		return fromTime;
 	}
 
-	public String getToDate() {
+	public Date getToDate() {
 		return toDate;
 	}
 
-	public String getToTime() {
-		return toTime;
-	}
+	public Time getToTime() { return toTime; }
 
 	public int getOdometer() {
 		return odometer;
@@ -74,7 +75,7 @@ public class RentModel {
 		return cardNo;
 	}
 
-	public String getExpDate() {
+	public Date getExpDate() {
 		return expDate;
 	}
 
