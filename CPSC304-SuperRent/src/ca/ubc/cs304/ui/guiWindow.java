@@ -500,11 +500,15 @@ public class guiWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String branch = (String)rentalReportBranch.getSelectedItem();
+                String report;
                 if (branch.equalsIgnoreCase("ALL")){
-                    dbHandler.generateReportForAll();
-                }else{
-                    dbHandler.generateReportForBranch(branch);
+                    report = dbHandler.generateReportForAll();
+
+                } else{
+                    report = dbHandler.generateReportForBranch(branch);
                 }
+                switchPanel (vehicleResults);
+                vehicleResultsField.setText(report);
             }
         });
         generateReportButtonClerkSelection.addActionListener(new ActionListener() {

@@ -461,57 +461,88 @@ public class DatabaseConnectionHandler {
 	}
 
 
-	public void generateReportForBranch(String location) {
+	public String generateReportForBranch(String location) {
+		String report = "";
 		try {
 			Statement stmt = connection.createStatement();
 			String createView = "create view test (location, vtname, totalRents) as " +
 					"select v.location, v.vtname, count(v.vtname) " +
-					"from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) and" +
-					"group by v.vtname, v.location";
+					"from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = '23-NOV-19') " +
+					"group by v.vtname, v.location HAVING v.location= '" + location + "'";
 			stmt.executeUpdate(createView);
-
-
-
-		} catch (SQLException e) {
-
-		}
-
-	}
-
-	public void generateReportForAll() {
-		System.out.println("here");
-		try {
-			Statement stmt = connection.createStatement();
-			String createView = "CREATE VIEW test2 (location, vtname, totalRents) as " +
-					"select v.location, v.vtname, COUNT(v.vtname) " +
-					"from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) " +
-					"group by v.vtname, v.location";
-//			String view = "SELECT v.location, v.vtname, COUNT(v.vtname) " +
-//					"FROM Vehicles v WHERE v.vid IN " +
-//					"(SELECT r.vid FROM Rentals r WHERE r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) " +
-//					"group by v.vtname, v.location";
-			stmt.executeUpdate(createView);
-			System.out.println("here");
-
 			Statement stmt2 = connection.createStatement();
-			ResultSet rs = stmt2.executeQuery("SELECT * from test2");
-			System.out.println(rs.getMetaData().getColumnName(1));
-			System.out.println(rs.getMetaData().getColumnName(2));
-			System.out.println(rs.getMetaData().getColumnName(3));
-			System.out.println("after select from view");
-			boolean nextrs = rs.next();
-			System.out.println(nextrs);
-//			System.out.println(rs.getString("totalRents"));
-//			while (rs.next()) {
-//				System.out.println("in loop");
-//				System.out.println(rs.getString("location"));
-//			}
-			stmt.executeUpdate("DROP VIEW test2");
+			ResultSet rs = stmt2.executeQuery("SELECT * from test");
+			ResultSetMetaData rsmd = rs.getMetaData();
+			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+				// get column name and print it
+				report += String.format("%-15s", rsmd.getColumnName(i + 1));
+			}
+			report += "\n";
+			while (rs.next()) {
+				report += String.format("%-15s", rs.getString(1));
+				report += String.format("%-15s", rs.getString(2));
+				report += String.format("%-15s", rs.getString(3));
+				report += "\n";
+			}
+			report += "\n";
 
+			rs = stmt2.executeQuery("Select SUM(totalRents) from test");
+			rs.next();
+			report += String.format("Total daily rents of SuperRent at branch (" + location + "): " + rs.getInt(1));
+
+			stmt.executeUpdate("DROP VIEW test");
+			return report;
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return "";
+
+	}
+
+	public String generateReportForAll() {
+		String report = "";
+		try {
+			Statement stmt = connection.createStatement();
+			String createView = "CREATE VIEW test2 (location, vtname, totalRents) as " +
+					"select v.location, v.vtname, COUNT(v.vtname) " +
+					"from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = '23-NOV-19') " +
+					"group by v.vtname, v.location";
+//
+			stmt.executeUpdate(createView);
+
+			Statement stmt2 = connection.createStatement();
+			ResultSet rs = stmt2.executeQuery("SELECT * from test2");
+			ResultSetMetaData rsmd = rs.getMetaData();
+			// display column names;
+			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+				// get column name and print it
+				report += String.format("%-15s", rsmd.getColumnName(i + 1));
+			}
+			report += "\n";
+			while (rs.next()) {
+				report += String.format("%-15s", rs.getString(1));
+				report += String.format("%-15s", rs.getString(2));
+				report += String.format("%-15s", rs.getString(3));
+				report += "\n";
+
+
+			}
+			report += "\n";
+
+			rs = stmt2.executeQuery("Select SUM(totalRents) from test2");
+			rs.next();
+			report += String.format("Total daily rents of SuperRent: " + rs.getInt(1));
+			System.out.println(report);
+
+//
+			stmt.executeUpdate("DROP VIEW test2");
+			return report;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return "";
 
 	}
 
