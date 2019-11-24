@@ -106,6 +106,8 @@ public class guiWindow {
     private JButton makeRentalButtonCreditCard;
     private JButton backButtonCreditCard;
     private JTextField reservationDriversLicense;
+    private JComboBox locationAddRental;
+    private JTextField cardNameField;
     private String vehicleType;
 
     private int test = 0;
@@ -290,6 +292,7 @@ public class guiWindow {
             public void actionPerformed(ActionEvent actionEvent) {
                 //using info, query availiable vehicles and show them
                 String vehicleType = (String)vehicleTypeAddRental.getSelectedItem();
+                String location = (String) locationAddRental.getSelectedItem();
                 String fromDatefromTime = fromDateAddRental.getText();
                 String toDatetoTime = toDateAddRental.getText();
                 System.out.println(vehicleType);
@@ -305,12 +308,13 @@ public class guiWindow {
                     dbHandler.setFromTime(fromTime);
                     dbHandler.setToDate(toDate);
                     dbHandler.setToDate(toTime);
+                    dbHandler.setBranchLocation(location);
 
                     //get through vehicle selection transaction
 //                switchPanel(listVehiclesRent);
                     switchPanel(creditCardInfo);
                 } catch (Exception e) {
-                    System.out.println("please follow correct format");
+                    System.out.println("please follow correct date format");
                 }
 
 
@@ -400,7 +404,7 @@ public class guiWindow {
                 if (branch.equalsIgnoreCase("All")){
                     //generate report of all branches
                 }else{
-                    //generate report of selected branch
+
                 }
             }
         });
@@ -482,16 +486,17 @@ public class guiWindow {
             public void actionPerformed(ActionEvent actionEvent) {
                 String cardNo = cardNoField.getText();
                 String expDate = expDateField.getText();
+                String cardName = cardNameField.getText();
                 try {
                     dbHandler.setCreditCardNo(Integer.parseInt(cardNo));
                     dbHandler.setExpDate(expDate);
+                    dbHandler.setCreditCardName(cardName);
                     // there was a reservation if true
                     if (dbHandler.isReservation()) {
-                        dbHandler.handleRent(dbHandler.getConfNo(), "SuperRentUser",
+                        dbHandler.handleRent(dbHandler.getConfNo(), dbHandler.getCreditCardName(),
                                 dbHandler.getCreditCardNo(), dbHandler.getExpDate());
                     } else {
-                        System.out.println("in else case where vtname = " + dbHandler.getVtname());
-                        dbHandler.handleRentNoReservation(dbHandler.getVtname(), "SuperRentUser", dbHandler.getCreditCardNo(), dbHandler.getExpDate(),
+                        dbHandler.handleRentNoReservation(dbHandler.getVtname(), dbHandler.getCreditCardName(), dbHandler.getCreditCardNo(), dbHandler.getExpDate(),
                                 dbHandler.getDlicense(), dbHandler.getFromDate(), dbHandler.getToDate(), dbHandler.getFromTime(), dbHandler.getToTime());
                     }
                     dbHandler.reset();

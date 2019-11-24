@@ -26,12 +26,29 @@ public class DatabaseConnectionHandler {
 	private int confNo;
 	private int creditCardNo;
 	private String expDate;
+	private String creditCardName;
 	private String customerName;
 	private String address;
 	private String cellphone;
 	private String dlicense;
 	private String fromDate;
 	private String vtname;
+	private String branchLocation;
+
+	public String getBranchLocation() {
+		return branchLocation;
+	}
+	public void setBranchLocation(String branchLocation) {
+		this.branchLocation = branchLocation;
+	}
+	public String getCreditCardName() {
+		return creditCardName;
+	}
+
+	public void setCreditCardName(String creditCardName) {
+		this.creditCardName = creditCardName;
+	}
+
 
 	public String getVtname() {
 		return vtname;
@@ -249,7 +266,7 @@ public class DatabaseConnectionHandler {
 			}
 			Statement stmt2 = connection.createStatement();
 			// GET VID AND ODOMETER FROM ANY VEHICLE OF THE RESERVED TYPE
-			ResultSet rs2 = stmt2.executeQuery("SELECT vid, odometer FROM Vehicles WHERE vtname = '" + vtname + "' AND status = 'for_rent'");
+			ResultSet rs2 = stmt2.executeQuery("SELECT vid, odometer FROM Vehicles WHERE vtname = '" + vtname + "' AND status = 'reserved'");
 			rsmd = rs2.getMetaData();
 			while (rs2.next()) {
 				vid = rs2.getInt("VID");
@@ -483,5 +500,6 @@ public class DatabaseConnectionHandler {
 		dlicense = "";
 		fromDate = "";
 		vtname = "";
+		creditCardName = "";
 	}
 }
