@@ -400,7 +400,7 @@ public class guiWindow {
                     String fromTime = fromDatefromTime.substring(11);
                     String toDate = toDatetoTime.substring(0, 10);
                     String toTime = toDatetoTime.substring(11);
-
+                    System.out.println(fromDate);
                     dbHandler.setVtname(vehicleType);
                     dbHandler.setFromDate(Date.valueOf(fromDate));
                     dbHandler.setFromTime(Time.valueOf(fromTime));
@@ -412,6 +412,7 @@ public class guiWindow {
 //                switchPanel(listVehiclesRent);
                     switchPanel(creditCardInfo);
                 } catch (Exception e) {
+                    e.printStackTrace();
                     System.out.println("please follow correct date format");
                 }
 
@@ -627,6 +628,7 @@ public class guiWindow {
     }
 
     public VehicleModel[] checkVehicleAvailable(String vehicletype, String location, Date date, Time time){
+        System.out.println("");
         VehicleModel[] vehicles = dbHandler.getVehicles();
         int vehicleCount = 0;
         int reservCount = 0;

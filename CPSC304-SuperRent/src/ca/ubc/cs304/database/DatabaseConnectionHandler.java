@@ -235,8 +235,12 @@ public class DatabaseConnectionHandler {
 			Random randomInt = new Random();
 			int rid = randomInt.nextInt(60000)/2 + randomInt.nextInt(300)/2;
 			// TODO make a new reservation table and then make a rent model so that dumb null error disappears
+			int confNo = (int) (Math.random()*10000) + 1;
+			System.out.println(vid);
+			insertNewReservation(new ReservationModel(confNo, vid, vtname, dlicense, fromDate, fromTime, toDate, toTime));
+
 			RentModel rental = new RentModel(rid, vid, dlicense, fromDate, fromTime, toDate, toTime, odometer,
-					cardName, cardNo, expDate, -1);
+					cardName, cardNo, expDate, confNo);
 			insertNewRental(rental);
 			System.out.println("rental no reservation complete! Heres your rental ID: " + rid);
 
@@ -302,6 +306,7 @@ public class DatabaseConnectionHandler {
 	}
 
 	private void insertNewRental(RentModel rental) {
+		System.out.println();
 		//	Rent(rid, vid, dlicense, fromDate, fromTime, toDate, toTime, odometer, cardName, cardNo, ExpDate, confNo)
 		try {
 			PreparedStatement ps = connection.prepareStatement("INSERT INTO Rentals VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -319,11 +324,9 @@ public class DatabaseConnectionHandler {
 			ps.setString(9, rental.getCardName());
 			ps.setInt(10, rental.getCardNo());
 			ps.setDate(11, rental.getExpDate());
-			if (confNo == -1) {
-				ps.setNull(12, java.sql.Types.INTEGER);
-			} else {
-				ps.setInt(12, rental.getConfNo());
-			}
+//
+			ps.setInt(12, rental.getConfNo());
+
 //			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
 			ps.executeUpdate();
 			connection.commit();
@@ -479,7 +482,6 @@ public class DatabaseConnectionHandler {
 		System.out.println("here");
 		try {
 			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("DROP VIEW test2");
 			String createView = "CREATE VIEW test2 (location, vtname, totalRents) as " +
 					"select v.location, v.vtname, COUNT(v.vtname) " +
 					"from vehicles v where v.vid in (select r.vid from rentals r where r.fromDate = TO_DATE('2019-11-23','YYYY-MM-dd')) " +
@@ -491,16 +493,21 @@ public class DatabaseConnectionHandler {
 			stmt.executeUpdate(createView);
 			System.out.println("here");
 
-			ResultSet rs = stmt.executeQuery("SELECT totalRents from test2");
-
+			Statement stmt2 = connection.createStatement();
+			ResultSet rs = stmt2.executeQuery("SELECT * from test2");
+			System.out.println(rs.getMetaData().getColumnName(1));
+			System.out.println(rs.getMetaData().getColumnName(2));
+			System.out.println(rs.getMetaData().getColumnName(3));
 			System.out.println("after select from view");
 			boolean nextrs = rs.next();
 			System.out.println(nextrs);
-			System.out.println(rs.getString("totalRents"));
+//			System.out.println(rs.getString("totalRents"));
 //			while (rs.next()) {
 //				System.out.println("in loop");
 //				System.out.println(rs.getString("location"));
 //			}
+			stmt.executeUpdate("DROP VIEW test2");
+
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -611,11 +618,10 @@ public class DatabaseConnectionHandler {
 			// get info on ResultSet
 			ResultSetMetaData rsmd = rs.getMetaData();
 			// display column names;
-			for (int i = 0; i < rsmd.getColumnCount(); i++) {
-				// get column name and print it
-				System.out.printf("%-15s", rsmd.getColumnName(i + 1));
-			}
-			System.out.println("");
+//			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+//				// get column name and print it
+//				System.out.printf("%-15s", rsmd.getColumnName(i + 1));
+//			}
 			while (rs.next()) {
 
 				VehicleModel vehicle = new VehicleModel(
