@@ -223,7 +223,8 @@ public class guiWindow {
                 if (name.isEmpty() || address.isEmpty() || cellphone.isEmpty() || driversLicense.isEmpty()){
                     nameAddCustomer.setText("Please fill in all information fields!");
                 } else {
-                    if(cellphone.matches("\\d{3}-\\d{3}-\\d{4}") && driversLicense.matches()){
+                    //donny
+                    if(cellphone.matches("\\d{3}-\\d{3}-\\d{4}")){
                         for (int i = 0; i < customers.length; i++){
                             if (customers[i].getDlicense().contains(driversLicense) || licenseAddCustomer.getText().contains("Already Registered")){
                                 licenseAddCustomer.setText("License Already Registered! Enter a new driver's license.");
