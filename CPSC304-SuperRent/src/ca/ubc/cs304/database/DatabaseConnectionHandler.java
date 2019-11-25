@@ -579,7 +579,7 @@ public class DatabaseConnectionHandler {
                         Time.valueOf(rs.getString("toTime")),
                         Integer.parseInt(rs.getString("odometer")),
                         rs.getString("cardName"),
-                        Integer.parseInt(rs.getString("cardNo")),
+                        rs.getInt("cardNo"),
                         rs.getDate("expDate"),
                         Integer.parseInt(rs.getString("confNo")));
                 rentals.add(vehicle);
