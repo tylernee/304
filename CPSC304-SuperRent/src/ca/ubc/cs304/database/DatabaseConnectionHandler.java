@@ -324,7 +324,7 @@ public class DatabaseConnectionHandler {
 			ps.setInt(8, rental.getOdometer());
 			ps.setString(9, rental.getCardName());
 			ps.setString(10, rental.getCardNo());
-			ps.setDate(11, rental.getExpDate());
+			ps.setString(11, rental.getExpDate().toString());
 //
 			ps.setInt(12, rental.getConfNo());
 
@@ -582,7 +582,7 @@ public class DatabaseConnectionHandler {
                         Integer.parseInt(rs.getString("odometer")),
                         rs.getString("cardName"),
                         rs.getString("cardNo"),
-                        rs.getDate("expDate"),
+                        Date.valueOf(rs.getString("expDate")),
                         Integer.parseInt(rs.getString("confNo")));
                 rentals.add(vehicle);
             }
