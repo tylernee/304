@@ -5,6 +5,7 @@ import ca.ubc.cs304.model.RentModel;
 import ca.ubc.cs304.model.*;
 
 import java.sql.*;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -682,14 +683,16 @@ public class DatabaseConnectionHandler {
 		//	Customer (confNo integer, vtname varchar, dlicense varchar,fromDate varchar,fromTime varchar, toDate varchar,toTime varchar)
 		try {
 			PreparedStatement ps = connection.prepareStatement("INSERT INTO RESERVATIONS VALUES (?,?,?,?,?,?,?,?)");
+            DateFormat df = new SimpleDateFormat("YYYY-MM-DD");
+            DateFormat tf = new SimpleDateFormat("HH:MM:SS");
 			ps.setInt(1, reservation.getConfNo());
 			ps.setInt(2, reservation.getVid());
 			ps.setString(3, reservation.getVtName());
 			ps.setString(4, reservation.getDlicense());
-			ps.setDate(5, reservation.getFromDate());
-            ps.setTime(6, reservation.getFromTime());
-            ps.setDate(7, reservation.getToDate());
-            ps.setTime(8, reservation.getToTime());
+			ps.setString(5, reservation.getFromDate().toString());
+            ps.setString(6, reservation.getFromTime().toString());
+            ps.setString(7, reservation.getToDate().toString());
+            ps.setString(8, reservation.getToTime().toString());
 
 //			not sure if needed for non-primary keys ps.setNull(4, java.sql.Types.INTEGER);
 			ps.executeUpdate();

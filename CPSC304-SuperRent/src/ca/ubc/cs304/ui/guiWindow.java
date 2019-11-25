@@ -298,6 +298,8 @@ public class guiWindow {
                         fromTime = Time.valueOf(fromDateMakeReservation.getText().substring(11, 19));
                         toDate = Date.valueOf(toDateMakeReservation.getText().substring(0, 10));
                         toTime = Time.valueOf(toDateMakeReservation.getText().substring(11, 19));
+                        System.out.println(fromDate);
+                        System.out.println(fromTime);
                     } catch (Exception e) {
                         e.printStackTrace();
                         fromDateMakeReservation.setText("Enter Correct Date Format");
@@ -326,10 +328,10 @@ public class guiWindow {
                         dbHandler.insertNewReservation(new ReservationModel(confNo,selectedVehicle.getVid(), vt, dl, fromDate, fromTime, toDate, toTime));
                         switchPanel(vehicleResults);
                         vehicleResultsField.setText("Reservation Successfully Made!" + "\n"
-                        + "Your Confirmation Number: " + confNo
-                        + "Vehicle Type: " + vt
-                        + "Drivers License: " + dl
-                        + "From: " + fromDate
+                        + "Your Confirmation Number: " + confNo + "\n"
+                        + "Vehicle Type: " + vt + "\n"
+                        + "Drivers License: " + dl + "\n"
+                        + "From: " + fromDate + "\n"
                         + "To: " + toDate);
                     } else {
                         reservationLocation.setText("Vehicle Not Available. Try again!");
