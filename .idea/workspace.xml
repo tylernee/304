@@ -3,40 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="17a49123-c5a1-413d-bebc-52cf37be2edd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/controller/SuperRent.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/controller/SuperRent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/database/DatabaseConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/database/DatabaseConnectionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/model/RentModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/model/RentModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/model/ReservationModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/model/ReservationModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/TerminalTransactions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$17.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$18.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$19.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$20.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$21.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$22.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$22.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$23.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$23.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$24.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$24.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$25.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$25.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$26.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$26.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$27.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$27.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$28.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$28.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$29.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$29.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$30.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$30.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$31.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$31.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$32.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$32.class" afterDir="false" />
@@ -47,17 +19,11 @@
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$37.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$37.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$38.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$38.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$39.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$39.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$40.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$40.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$41.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$41.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$42.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$42.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$43.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$43.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$44.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$44.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,11 +35,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="SuperRent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="guiWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4145">
-              <caret line="505" column="34" selection-start-line="505" selection-start-column="34" selection-end-line="505" selection-end-column="34" />
+            <state relative-caret-position="190">
+              <caret line="693" column="22" lean-forward="true" selection-start-line="693" selection-start-column="22" selection-end-line="693" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -95,8 +73,8 @@
       <file leaf-file-name="DatabaseConnectionHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="383" column="82" selection-start-line="383" selection-start-column="82" selection-end-line="383" selection-end-column="82" />
+            <state relative-caret-position="2346">
+              <caret line="444" column="21" selection-start-line="444" selection-start-column="21" selection-end-line="444" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1117#1118#0" expanded="true" />
@@ -167,8 +145,8 @@
       <file leaf-file-name="d3mod.sql" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/OneDrive/Documents/NetSarang/Xftp/Temporary/d3mod.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+            <state relative-caret-position="349">
+              <caret line="158" column="57" lean-forward="true" selection-start-line="158" selection-start-column="57" selection-end-line="158" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -209,15 +187,15 @@
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReturnModel.java" />
         <option value="$PROJECT_DIR$/../d3mod.sql" />
-        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form" />
         <option value="$USER_HOME$/OneDrive/Documents/NetSarang/Xftp/Temporary/d3mod.sql" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java" />
-        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" />
+        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" />
+        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" />
       </list>
     </option>
   </component>
@@ -459,11 +437,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33168316" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33168316" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18986385" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18986385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -499,30 +477,30 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info id="Designer" order="3" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21948609" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1924716" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33168316" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16490166" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3254818" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3250825" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info id="Favorites" order="6" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -730,16 +708,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java" />
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-873">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../d3mod.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -767,13 +735,6 @@
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$USER_HOME$/OneDrive/Documents/NetSarang/Xftp/Temporary/d3mod.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -784,10 +745,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/OneDrive/Documents/NetSarang/Xftp/Temporary/d3mod.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="158" column="57" lean-forward="true" selection-start-line="158" selection-start-column="57" selection-end-line="158" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReturnModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="383" column="82" selection-start-line="383" selection-start-column="82" selection-end-line="383" selection-end-column="82" />
+        <state relative-caret-position="2346">
+          <caret line="444" column="21" selection-start-line="444" selection-start-column="21" selection-end-line="444" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1117#1118#0" expanded="true" />
@@ -854,17 +839,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReturnModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4145">
-          <caret line="505" column="34" selection-start-line="505" selection-start-column="34" selection-end-line="505" selection-end-column="34" />
+        <state relative-caret-position="190">
+          <caret line="693" column="22" lean-forward="true" selection-start-line="693" selection-start-column="22" selection-end-line="693" selection-end-column="22" />
         </state>
       </provider>
     </entry>
