@@ -534,6 +534,7 @@ public class guiWindow {
                             backSel = returns;
                             vehicleResultsField.setText("Vehicle Successfully Returned!" + "\n"
                                     + "Rental ID: " + rid + "\n"
+                                    + "Day of Return: " + date + '\n'
                                     + "Total Cost: $" + String.valueOf(cost));
                         }else {
                             rIdReturn.setText("Not valid rid!");
