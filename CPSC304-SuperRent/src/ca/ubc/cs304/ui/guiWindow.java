@@ -283,37 +283,33 @@ public class guiWindow {
                 String loc = reservationLocation.getText();
                 String vt = (String)selectTypeMakeReservation.getSelectedItem();
                 String dl = licenseMakeReservation.getText();
-                if(loc.isEmpty()|dl.isEmpty()){
+                if(loc.isEmpty() && dl.isEmpty()){
                     reservationLocation.setText("Enter All Fields!");
                     return;
                 }
                 CustomerModel[] customers = dbHandler.getCustomers();
-                if(!dl.matches("\\d{4}-\\d{4}-\\d{4}")){
-                    licenseMakeReservation.setText("Enter valid number!");
-                    return;
-                }else{
-                    for (int i = 0; i < customers.length; i++){
-                        if (!customers[i].getDlicense().contains(dl) || !licenseAddCustomer.getText().contains("Already Registered")){
-                            licenseMakeReservation.setText("License Not Registered! Enter a new driver's license.");
-                            return;
-                        }
-                    }
-                }
                 Date fromDate = null;
                 Time fromTime = null;
                 Date toDate = null;
                 Time toTime = null;
                 if (fromDateMakeReservation.getText() != null) {
-                    fromDate = Date.valueOf(fromDateMakeReservation.getText().substring(0, 10));
-                    fromTime = Time.valueOf(fromDateMakeReservation.getText().substring(11, 19));
-                    toDate = Date.valueOf(toDateMakeReservation.getText().substring(0, 10));
-                    toTime = Time.valueOf(toDateMakeReservation.getText().substring(11, 19));
+                    try{
+                        fromDate = Date.valueOf(fromDateMakeReservation.getText().substring(0, 10));
+                        fromTime = Time.valueOf(fromDateMakeReservation.getText().substring(11, 19));
+                        toDate = Date.valueOf(toDateMakeReservation.getText().substring(0, 10));
+                        toTime = Time.valueOf(toDateMakeReservation.getText().substring(11, 19));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        fromDateMakeReservation.setText("Enter Correct Date Format");
+                        return;
+                    }
                 }
                 VehicleModel[] availableVehicles = checkVehicleAvailable(vt, loc, fromDate, fromTime);
                 Boolean exists = false;
                 for(int i=0; i < customers.length; i++){
                     if (customers[i].getDlicense().contains(dl)){
                         exists = true;
+                        break;
                     }
                 }
                 if (exists) {
@@ -391,7 +387,7 @@ public class guiWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String dlicense = reservationDriversLicense.getText();
-                if(!dlicense.isEmpty() && dlicense.matches("\\d{4}-\\d{4}-\\d{4}")){
+                if(!dlicense.isEmpty()){
                     CustomerModel[] customers = dbHandler.getCustomers();
                     for (int i = 0; i < customers.length; i++){
                         if (customers[i].getDlicense().contains(dlicense) || licenseAddCustomer.getText().contains("Already Registered")){
@@ -436,10 +432,9 @@ public class guiWindow {
                     switchPanel(creditCardInfo);
                 } catch (Exception e) {
                     e.printStackTrace();
+                    fromDateAddRental.setText("please follow correct date format");
                     System.out.println("please follow correct date format");
                 }
-
-
             }
         });
         findReservation.addActionListener(new ActionListener() {
@@ -517,7 +512,12 @@ public class guiWindow {
                                 } else {
                                     tank = false;
                                 }
-                                dbHandler.returnVehicle(Integer.parseInt(rid), date, returnTime, Integer.parseInt(odometer), tank);
+                                try {
+                                    dbHandler.returnVehicle(Integer.parseInt(rid), date, returnTime, Integer.parseInt(odometer), tank);
+                                } catch (NumberFormatException e) {
+                                    e.printStackTrace();
+                                    dateReturn.setText("Date format incorrect!");
+                                }
                                 switchPanel(users);
                                 break;
                             }
@@ -602,20 +602,21 @@ public class guiWindow {
                 String address = addressAddRental.getText();
                 String cellphone = cellAddRental.getText();
                 String driversLicense = licenseAddRental.getText();
-                boolean exists = true;
+                boolean exists = false;
                 //add info into database
                 if (name.isEmpty() || address.isEmpty() || cellphone.isEmpty() || driversLicense.isEmpty()){
                         nameAddRental.setText("Please fill in all information fields!");
                 } else {
-                    if(cellphone.matches("\\d{3}-\\d{3}-\\d{4}") && driversLicense.matches("\\d{4}-\\d{4}-\\d{4}")){
+                    if(cellphone.matches("^[0-9]*$") && driversLicense.matches("^[0-9]*$")){
                         CustomerModel[] customers = dbHandler.getCustomers();
                         for (int i = 0; i < customers.length; i++){
-                            if (!customers[i].getDlicense().contains(driversLicense) || !licenseAddRental.getText().contains("Already Registered")){
+                            if (customers[i].getDlicense().contains(driversLicense) || licenseAddRental.getText().contains("Already Registered")){
                                 licenseAddRental.setText("License Already Registered! Enter a new driver's license.");
-                                exists = false;
+                                exists = true;
+                                break;
                             }
                         }
-                        if(exists){
+                        if(!exists){
                             dbHandler.setIsReservation(false);
                             dbHandler.setCustomerName(name);
                             dbHandler.setAddress(address);
@@ -664,6 +665,7 @@ public class guiWindow {
                     switchPanel(users);
                 } catch (Exception e) {
                     System.out.println("not a valid cc number");
+                    cardNoField.setText("Card No/exp date not valid!");
                 }
                 //add these into rent, maybe use global variables to store?
                 //switchPanel(the output panel which prints the conf no);
