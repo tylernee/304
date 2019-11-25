@@ -501,33 +501,38 @@ public class guiWindow {
                 if(!rid.isEmpty() && !date.isEmpty() && !odometer.isEmpty()){
                     if(!rid.contains("Enter all fields!")){
                         RentModel[] rentals = dbHandler.getRentals();
+                        boolean exist = false;
                         for (int i = 0; i < rentals.length; i++){
                             if (rentals[i].getRid() == Integer.parseInt(rid)){
-                                Calendar cal = Calendar.getInstance();
-                                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd:HH:mm:ss");
-                                //String returnTime = sdf.format(cal.getTime());
-                                System.out.println(date);
-                                //System.out.println(returnTime);
-                                boolean tank;
-                                if(tankFull.equalsIgnoreCase("Yes")){
-                                    tank = true;
-                                } else {
-                                    tank = false;
-                                }
-                                try {
-                                    cost = dbHandler.returnVehicle(Integer.parseInt(rid), date, Integer.parseInt(odometer), tank);
-                                } catch (NumberFormatException e) {
-                                    e.printStackTrace();
-                                    dateReturn.setText("Date format incorrect!");
-                                }
-                                switchPanel(vehicleResults);
-                                vehicleResultsField.setText("Vehicle Successfully Returned!" + "\n"
-                                        + "Rental ID: " + rid + "\n"
-                                        + "Total Cost: $" + String.valueOf(cost));
-                                return;
+                                exist = true;
+                                break;
                             }
                         }
-                        rIdReturn.setText("Not valid rid!");
+                        if(exist){
+                            Calendar cal = Calendar.getInstance();
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd:HH:mm:ss");
+                            //String returnTime = sdf.format(cal.getTime());
+                            System.out.println(date);
+                            //System.out.println(returnTime);
+                            boolean tank;
+                            if(tankFull.equalsIgnoreCase("Yes")){
+                                tank = true;
+                            } else {
+                                tank = false;
+                            }
+                            try {
+                                cost = dbHandler.returnVehicle(Integer.parseInt(rid), date, Integer.parseInt(odometer), tank);
+                            } catch (NumberFormatException e) {
+                                e.printStackTrace();
+                                dateReturn.setText("Date format incorrect!");
+                            }
+                            switchPanel(vehicleResults);
+                            vehicleResultsField.setText("Vehicle Successfully Returned!" + "\n"
+                                    + "Rental ID: " + rid + "\n"
+                                    + "Total Cost: $" + String.valueOf(cost));
+                        }else {
+                            rIdReturn.setText("Not valid rid!");
+                        }
                     }
                 }else {
                     rIdReturn.setText("Enter all fields!");
