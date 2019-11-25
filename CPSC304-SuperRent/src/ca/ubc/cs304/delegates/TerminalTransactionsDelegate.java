@@ -1,6 +1,8 @@
 package ca.ubc.cs304.delegates;
 
 import ca.ubc.cs304.model.BranchModel;
+import ca.ubc.cs304.model.CustomerModel;
+import ca.ubc.cs304.model.ReservationModel;
 import ca.ubc.cs304.model.VehicleModel;
 import ca.ubc.cs304.model.VehicleTypeModel;
 
@@ -19,11 +21,15 @@ public interface TerminalTransactionsDelegate {
 	public void showCustomers();
 	public VehicleTypeModel[] showVehicleTypes();
 	public VehicleModel[] showVehicles();
+	public ReservationModel[] showReservations();
 	public void updateBranch(int branchId, String name);
 
 
 	public void makeReservation(int dlicense);
-	public String handleRent(int confNo);
+	public String handleRent(int confNo, String cardName, int cardNo, String expDate);
+	public String handleRentNoReservation(String vtname, String cardName, int cardNo, String expDate);
+	public void insertNewCustomer(CustomerModel customer);
+	public void returnVehicle(int rid, String date, String time, int odometer, boolean fulltank);
 
 	
 	public void terminalTransactionsFinished();
