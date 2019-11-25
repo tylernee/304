@@ -121,6 +121,7 @@ public class guiWindow {
     private int backSel;
     private int creditCardBack = 0;
     private int credictCardBackConfNo = 1;
+    private int returns = 5;
 
 
 
@@ -328,6 +329,7 @@ public class guiWindow {
                         int confNo = (int)(Math.random()*10000);
                         dbHandler.insertNewReservation(new ReservationModel(confNo,selectedVehicle.getVid(), vt, dl, fromDate, fromTime, toDate, toTime));
                         switchPanel(vehicleResults);
+                        backSel = backtoMenu;
                         vehicleResultsField.setText("Reservation Successfully Made!" + "\n"
                         + "Your Confirmation Number: " + confNo + "\n"
                         + "Vehicle Type: " + vt + "\n"
@@ -529,6 +531,7 @@ public class guiWindow {
                                 dateReturn.setText("Date format incorrect!");
                             }
                             switchPanel(vehicleResults);
+                            backSel = returns;
                             vehicleResultsField.setText("Vehicle Successfully Returned!" + "\n"
                                     + "Rental ID: " + rid + "\n"
                                     + "Total Cost: $" + String.valueOf(cost));
@@ -703,6 +706,9 @@ public class guiWindow {
                     switchPanel(selectVehicles);
                 }else{
                     switchPanel(customerSelection);
+                }
+                if(backSel == returns){
+                    switchPanel(clerkSelection);
                 }
             }
         });
