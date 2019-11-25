@@ -557,11 +557,14 @@ public class guiWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String branch = (String)rentalReportBranch.getSelectedItem();
+                String report;
                 if (branch.equalsIgnoreCase("ALL")){
-                    dbHandler.generateReportForAll();
+                    report = dbHandler.generateReportForAll();
                 }else{
-                    dbHandler.generateReportForBranch(branch);
+                    report = dbHandler.generateReportForBranch(branch);
                 }
+                switchPanel(vehicleResults);
+                vehicleResultsField.setText(report);
             }
         });
         generateReportButtonClerkSelection.addActionListener(new ActionListener() {
@@ -586,11 +589,16 @@ public class guiWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String branch = (String)returnReportBranch.getSelectedItem();
+                String report;
                 if (branch.equalsIgnoreCase("All")){
-                    //generate report of all branches
-                }else{
-                    //generate report of selected branch
+                    report = dbHandler.generateReportReturnsAll();
+                } else{
+                    report = dbHandler.generateReportForBranch(branch);
                 }
+                switchPanel(vehicleResults);
+                vehicleResultsField.setText(report);
+
+
             }
         });
         backButtonDailyReturn.addActionListener(new ActionListener() {
