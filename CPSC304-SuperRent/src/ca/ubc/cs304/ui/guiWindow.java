@@ -223,7 +223,8 @@ public class guiWindow {
                 if (name.isEmpty() || address.isEmpty() || cellphone.isEmpty() || driversLicense.isEmpty()){
                     nameAddCustomer.setText("Please fill in all information fields!");
                 } else {
-                    if(cellphone.matches("\\d{3}-\\d{3}-\\d{4}") && driversLicense.matches("\\d{4}-\\d{4}-\\d{4}")){
+                    //donny
+                    if(cellphone.matches("\\d{3}-\\d{3}-\\d{4}")){
                         for (int i = 0; i < customers.length; i++){
                             if (customers[i].getDlicense().contains(driversLicense) || licenseAddCustomer.getText().contains("Already Registered")){
                                 licenseAddCustomer.setText("License Already Registered! Enter a new driver's license.");
@@ -516,13 +517,16 @@ public class guiWindow {
                                     tank = false;
                                 }
                                 try {
-                                   cost = dbHandler.returnVehicle(Integer.parseInt(rid), date, Integer.parseInt(odometer), tank);
+                                    cost = dbHandler.returnVehicle(Integer.parseInt(rid), date, Integer.parseInt(odometer), tank);
                                 } catch (NumberFormatException e) {
                                     e.printStackTrace();
                                     dateReturn.setText("Date format incorrect!");
                                 }
-                                switchPanel(users);
-                                break;
+                                switchPanel(vehicleResults);
+                                vehicleResultsField.setText("Vehicle Successfully Returned!" + "\n"
+                                        + "Rental ID: " + rid + "\n"
+                                        + "Total Cost: $" + String.valueOf(cost));
+                                return;
                             }
                         }
                         rIdReturn.setText("Not valid rid!");
@@ -530,10 +534,6 @@ public class guiWindow {
                 }else {
                     rIdReturn.setText("Enter all fields!");
                 }
-                switchPanel(vehicleResults);
-                vehicleResultsField.setText("Vehicle Successfully Returned!" + "\n"
-                + "Rental ID: " + rid + "\n"
-                + "Total Cost: $" + String.valueOf(cost));
             }
         });
         backButtonGenReport.addActionListener(new ActionListener() {
