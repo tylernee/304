@@ -420,6 +420,7 @@ public class DatabaseConnectionHandler {
 			int cost = calculateCost(vtname, date, sdf.format(curDate), originalOdometer, odometer);
 //			int cost = 1;
 
+
 			PreparedStatement ps2 = connection.prepareStatement("INSERT INTO Returns VALUES (?, ?, ?, ?, ?)");
 			ps2.setInt(1, rid);
 			ps2.setString(2, date);
