@@ -733,20 +733,25 @@ public class guiWindow {
 
         for(int i=0; i < vehicles.length; i++){
             if(vehicles[i].getVtName().contains(vehicletype) && vehicles[i].getStatus().contains("reserved")){
-                for(int j=0; j < relatedReservations.length; j++){
-                    if (vehicles[i].getVid() == relatedReservations[j].getVid()){
-                        availableVehicles[vehicleCount] = vehicles[i];
-                        vehicleCount++;
-                        break;
+                for (int j = 0; j < relatedReservations.length; j++) {
+                    if (relatedReservations[j] != null) {
+                        if (vehicles[i].getVid() == relatedReservations[j].getVid()) {
+                            availableVehicles[vehicleCount] = vehicles[i];
+                            vehicleCount++;
+                            break;
+                        }
                     }
                 }
+
             }
             if(vehicles[i].getVtName().contains(vehicletype) && vehicles[i].getStatus().contains("rented")){
-                for(int j=0; j < relatedRentals.length; j++){
-                    if (vehicles[i].getVid() == relatedRentals[j].getVid()){
-                        availableVehicles[vehicleCount] = vehicles[i];
-                        vehicleCount++;
-                        break;
+                for (int j = 0; j < relatedRentals.length; j++) {
+                    if (relatedRentals[j] != null) {
+                        if (vehicles[i].getVid() == relatedRentals[j].getVid()) {
+                            availableVehicles[vehicleCount] = vehicles[i];
+                            vehicleCount++;
+                            break;
+                        }
                     }
                 }
             }
