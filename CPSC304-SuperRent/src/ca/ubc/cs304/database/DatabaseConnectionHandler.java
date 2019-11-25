@@ -25,7 +25,7 @@ public class DatabaseConnectionHandler {
 	private Connection connection = null;
 	private boolean isReserved = false;
 	private int confNo;
-	private int creditCardNo;
+	private String creditCardNo;
 	private Date expDate;
 	private String creditCardName;
 	private String customerName;
@@ -135,11 +135,11 @@ public class DatabaseConnectionHandler {
 		this.confNo = confNo;
 	}
 
-	public int getCreditCardNo() {
+	public String getCreditCardNo() {
 		return creditCardNo;
 	}
 
-	public void setCreditCardNo(int creditCardNo) {
+	public void setCreditCardNo(String creditCardNo) {
 		this.creditCardNo = creditCardNo;
 	}
 
@@ -212,7 +212,7 @@ public class DatabaseConnectionHandler {
 		}
 	}
 
-	public String handleRentNoReservation(String vtname, String cardName, int cardNo, Date expDate, String dlicense,
+	public String handleRentNoReservation(String vtname, String cardName, String cardNo, Date expDate, String dlicense,
 										  Date fromDate, Date toDate, Time fromTime, Time toTime) {
 		try {
 			Statement stmt = connection.createStatement();
@@ -251,7 +251,7 @@ public class DatabaseConnectionHandler {
 		}
 		return "";
 	}
-	public void handleRent(int confNo, String cardName, int cardNo, Date expDate) {
+	public void handleRent(int confNo, String cardName, String cardNo, Date expDate) {
 		try {
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM Reservations WHERE confNo = " + confNo);
@@ -322,7 +322,7 @@ public class DatabaseConnectionHandler {
 			ps.setTime(7, rental.getToTime());
 			ps.setInt(8, rental.getOdometer());
 			ps.setString(9, rental.getCardName());
-			ps.setInt(10, rental.getCardNo());
+			ps.setString(10, rental.getCardNo());
 			ps.setDate(11, rental.getExpDate());
 //
 			ps.setInt(12, rental.getConfNo());
@@ -381,7 +381,7 @@ public class DatabaseConnectionHandler {
 
 	}
 
-	public void returnVehicle(int rid, String date, String time, int odometer, boolean fulltank) {
+	public void returnVehicle(int rid, String date, int odometer, boolean fulltank) {
 		try {
 			Statement stmt = connection.createStatement();
 			// TODO: ADD THE DATES TO CALCULATE THE TOTAL
@@ -419,13 +419,12 @@ public class DatabaseConnectionHandler {
 			int cost = calculateCost(vtname, date, sdf.format(curDate), originalOdometer, odometer);
 //			int cost = 1;
 
-			PreparedStatement ps2 = connection.prepareStatement("INSERT INTO Returns VALUES (?, ?, ?, ?, ?, ?)");
+			PreparedStatement ps2 = connection.prepareStatement("INSERT INTO Returns VALUES (?, ?, ?, ?, ?)");
 			ps2.setInt(1, rid);
 			ps2.setString(2, date);
-			ps2.setString(3, time);
-			ps2.setInt(4, odometer);
-			ps2.setInt(5, (fulltank) ? 1 : 0);
-			ps2.setInt(6, cost);
+			ps2.setInt(3, odometer);
+			ps2.setInt(4, (fulltank) ? 1 : 0);
+			ps2.setInt(5, cost);
 			ps2.executeUpdate();
 			System.out.println("after execute");
 
@@ -544,7 +543,7 @@ public class DatabaseConnectionHandler {
 	public void reset() {
 		isReserved = false;
 		confNo = -1;
-		creditCardNo = -1;
+		creditCardNo = "";
 		expDate = null;
 		customerName ="";
 		address = "";
@@ -579,7 +578,7 @@ public class DatabaseConnectionHandler {
                         Time.valueOf(rs.getString("toTime")),
                         Integer.parseInt(rs.getString("odometer")),
                         rs.getString("cardName"),
-                        rs.getInt("cardNo"),
+                        rs.getString("cardNo"),
                         rs.getDate("expDate"),
                         Integer.parseInt(rs.getString("confNo")));
                 rentals.add(vehicle);

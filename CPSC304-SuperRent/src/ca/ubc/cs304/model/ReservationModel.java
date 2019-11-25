@@ -12,9 +12,6 @@ public class ReservationModel {
 	private final int vid;
 	private final String vtname;
 	private final String dlicense;
-
-
-
 	private final Date fromDate;
 	private final Time fromTime;
 	private final Date toDate;

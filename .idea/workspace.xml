@@ -3,18 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="17a49123-c5a1-413d-bebc-52cf37be2edd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/controller/SuperRent.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/controller/SuperRent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/database/DatabaseConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/database/DatabaseConnectionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/model/RentModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/model/RentModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/model/ReservationModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/model/ReservationModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/model/ReturnModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/model/ReturnModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/TerminalTransactions.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/TerminalTransactions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/TerminalTransactions.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$11.class" afterDir="false" />
@@ -70,74 +69,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SuperRent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java">
+      <file leaf-file-name="guiWindow.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1696">
-              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#653#654#0" expanded="true" />
-                <element signature="e#703#704#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-4145">
+              <caret line="505" column="34" selection-start-line="505" selection-start-column="34" selection-end-line="505" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guiWindow.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
+      <file leaf-file-name="ReturnModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReturnModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="581" column="86" selection-start-line="581" selection-start-column="86" selection-end-line="581" selection-end-column="86" />
-              <folding>
-                <element signature="class#7282:8774" />
-                <element signature="e#13157#13158#0" expanded="true" />
-                <element signature="e#13207#13208#0" expanded="true" />
-                <element signature="e#13382#13383#0" expanded="true" />
-                <element signature="e#13441#13442#0" expanded="true" />
-                <element signature="e#13614#13615#0" expanded="true" />
-                <element signature="e#13679#13680#0" expanded="true" />
-                <element signature="e#13853#13854#0" expanded="true" />
-                <element signature="e#13917#13918#0" expanded="true" />
-                <element signature="e#14092#14093#0" expanded="true" />
-                <element signature="e#14151#14152#0" expanded="true" />
-                <element signature="e#14327#14328#0" expanded="true" />
-                <element signature="e#14386#14387#0" expanded="true" />
-                <element signature="e#14556#14557#0" expanded="true" />
-                <element signature="e#14615#14616#0" expanded="true" />
-                <element signature="e#14789#14790#0" expanded="true" />
-                <element signature="e#14855#14856#0" expanded="true" />
-                <element signature="e#15032#15033#0" expanded="true" />
-                <element signature="e#15098#15099#0" expanded="true" />
-                <element signature="class#12550:13065" />
-                <element signature="class#13114:13472" />
-                <element signature="e#16250#16251#0" expanded="true" />
-                <element signature="e#16314#16315#0" expanded="true" />
-                <element signature="e#16489#16490#0" expanded="true" />
-                <element signature="e#16544#16545#0" expanded="true" />
-                <element signature="e#16721#16722#0" expanded="true" />
-                <element signature="e#16772#16773#0" expanded="true" />
-                <element signature="e#16939#16940#0" expanded="true" />
-                <element signature="e#16998#16999#0" expanded="true" />
-                <element signature="e#17858#17859#0" expanded="true" />
-                <element signature="e#17917#17918#0" expanded="true" />
-                <element signature="e#18090#18091#0" expanded="true" />
-                <element signature="e#18147#18148#0" expanded="true" />
-                <element signature="e#18806#18807#0" expanded="true" />
-                <element signature="e#18863#18864#0" expanded="true" />
-                <element signature="e#19037#19038#0" expanded="true" />
-                <element signature="e#19099#19100#0" expanded="true" />
-                <element signature="e#19273#19274#0" expanded="true" />
-                <element signature="e#19335#19336#0" expanded="true" />
-                <element signature="e#19981#19982#0" expanded="true" />
-                <element signature="e#20038#20039#0" expanded="true" />
-                <element signature="e#20210#20211#0" expanded="true" />
-                <element signature="e#20269#20270#0" expanded="true" />
-                <element signature="e#21461#21462#0" expanded="true" />
-                <element signature="e#21522#21523#0" expanded="true" />
-                <element signature="e#22134#22135#0" expanded="true" />
-                <element signature="e#22193#22194#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -150,8 +95,71 @@
       <file leaf-file-name="DatabaseConnectionHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="122" column="60" selection-start-line="122" selection-start-column="60" selection-end-line="122" selection-end-column="60" />
+            <state relative-caret-position="85">
+              <caret line="383" column="82" selection-start-line="383" selection-start-column="82" selection-end-line="383" selection-end-column="82" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1117#1118#0" expanded="true" />
+                <element signature="e#1145#1146#0" expanded="true" />
+                <element signature="e#1201#1202#0" expanded="true" />
+                <element signature="e#1244#1245#0" expanded="true" />
+                <element signature="e#1281#1282#0" expanded="true" />
+                <element signature="e#1309#1310#0" expanded="true" />
+                <element signature="e#1366#1367#0" expanded="true" />
+                <element signature="e#1409#1410#0" expanded="true" />
+                <element signature="e#1440#1441#0" expanded="true" />
+                <element signature="e#1460#1461#0" expanded="true" />
+                <element signature="e#1501#1502#0" expanded="true" />
+                <element signature="e#1528#1529#0" expanded="true" />
+                <element signature="e#1558#1559#0" expanded="true" />
+                <element signature="e#1580#1581#0" expanded="true" />
+                <element signature="e#1623#1624#0" expanded="true" />
+                <element signature="e#1654#1655#0" expanded="true" />
+                <element signature="e#1682#1683#0" expanded="true" />
+                <element signature="e#1702#1703#0" expanded="true" />
+                <element signature="e#1741#1742#0" expanded="true" />
+                <element signature="e#1768#1769#0" expanded="true" />
+                <element signature="e#1798#1799#0" expanded="true" />
+                <element signature="e#1820#1821#0" expanded="true" />
+                <element signature="e#1863#1864#0" expanded="true" />
+                <element signature="e#1894#1895#0" expanded="true" />
+                <element signature="e#1922#1923#0" expanded="true" />
+                <element signature="e#1942#1943#0" expanded="true" />
+                <element signature="e#1981#1982#0" expanded="true" />
+                <element signature="e#2008#2009#0" expanded="true" />
+                <element signature="e#2113#2114#0" expanded="true" />
+                <element signature="e#2139#2140#0" expanded="true" />
+                <element signature="e#2192#2193#0" expanded="true" />
+                <element signature="e#2231#2232#0" expanded="true" />
+                <element signature="e#2262#2263#0" expanded="true" />
+                <element signature="e#2283#2284#0" expanded="true" />
+                <element signature="e#2326#2327#0" expanded="true" />
+                <element signature="e#2355#2356#0" expanded="true" />
+                <element signature="e#2388#2389#0" expanded="true" />
+                <element signature="e#2411#2412#0" expanded="true" />
+                <element signature="e#2458#2459#0" expanded="true" />
+                <element signature="e#2491#2492#0" expanded="true" />
+                <element signature="e#2523#2524#0" expanded="true" />
+                <element signature="e#2545#2546#0" expanded="true" />
+                <element signature="e#2590#2591#0" expanded="true" />
+                <element signature="e#2621#2622#0" expanded="true" />
+                <element signature="e#2648#2649#0" expanded="true" />
+                <element signature="e#2668#2669#0" expanded="true" />
+                <element signature="e#2706#2707#0" expanded="true" />
+                <element signature="e#2733#2734#0" expanded="true" />
+                <element signature="e#2766#2767#0" expanded="true" />
+                <element signature="e#2792#2793#0" expanded="true" />
+                <element signature="e#2842#2843#0" expanded="true" />
+                <element signature="e#2881#2882#0" expanded="true" />
+                <element signature="e#2910#2911#0" expanded="true" />
+                <element signature="e#2931#2932#0" expanded="true" />
+                <element signature="e#2972#2973#0" expanded="true" />
+                <element signature="e#3001#3002#0" expanded="true" />
+                <element signature="e#3047#3048#0" expanded="true" />
+                <element signature="e#3075#3076#0" expanded="true" />
+                <element signature="e#3110#3111#0" expanded="true" />
+                <element signature="e#3139#3140#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,8 +167,20 @@
       <file leaf-file-name="d3mod.sql" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/OneDrive/Documents/NetSarang/Xftp/Temporary/d3mod.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="55" column="107" lean-forward="true" selection-start-line="55" selection-start-column="107" selection-end-line="55" selection-end-column="107" />
+            <state relative-caret-position="91">
+              <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RentModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,7 +190,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>LocalTime</find>
+      <find>&quot;</find>
     </findStrings>
+    <replaceStrings>
+      <replace>'</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -183,17 +207,17 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/CustomerModel.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReturnModel.java" />
         <option value="$PROJECT_DIR$/../d3mod.sql" />
-        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java" />
-        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/delegates/TerminalTransactionsDelegate.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java" />
+        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java" />
+        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form" />
         <option value="$USER_HOME$/OneDrive/Documents/NetSarang/Xftp/Temporary/d3mod.sql" />
-        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" />
+        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java" />
         <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" />
+        <option value="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" />
       </list>
     </option>
   </component>
@@ -435,37 +459,57 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33168316" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33168316" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16490166" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18986385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33168316" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3250825" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16490166" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Designer" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21948609" />
       <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1924716" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21948609" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="4" />
@@ -475,7 +519,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.3254818" />
       <window_info anchor="right" id="Maven Projects" order="4" />
@@ -519,8 +563,6 @@
           <caret line="108" selection-start-line="108" selection-end-line="108" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -528,15 +570,7 @@
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/LoginWindow.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java" />
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -599,22 +633,11 @@
           <caret line="37" column="4" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1020" />
@@ -638,8 +661,6 @@
           <caret line="108" selection-start-line="108" selection-end-line="108" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -647,15 +668,7 @@
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/LoginWindow.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java" />
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -692,23 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReturnModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/VehicleModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -733,32 +729,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="66" column="25" lean-forward="true" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/TerminalTransactions.java" />
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1696">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        <state relative-caret-position="-873">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -772,9 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="jar://$PROJECT_DIR$/CPSC304-SuperRent/resources/ojdbc8.jar!/oracle/jdbc/driver/GeneratedResultSet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -782,73 +754,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReservationModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="122" column="60" selection-start-line="122" selection-start-column="60" selection-end-line="122" selection-end-column="60" />
+        <state relative-caret-position="187">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
     <entry file="file://$USER_HOME$/OneDrive/Documents/NetSarang/Xftp/Temporary/d3mod.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="55" column="107" lean-forward="true" selection-start-line="55" selection-start-column="107" selection-end-line="55" selection-end-column="107" />
+        <state relative-caret-position="91">
+          <caret line="95" column="41" selection-start-line="95" selection-start-column="41" selection-end-line="95" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="383" column="82" selection-start-line="383" selection-start-column="82" selection-end-line="383" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
+            <element signature="e#1145#1146#0" expanded="true" />
+            <element signature="e#1201#1202#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1281#1282#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+            <element signature="e#1366#1367#0" expanded="true" />
+            <element signature="e#1409#1410#0" expanded="true" />
+            <element signature="e#1440#1441#0" expanded="true" />
+            <element signature="e#1460#1461#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1528#1529#0" expanded="true" />
+            <element signature="e#1558#1559#0" expanded="true" />
+            <element signature="e#1580#1581#0" expanded="true" />
+            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="e#1654#1655#0" expanded="true" />
+            <element signature="e#1682#1683#0" expanded="true" />
+            <element signature="e#1702#1703#0" expanded="true" />
+            <element signature="e#1741#1742#0" expanded="true" />
+            <element signature="e#1768#1769#0" expanded="true" />
+            <element signature="e#1798#1799#0" expanded="true" />
+            <element signature="e#1820#1821#0" expanded="true" />
+            <element signature="e#1863#1864#0" expanded="true" />
+            <element signature="e#1894#1895#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+            <element signature="e#1942#1943#0" expanded="true" />
+            <element signature="e#1981#1982#0" expanded="true" />
+            <element signature="e#2008#2009#0" expanded="true" />
+            <element signature="e#2113#2114#0" expanded="true" />
+            <element signature="e#2139#2140#0" expanded="true" />
+            <element signature="e#2192#2193#0" expanded="true" />
+            <element signature="e#2231#2232#0" expanded="true" />
+            <element signature="e#2262#2263#0" expanded="true" />
+            <element signature="e#2283#2284#0" expanded="true" />
+            <element signature="e#2326#2327#0" expanded="true" />
+            <element signature="e#2355#2356#0" expanded="true" />
+            <element signature="e#2388#2389#0" expanded="true" />
+            <element signature="e#2411#2412#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2491#2492#0" expanded="true" />
+            <element signature="e#2523#2524#0" expanded="true" />
+            <element signature="e#2545#2546#0" expanded="true" />
+            <element signature="e#2590#2591#0" expanded="true" />
+            <element signature="e#2621#2622#0" expanded="true" />
+            <element signature="e#2648#2649#0" expanded="true" />
+            <element signature="e#2668#2669#0" expanded="true" />
+            <element signature="e#2706#2707#0" expanded="true" />
+            <element signature="e#2733#2734#0" expanded="true" />
+            <element signature="e#2766#2767#0" expanded="true" />
+            <element signature="e#2792#2793#0" expanded="true" />
+            <element signature="e#2842#2843#0" expanded="true" />
+            <element signature="e#2881#2882#0" expanded="true" />
+            <element signature="e#2910#2911#0" expanded="true" />
+            <element signature="e#2931#2932#0" expanded="true" />
+            <element signature="e#2972#2973#0" expanded="true" />
+            <element signature="e#3001#3002#0" expanded="true" />
+            <element signature="e#3047#3048#0" expanded="true" />
+            <element signature="e#3075#3076#0" expanded="true" />
+            <element signature="e#3110#3111#0" expanded="true" />
+            <element signature="e#3139#3140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReturnModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="581" column="86" selection-start-line="581" selection-start-column="86" selection-end-line="581" selection-end-column="86" />
-          <folding>
-            <element signature="class#7282:8774" />
-            <element signature="e#13157#13158#0" expanded="true" />
-            <element signature="e#13207#13208#0" expanded="true" />
-            <element signature="e#13382#13383#0" expanded="true" />
-            <element signature="e#13441#13442#0" expanded="true" />
-            <element signature="e#13614#13615#0" expanded="true" />
-            <element signature="e#13679#13680#0" expanded="true" />
-            <element signature="e#13853#13854#0" expanded="true" />
-            <element signature="e#13917#13918#0" expanded="true" />
-            <element signature="e#14092#14093#0" expanded="true" />
-            <element signature="e#14151#14152#0" expanded="true" />
-            <element signature="e#14327#14328#0" expanded="true" />
-            <element signature="e#14386#14387#0" expanded="true" />
-            <element signature="e#14556#14557#0" expanded="true" />
-            <element signature="e#14615#14616#0" expanded="true" />
-            <element signature="e#14789#14790#0" expanded="true" />
-            <element signature="e#14855#14856#0" expanded="true" />
-            <element signature="e#15032#15033#0" expanded="true" />
-            <element signature="e#15098#15099#0" expanded="true" />
-            <element signature="class#12550:13065" />
-            <element signature="class#13114:13472" />
-            <element signature="e#16250#16251#0" expanded="true" />
-            <element signature="e#16314#16315#0" expanded="true" />
-            <element signature="e#16489#16490#0" expanded="true" />
-            <element signature="e#16544#16545#0" expanded="true" />
-            <element signature="e#16721#16722#0" expanded="true" />
-            <element signature="e#16772#16773#0" expanded="true" />
-            <element signature="e#16939#16940#0" expanded="true" />
-            <element signature="e#16998#16999#0" expanded="true" />
-            <element signature="e#17858#17859#0" expanded="true" />
-            <element signature="e#17917#17918#0" expanded="true" />
-            <element signature="e#18090#18091#0" expanded="true" />
-            <element signature="e#18147#18148#0" expanded="true" />
-            <element signature="e#18806#18807#0" expanded="true" />
-            <element signature="e#18863#18864#0" expanded="true" />
-            <element signature="e#19037#19038#0" expanded="true" />
-            <element signature="e#19099#19100#0" expanded="true" />
-            <element signature="e#19273#19274#0" expanded="true" />
-            <element signature="e#19335#19336#0" expanded="true" />
-            <element signature="e#19981#19982#0" expanded="true" />
-            <element signature="e#20038#20039#0" expanded="true" />
-            <element signature="e#20210#20211#0" expanded="true" />
-            <element signature="e#20269#20270#0" expanded="true" />
-            <element signature="e#21461#21462#0" expanded="true" />
-            <element signature="e#21522#21523#0" expanded="true" />
-            <element signature="e#22134#22135#0" expanded="true" />
-            <element signature="e#22193#22194#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-4145">
+          <caret line="505" column="34" selection-start-line="505" selection-start-column="34" selection-end-line="505" selection-end-column="34" />
         </state>
       </provider>
     </entry>
