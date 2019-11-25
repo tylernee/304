@@ -503,9 +503,9 @@ public class guiWindow {
                             if (rentals[i].getRid() == Integer.parseInt(rid)){
                                 Calendar cal = Calendar.getInstance();
                                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd:HH:mm:ss");
-                                String returnTime = sdf.format(cal.getTime());
+                                //String returnTime = sdf.format(cal.getTime());
                                 System.out.println(date);
-                                System.out.println(returnTime);
+                                //System.out.println(returnTime);
                                 boolean tank;
                                 if(tankFull.equalsIgnoreCase("Yes")){
                                     tank = true;
@@ -513,7 +513,7 @@ public class guiWindow {
                                     tank = false;
                                 }
                                 try {
-                                    dbHandler.returnVehicle(Integer.parseInt(rid), date, returnTime, Integer.parseInt(odometer), tank);
+                                    dbHandler.returnVehicle(Integer.parseInt(rid), date, Integer.parseInt(odometer), tank);
                                 } catch (NumberFormatException e) {
                                     e.printStackTrace();
                                     dateReturn.setText("Date format incorrect!");
@@ -649,7 +649,7 @@ public class guiWindow {
                 String expDate = expDateField.getText();
                 String cardName = cardNameField.getText();
                 try {
-                    dbHandler.setCreditCardNo(Integer.parseInt(cardNo));
+                    dbHandler.setCreditCardNo(cardNo);
                     dbHandler.setExpDate(Date.valueOf(expDate));
                     dbHandler.setCreditCardName(cardName);
                     // there was a reservation if true
