@@ -317,10 +317,10 @@ public class DatabaseConnectionHandler {
 			ps.setInt(1, rental.getRid());
 			ps.setInt(2, rental.getVid());
 			ps.setString(3, rental.getDLicense());
-			ps.setDate(4, rental.getFromDate());
-			ps.setTime(5, rental.getFromTime());
-			ps.setDate(6, rental.getToDate());
-			ps.setTime(7, rental.getToTime());
+			ps.setString(4, rental.getFromDate().toString());
+			ps.setString(5, rental.getFromTime().toString());
+			ps.setString(6, rental.getToDate().toString());
+			ps.setString(7, rental.getToTime().toString());
 			ps.setInt(8, rental.getOdometer());
 			ps.setString(9, rental.getCardName());
 			ps.setString(10, rental.getCardNo());

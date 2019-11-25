@@ -2,42 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17a49123-c5a1-413d-bebc-52cf37be2edd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/database/DatabaseConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/database/DatabaseConnectionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$17.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$18.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$19.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$20.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$21.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$22.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$22.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$23.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$23.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$24.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$24.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$25.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$25.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$26.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$26.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$27.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$27.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$28.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$28.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$29.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$29.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$30.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$30.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$31.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$31.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$32.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$32.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$33.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$33.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$34.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$34.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$35.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$35.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$36.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$36.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$37.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$37.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$38.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$38.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$39.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$39.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$40.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$40.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$41.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$41.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$42.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$42.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$43.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$43.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$44.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow$44.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/production/304/ca/ubc/cs304/ui/guiWindow.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,23 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SuperRent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/controller/SuperRent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="guiWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="334" column="41" lean-forward="true" selection-start-line="334" selection-start-column="41" selection-end-line="334" selection-end-column="41" />
+            <state relative-caret-position="-5780">
+              <caret line="335" column="41" selection-start-line="335" selection-start-column="41" selection-end-line="335" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -74,11 +28,11 @@
           <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
-      <file leaf-file-name="DatabaseConnectionHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DatabaseConnectionHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-298">
-              <caret line="231" column="42" selection-start-line="231" selection-start-column="35" selection-end-line="231" selection-end-column="42" />
+            <state relative-caret-position="161">
+              <caret line="322" column="25" lean-forward="true" selection-start-line="322" selection-start-column="25" selection-end-line="322" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1117#1118#0" expanded="true" />
@@ -146,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="d3mod.sql" pinned="false" current-in-tab="false">
+      <file leaf-file-name="d3mod.sql" pinned="false" current-in-tab="true">
         <entry file="file://$USER_HOME$/OneDrive/Documents/NetSarang/Xftp/Temporary/d3mod.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-977">
-              <caret line="42" column="100" lean-forward="true" selection-start-line="42" selection-start-column="100" selection-end-line="42" selection-end-column="100" />
+            <state relative-caret-position="-816">
+              <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -159,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="918">
-              <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+              <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -737,13 +691,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/ReturnModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="66" column="22" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -757,34 +718,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/model/RentModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="66" column="22" lean-forward="true" selection-start-line="66" selection-start-column="22" selection-end-line="66" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="334" column="41" lean-forward="true" selection-start-line="334" selection-start-column="41" selection-end-line="334" selection-end-column="41" />
+        <state relative-caret-position="-5780">
+          <caret line="335" column="41" selection-start-line="335" selection-start-column="41" selection-end-line="335" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/OneDrive/Documents/NetSarang/Xftp/Temporary/d3mod.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-977">
-          <caret line="42" column="100" lean-forward="true" selection-start-line="42" selection-start-column="100" selection-end-line="42" selection-end-column="100" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/ui/guiWindow.form">
+      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/CPSC304-SuperRent/src/ca/ubc/cs304/database/DatabaseConnectionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-298">
-          <caret line="231" column="42" selection-start-line="231" selection-start-column="35" selection-end-line="231" selection-end-column="42" />
+        <state relative-caret-position="161">
+          <caret line="322" column="25" lean-forward="true" selection-start-line="322" selection-start-column="25" selection-end-line="322" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1117#1118#0" expanded="true" />
@@ -848,6 +795,13 @@
             <element signature="e#3110#3111#0" expanded="true" />
             <element signature="e#3139#3140#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/OneDrive/Documents/NetSarang/Xftp/Temporary/d3mod.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-816">
+          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
         </state>
       </provider>
     </entry>
