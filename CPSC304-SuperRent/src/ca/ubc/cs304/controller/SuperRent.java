@@ -19,9 +19,7 @@ public class SuperRent implements LoginWindowDelegate {
 	private void start() {
 		loginWindow = new LoginWindow();
 		loginWindow.showFrame(this);
-		//System.out.println("test");
-//		String username = "ora_tylernee";
-//		String pass = "a22705157";
+
 
 //		login(username, pass);
 	}
