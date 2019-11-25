@@ -515,13 +515,16 @@ public class guiWindow {
                                     tank = false;
                                 }
                                 try {
-                                   cost = dbHandler.returnVehicle(Integer.parseInt(rid), date, Integer.parseInt(odometer), tank);
+                                    cost = dbHandler.returnVehicle(Integer.parseInt(rid), date, Integer.parseInt(odometer), tank);
                                 } catch (NumberFormatException e) {
                                     e.printStackTrace();
                                     dateReturn.setText("Date format incorrect!");
                                 }
-                                switchPanel(users);
-                                break;
+                                switchPanel(vehicleResults);
+                                vehicleResultsField.setText("Vehicle Successfully Returned!" + "\n"
+                                        + "Rental ID: " + rid + "\n"
+                                        + "Total Cost: $" + String.valueOf(cost));
+                                return;
                             }
                         }
                         rIdReturn.setText("Not valid rid!");
@@ -529,10 +532,6 @@ public class guiWindow {
                 }else {
                     rIdReturn.setText("Enter all fields!");
                 }
-                switchPanel(vehicleResults);
-                vehicleResultsField.setText("Vehicle Successfully Returned!" + "\n"
-                + "Rental ID: " + rid + "\n"
-                + "Total Cost: $" + String.valueOf(cost));
             }
         });
         backButtonGenReport.addActionListener(new ActionListener() {
