@@ -496,6 +496,7 @@ public class guiWindow {
                 String date = dateReturn.getText();
                 String odometer = odometerReturn.getText();
                 String tankFull = (String)tankFullReturn.getSelectedItem();
+                int cost = 0;
                 if(!rid.isEmpty() && !date.isEmpty() && !odometer.isEmpty()){
                     if(!rid.contains("Enter all fields!")){
                         RentModel[] rentals = dbHandler.getRentals();
@@ -513,7 +514,7 @@ public class guiWindow {
                                     tank = false;
                                 }
                                 try {
-                                    dbHandler.returnVehicle(Integer.parseInt(rid), date, Integer.parseInt(odometer), tank);
+                                   cost = dbHandler.returnVehicle(Integer.parseInt(rid), date, Integer.parseInt(odometer), tank);
                                 } catch (NumberFormatException e) {
                                     e.printStackTrace();
                                     dateReturn.setText("Date format incorrect!");
@@ -527,7 +528,10 @@ public class guiWindow {
                 }else {
                     rIdReturn.setText("Enter all fields!");
                 }
-                //switchPanel(print results);
+                switchPanel(vehicleResults);
+                vehicleResultsField.setText("Vehicle Successfully Returned!" + "\n"
+                + "Rental ID: " + rid + "\n"
+                + "Total Cost: $" + String.valueOf(cost));
             }
         });
         backButtonGenReport.addActionListener(new ActionListener() {

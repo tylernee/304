@@ -381,7 +381,7 @@ public class DatabaseConnectionHandler {
 
 	}
 
-	public void returnVehicle(int rid, String date, int odometer, boolean fulltank) {
+	public int returnVehicle(int rid, String date, int odometer, boolean fulltank) {
 		try {
 			Statement stmt = connection.createStatement();
 			// TODO: ADD THE DATES TO CALCULATE THE TOTAL
@@ -399,7 +399,7 @@ public class DatabaseConnectionHandler {
 			if (!status.equals("rented")) {
 				System.out.println("Vehicle was never rented!");
 				rollbackConnection();
-				return;
+				return -1;
 			}
 			System.out.println(originalOdometer);
 			System.out.println(odometer);
@@ -432,6 +432,7 @@ public class DatabaseConnectionHandler {
 			System.out.println("rental complete costs: " + cost);
 			ps.close();
 			ps2.close();
+			return cost;
 			// change status in Vehicle  to for_rent , insert new value in returns calculate costs and return a receipt (GUI)
 			// update odometer, get price from the difference.
 
@@ -441,6 +442,7 @@ public class DatabaseConnectionHandler {
 		} catch (SQLException e) {
 			System.out.println(EXCEPTION_TAG + " " + e.getMessage());
 			rollbackConnection();
+			return -1;
 		}
 	}
 
