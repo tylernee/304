@@ -572,7 +572,7 @@ public class DatabaseConnectionHandler {
                 RentModel vehicle = new RentModel(
                         Integer.parseInt(rs.getString("rid")),
                         Integer.parseInt(rs.getString("vid")),
-                        rs.getString("cellphone"),
+                        rs.getString("dlicense"),
                         Date.valueOf(rs.getString("fromDate")),
                         Time.valueOf(rs.getString("fromTime")),
                         Date.valueOf(rs.getString("toDate")),

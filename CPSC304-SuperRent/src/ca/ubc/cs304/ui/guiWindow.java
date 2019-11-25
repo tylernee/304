@@ -10,10 +10,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.sql.Date;
 import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class guiWindow {
     private JPanel panel1;
@@ -77,9 +77,6 @@ public class guiWindow {
     private JButton yesButtonHaveReservation;
     private JButton backButtonHaveReservation;
     private JButton noButtonHaveReservation;
-    private JPanel listVehiclesRent;
-    private JButton backButtonListVehiclesRent;
-    private JButton addToRentalButton;
     private JPanel confNoRent;
     private JButton findReservation;
     private JTextField confNoFieldRent;
@@ -104,7 +101,6 @@ public class guiWindow {
     private JButton generateReturnReportButton;
     private JButton backButtonDailyReturn;
     private JComboBox returnReportBranch;
-    private JComboBox selectVehicleRent;
     private JPanel creditCardInfo;
     private JTextField cardNoField;
     private JTextField expDateField;
@@ -120,6 +116,11 @@ public class guiWindow {
     private JTextField selTime;
     private String vehicleType;
     private DatabaseConnectionHandler dbHandler = null;
+    private int backtoMenu = 0;
+    private int backtoVSel = 1;
+    private int backSel;
+    private int creditCardBack = 0;
+    private int credictCardBackConfNo = 1;
 
 
 
@@ -180,10 +181,11 @@ public class guiWindow {
 
                 if (vehicleCount > 0){
                     results = "Total Number of Available Vehicles: " + vehicleCount + "\n" + results;
-
+                    backSel = backtoMenu;
                     vehicleResultsField.setText(results);
                 } else {
                     results = "No Vehicles Available! Please select another.";
+                    backSel = backtoVSel;
                     vehicleResultsField.setText(results);
                 }
 
@@ -217,28 +219,28 @@ public class guiWindow {
                 String driversLicense = licenseAddCustomer.getText();
                 Boolean exists = false;
                 //add info into database
-//<<<<<<< HEAD
-//
-//                dbHandler.setCustomerName(name);
-//                dbHandler.setAddress(address);
-//                dbHandler.setCellphone(cellphone);
-//                dbHandler.setDlicense(driversLicense);
-//                switchPanel(makeReservation);
-//
-//=======
                 CustomerModel[] customers = dbHandler.getCustomers();
                 if (name.isEmpty() || address.isEmpty() || cellphone.isEmpty() || driversLicense.isEmpty()){
                     nameAddCustomer.setText("Please fill in all information fields!");
                 } else {
-                    for (int i = 0; i < customers.length; i++){
-                        if (customers[i].getDlicense().contains(driversLicense) || licenseAddCustomer.getText().contains("Already Registered")){
-                            licenseAddCustomer.setText("License Already Registered! Enter a new driver's license.");
-                            exists = true;
+                    if(cellphone.matches("\\d{3}-\\d{3}-\\d{4}") && driversLicense.matches("\\d{4}-\\d{4}-\\d{4}")){
+                        for (int i = 0; i < customers.length; i++){
+                            if (customers[i].getDlicense().contains(driversLicense) || licenseAddCustomer.getText().contains("Already Registered")){
+                                licenseAddCustomer.setText("License Already Registered! Enter a new driver's license.");
+                                exists = true;
+                            }
                         }
-                    }
-                    if(!exists){
-                        dbHandler.insertNewCustomer(new CustomerModel(cellphone, name, address, driversLicense));
-                        switchPanel(makeReservation);
+                        if(!exists){
+                            dbHandler.insertNewCustomer(new CustomerModel(cellphone, name, address, driversLicense));
+                            switchPanel(makeReservation);
+                        }
+                    }else {
+                        if(!cellphone.matches("\\d{3}-\\d{3}-\\d{4}")){
+                            cellAddCustomer.setText("Enter valid number!");
+                        }
+                        if(!driversLicense.matches("\\d{4}-\\d{4}-\\d{4}")){
+                            licenseAddCustomer.setText("Enter valid number!");
+                        }
                     }
                 }
 
@@ -281,6 +283,22 @@ public class guiWindow {
                 String loc = reservationLocation.getText();
                 String vt = (String)selectTypeMakeReservation.getSelectedItem();
                 String dl = licenseMakeReservation.getText();
+                if(loc.isEmpty()|dl.isEmpty()){
+                    reservationLocation.setText("Enter All Fields!");
+                    return;
+                }
+                CustomerModel[] customers = dbHandler.getCustomers();
+                if(!dl.matches("\\d{4}-\\d{4}-\\d{4}")){
+                    licenseMakeReservation.setText("Enter valid number!");
+                    return;
+                }else{
+                    for (int i = 0; i < customers.length; i++){
+                        if (!customers[i].getDlicense().contains(dl) || !licenseAddCustomer.getText().contains("Already Registered")){
+                            licenseMakeReservation.setText("License Not Registered! Enter a new driver's license.");
+                            return;
+                        }
+                    }
+                }
                 Date fromDate = null;
                 Time fromTime = null;
                 Date toDate = null;
@@ -292,7 +310,6 @@ public class guiWindow {
                     toTime = Time.valueOf(toDateMakeReservation.getText().substring(11, 19));
                 }
                 VehicleModel[] availableVehicles = checkVehicleAvailable(vt, loc, fromDate, fromTime);
-                CustomerModel[] customers = dbHandler.getCustomers();
                 Boolean exists = false;
                 for(int i=0; i < customers.length; i++){
                     if (customers[i].getDlicense().contains(dl)){
@@ -374,17 +391,22 @@ public class guiWindow {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 String dlicense = reservationDriversLicense.getText();
-                dbHandler.setDlicense(dlicense);
-                System.out.println(dlicense);
-                switchPanel(findVehiclesAddRental);
+                if(!dlicense.isEmpty() && dlicense.matches("\\d{4}-\\d{4}-\\d{4}")){
+                    CustomerModel[] customers = dbHandler.getCustomers();
+                    for (int i = 0; i < customers.length; i++){
+                        if (customers[i].getDlicense().contains(dlicense) || licenseAddCustomer.getText().contains("Already Registered")){
+                            dbHandler.setDlicense(dlicense);
+                            System.out.println(dlicense);
+                            switchPanel(findVehiclesAddRental);
+                        }
+                    }
+                    reservationDriversLicense.setText("License Not Registered! Enter a new driver's license.");
+                }else{
+                    reservationDriversLicense.setText("Please enter drivers license");
+                }
             }
         });
-        backButtonListVehiclesRent.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                switchPanel(findVehiclesAddRental);
-            }
-        });
+
         findVehiclesButtonAddRental.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -410,6 +432,7 @@ public class guiWindow {
 
                     //get through vehicle selection transaction
 //                switchPanel(listVehiclesRent);
+                    creditCardBack = 0;
                     switchPanel(creditCardInfo);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -425,13 +448,21 @@ public class guiWindow {
                 String confNo = confNoFieldRent.getText();
                 try {
                     int confNum = Integer.parseInt(confNo);
-                    dbHandler.setIsReservation(true);
-                    dbHandler.setConfNo(confNum);
-//                    switchPanel(listVehiclesRent);
-                    switchPanel(creditCardInfo);
+                    ReservationModel[] reservations = dbHandler.getReservations();
+                    for (int i = 0; i < reservations.length; i++){
+                        if (reservations[i].getConfNo() == confNum){
+                            dbHandler.setIsReservation(true);
+                            dbHandler.setConfNo(confNum);
+                            creditCardBack = credictCardBackConfNo;
+                            switchPanel(creditCardInfo);
+                        }
+                    }
+                    confNoFieldRent.setText("Number is not valid!");
                 } catch (Exception e) {
+                    switchPanel(confNoRent);
                     e.printStackTrace();
                     System.out.println("not a number");
+                    confNoFieldRent.setText("Number is not valid!");
                 }
             }
         });
@@ -444,7 +475,11 @@ public class guiWindow {
         yesButtonHaveReservation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                switchPanel(confNoRent);
+                if(reservationDriversLicense.getText().isEmpty()){
+                    switchPanel(confNoRent);
+                }else {
+                    reservationDriversLicense.setText("Field Must be empty!");
+                }
             }
         });
         returnButtonClerkSelection.addActionListener(new ActionListener() {
@@ -466,21 +501,32 @@ public class guiWindow {
                 String date = dateReturn.getText();
                 String odometer = odometerReturn.getText();
                 String tankFull = (String)tankFullReturn.getSelectedItem();
-
-                Calendar cal = Calendar.getInstance();
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd:HH:mm:ss");
-                String returnTime = sdf.format(cal.getTime());
-                System.out.println(date);
-                System.out.println(returnTime);
-
-                boolean tank;
-                if(tankFull.equalsIgnoreCase("Yes")){
-                    tank = true;
-                } else {
-                    tank = false;
+                if(!rid.isEmpty() && !date.isEmpty() && !odometer.isEmpty()){
+                    if(!rid.contains("Enter all fields!")){
+                        RentModel[] rentals = dbHandler.getRentals();
+                        for (int i = 0; i < rentals.length; i++){
+                            if (rentals[i].getRid() == Integer.parseInt(rid)){
+                                Calendar cal = Calendar.getInstance();
+                                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd:HH:mm:ss");
+                                String returnTime = sdf.format(cal.getTime());
+                                System.out.println(date);
+                                System.out.println(returnTime);
+                                boolean tank;
+                                if(tankFull.equalsIgnoreCase("Yes")){
+                                    tank = true;
+                                } else {
+                                    tank = false;
+                                }
+                                dbHandler.returnVehicle(Integer.parseInt(rid), date, returnTime, Integer.parseInt(odometer), tank);
+                                switchPanel(users);
+                                break;
+                            }
+                        }
+                        rIdReturn.setText("Not valid rid!");
+                    }
+                }else {
+                    rIdReturn.setText("Enter all fields!");
                 }
-                dbHandler.returnVehicle(Integer.parseInt(rid), date, returnTime, Integer.parseInt(odometer), tank);
-                switchPanel(users);
                 //switchPanel(print results);
             }
         });
@@ -556,28 +602,43 @@ public class guiWindow {
                 String address = addressAddRental.getText();
                 String cellphone = cellAddRental.getText();
                 String driversLicense = licenseAddRental.getText();
+                boolean exists = true;
                 //add info into database
-                dbHandler.setIsReservation(false);
-                dbHandler.setCustomerName(name);
-                dbHandler.setAddress(address);
-                dbHandler.setCellphone(cellphone);
-                dbHandler.setDlicense(driversLicense);
-                dbHandler.insertNewCustomer(new CustomerModel(cellphone, name, address, driversLicense));
-                switchPanel(findVehiclesAddRental);
-            }
-        });
-        addToRentalButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                String car = (String)selectVehicleRent.getSelectedItem(); //have id or some identifying feature in the combobox
-                //select from vehicles, store it into local variable
-                switchPanel(creditCardInfo);
+                if (name.isEmpty() || address.isEmpty() || cellphone.isEmpty() || driversLicense.isEmpty()){
+                        nameAddRental.setText("Please fill in all information fields!");
+                } else {
+                    if(cellphone.matches("\\d{3}-\\d{3}-\\d{4}") && driversLicense.matches("\\d{4}-\\d{4}-\\d{4}")){
+                        CustomerModel[] customers = dbHandler.getCustomers();
+                        for (int i = 0; i < customers.length; i++){
+                            if (!customers[i].getDlicense().contains(driversLicense) || !licenseAddRental.getText().contains("Already Registered")){
+                                licenseAddRental.setText("License Already Registered! Enter a new driver's license.");
+                                exists = false;
+                            }
+                        }
+                        if(exists){
+                            dbHandler.setIsReservation(false);
+                            dbHandler.setCustomerName(name);
+                            dbHandler.setAddress(address);
+                            dbHandler.setCellphone(cellphone);
+                            dbHandler.setDlicense(driversLicense);
+                            dbHandler.insertNewCustomer(new CustomerModel(cellphone, name, address, driversLicense));
+                            switchPanel(findVehiclesAddRental);
+                        }
+                    } else{
+                        cellAddRental.setText("Please enter valid number");
+                        licenseAddRental.setText("Please enter valid license number");
+                    }
+                }
             }
         });
         backButtonCreditCard.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                switchPanel(listVehiclesRent);
+                if(creditCardBack == credictCardBackConfNo){
+                    switchPanel(confNoRent);
+                }else {
+                    switchPanel(findVehiclesAddRental);
+                }
             }
         });
         makeRentalButtonCreditCard.addActionListener(new ActionListener() {
@@ -622,7 +683,14 @@ public class guiWindow {
         backVehicleResults.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                switchPanel(selectVehicles);
+                //if = back to menu go to menu
+                //if = back to vehsel go to selveh
+                //TODO
+                if(backSel == backtoVSel){
+                    switchPanel(selectVehicles);
+                }else{
+                    switchPanel(customerSelection);
+                }
             }
         });
     }
